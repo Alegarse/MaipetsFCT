@@ -1,2 +1,2 @@
 # MaipetsF
-Repositorio que contendr
+Repositorio que contendrá el contenido del proyecto final de ciclo
