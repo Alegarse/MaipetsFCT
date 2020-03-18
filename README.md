@@ -15,6 +15,7 @@ De forma técnica y actualmente de manera somera, ya que no está del todo dise�
 La interfaz iniciará e una actividad de logeo, con copciones de registro y restaruación de contraseña, la cual desembocará en la actividad principal de la app, que se contendrála página de usuario, con uso a través de cards, reclycerViews y modales para mostrar su contenido, todo ello sujeto al desarrollodela app, por lo que podria modificarse si se estima que así seoptimizase dicha app.<br/>
 Constará también de un menú contextual, el cual servirá de enlace a la gestión del perfil de usuario, información tecnica de la aplicación y omo via de deslogeo.<br/>
 Dicho perfil de usuario abandonará la aplicación nativa para desarrollarse en un entorno Web, desde el que se accederá a los datos de dicho usuario,con edición, inserción y borrado de datos.<br/>
+Inclusive se realizará para la administración de usuarios por el desarrollador una aplicación web, similar a la de getión de usuario, pero que solo sera de acceso a este último.<br/>
 
 ## Medios a utilizar
 Nos valdremos de los siguientes medios:<br/>
