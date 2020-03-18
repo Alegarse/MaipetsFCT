@@ -3,7 +3,7 @@ Gestión de mascotas integral a nivel usuario.<br/>
 
 
 ## Video explicativo del contenido
-[Video-demostración](https://youtu.be/JNNqqDwe2vU)
+[Video explicativo](https://youtu.be/JNNqqDwe2vU)
 
 
 
