@@ -9,11 +9,11 @@ Gestión de mascotas integral a nivel usuario.<br/>
 ## Evolución del proyecto
 
 ### Semana 23 a 27 de Marzo de 2020
-###Contenido
+### Contenido
 En esta semana he estado retocando el proyecto base sobre el que voyy a rediseñar este proyecto. Al contener bastantes lineas de código, algunas no optimizadas, decidí finalmente la opción de rehacerlo por completo, así que parto de uno nuevo que iré implementando en las semanas sucesivas.<br/>
 He dedicado el tiempo que tenía en buscar información acerca de la posibilidad del uso de plataformas de redes sociales para el login en la aplicación, y dado que muchos videos y enlaces están desactualizados, ha sido en gran parte una pérdidade tiempo, y tratando de editar estetícamente a través de paginas que informan cobre las mejores combinaciones de colores para Material Design. A nivel de código aún no he implementado nada propiamente dicho a través de Android Studio, lo comenzaré la próxima semana.<br/>
 Tambíen he estado pensando como realizar la web de gestión, algo que aún está sin determinar.<br/>
-###Bibliografía Utilizada
+### Bibliografía Utilizada
 Buscando combinación de colores: [Link con selección](https://material.io/resources/color/#!/?view.left=1&view.right=0&primary.color=D32F2F&secondary.color=7986cc)
 
 
