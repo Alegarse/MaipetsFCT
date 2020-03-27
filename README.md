@@ -10,8 +10,8 @@ Gestión de mascotas integral a nivel usuario.<br/>
 
 ##  :books:Semana 23 a 27 de Marzo de 2020
 ### Contenido
-En esta semana he estado retocando el proyecto base sobre el que voyy a rediseñar este proyecto. Al contener bastantes lineas de código, algunas no optimizadas, decidí finalmente la opción de rehacerlo por completo, así que parto de uno nuevo que iré implementando en las semanas sucesivas.<br/>
-He dedicado el tiempo que tenía en buscar información acerca de la posibilidad del uso de plataformas de redes sociales para el login en la aplicación, y dado que muchos videos y enlaces están desactualizados, ha sido en gran parte una pérdidade tiempo, y tratando de editar estetícamente a través de paginas que informan cobre las mejores combinaciones de colores para Material Design.<br/>
+En esta semana he estado retocando el proyecto base sobre el que voy a rediseñar este proyecto. Al contener bastantes lineas de código, algunas no optimizadas, decidí finalmente la opción de rehacerlo por completo, así que parto de uno nuevo que iré implementando en las semanas sucesivas.<br/>
+He dedicado el tiempo que tenía en buscar información acerca de la posibilidad del uso de plataformas de redes sociales para el login en la aplicación, y dado que muchos videos y enlaces están desactualizados, ha sido en gran parte una pérdida de tiempo; también tratando de editar estetícamente a través de paginas que informan sobre las mejores combinaciones de colores para Material Design.<br/>
 A nivel de código aún no he implementado nada propiamente dicho a través de Android Studio, lo comenzaré la próxima semana.<br/>
 Tambíen he estado pensando como realizar la web de gestión, algo que aún está sin determinar.<br/>
 ### Bibliografía Utilizada
@@ -19,10 +19,10 @@ Tambíen he estado pensando como realizar la web de gestión, algo que aún est�
 :small_orange_diamond:Buscando templates y diseños amigables: [Material Design Kit](https://materialdesignkit.com/templates/)<br/>
 :small_orange_diamond:Eligiendo tipografía TrueType: [Google Fonts](https://fonts.google.com/)<br/>
 :small_orange_diamond:Buscando información para integrar logins:<br/>
-> :small_orange_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
-> :small_orange_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/>
+> :small_blue_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
+> :small_blue_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/>
 
-
+<br/>
 # Información del proyecto
 
 ## Descripcion
