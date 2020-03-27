@@ -23,6 +23,7 @@ Tambíen he estado pensando como realizar la web de gestión, algo que aún est�
 > :small_blue_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/><br/>
 
 ---
+---
 
 # Información del proyecto
 
