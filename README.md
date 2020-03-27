@@ -6,7 +6,7 @@ Gestión de mascotas integral a nivel usuario.<br/>
 [Video explicativo](https://youtu.be/JNNqqDwe2vU)
 
 
-# Evolución del proyecto
+# Evolución semanal del proyecto
 
 ##  :books:Semana 23 a 27 de Marzo de 2020
 ### Contenido
