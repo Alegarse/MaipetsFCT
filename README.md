@@ -23,6 +23,8 @@ Tambíen he estado pensando como realizar la web de gestión, algo que aún est�
 > :small_orange_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/>
 
 
+# Información del proyecto
+
 ## Descripcion
 Se trata de una app que trata de aunar en una misma aplicación la gestión de nuestras mascotas del hogar, su atención y cuidado, e implementar tambien utilidades como gestión de calendario y citas con el veterinario, control de vacunas, acceso a canal de chat de usuarios y una seccion para posibles mascotas extraviadas, en las que indicar zona y fotografía.<br/>
 Todo con un control de acceso de usuario, con la posibilidad de integrarlo con redes sociales y una pequeña descripción biográfica.<br/>
