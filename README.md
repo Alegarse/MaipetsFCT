@@ -21,7 +21,8 @@ Tambíen he estado pensando como realizar la web de gestión, algo que aún est�
 :small_orange_diamond:Buscando información para integrar logins:<br/>
 > :small_blue_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
 > :small_blue_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/>
-<br/>
+
+
 ---
 
 ## Descripcion
