@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MaipetsFCT</string>
+    <string name="welcome">WELCOME</string>
+    <string name="welcome1">We will help you configure the application ...</string>
+    <string name="newuser">I\'m  a new user</string>
+    <string name="alreadyuser">Actually I have an account</string>
 </resources>

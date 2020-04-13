@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MaipetsFCT</string>
+    <string name="welcome">BIENVENIDO</string>
+    <string name="welcome1">Vamos a ayudarle a configurar la aplicación ...</string>
+    <string name="newuser">Soy un usuario nuevo</string>
+    <string name="alreadyuser">Ya tengo una cuenta</string>
+</resources>
