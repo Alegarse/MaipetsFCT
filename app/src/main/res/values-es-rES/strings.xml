@@ -5,4 +5,17 @@
     <string name="welcome1">Vamos a ayudarle a configurar la aplicación ...</string>
     <string name="newuser">Soy un usuario nuevo</string>
     <string name="alreadyuser">Ya tengo una cuenta</string>
+    <string name="familyuser">Familia con mascotas</string>
+    <string name="vetuser">Clínica veterinaria</string>
+    <string name="anotheruser">Otros servicios para mascotas</string>
+    <string name="regtext">Por favor, rellene todos los campos</string>
+    <string name="name">Nombre</string>
+    <string name="surname">Apellidos</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="repassword">Introduzca la contraseña de nuevo</string>
+    <string name="register">REGISTRARSE</string>
+    <string name="cancel">CANCELAR</string>
+    <string name="slogan">La gestión de tus mascotas en unos pocos clics</string>
+    <string name="login">ENTRAR</string>
 </resources>

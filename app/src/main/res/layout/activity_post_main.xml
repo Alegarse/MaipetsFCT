@@ -45,10 +45,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/newuser"
         app:layout_constraintEnd_toEndOf="@+id/newuser"
-        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="@+id/newuser"
         app:layout_constraintTop_toTopOf="@+id/newuser"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <ImageView
         android:id="@+id/alreadyuser"

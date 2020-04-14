@@ -4,4 +4,17 @@
     <string name="welcome1">We will help you configure the application ...</string>
     <string name="newuser">I\'m  a new user</string>
     <string name="alreadyuser">Actually I have an account</string>
+    <string name="familyuser">Family with pets</string>
+    <string name="vetuser">Veterinary clinic</string>
+    <string name="anotheruser">Other services for pets</string>
+    <string name="regtext">Please, fill all the fields</string>
+    <string name="name">Name</string>
+    <string name="surname">Surnames</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="repassword">Password again</string>
+    <string name="register">REGISTER</string>
+    <string name="cancel">CANCEL</string>
+    <string name="slogan">Managing your pets in a few clicks</string>
+    <string name="login">LOGIN</string>
 </resources>
