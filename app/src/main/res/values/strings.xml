@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MaipetsFCT</string>
+    <string name="app_name" translatable="false">Maipets</string>
     <string name="welcome">WELCOME</string>
     <string name="welcome1">We will help you configure the application ...</string>
     <string name="newuser">I\'m  a new user</string>

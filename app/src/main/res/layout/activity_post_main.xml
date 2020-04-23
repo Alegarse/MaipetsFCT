@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffbe00"
+    android:background="@color/colorBack"
     tools:context=".PostMainActivity">
 
+    // New User
     <ImageView
         android:id="@+id/newuser"
         android:layout_width="280dp"
         android:layout_height="252dp"
         android:layout_marginTop="76dp"
+        android:elevation="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +51,12 @@
         app:layout_constraintTop_toTopOf="@+id/newuser"
         app:layout_constraintVertical_bias="0.135" />
 
+    // User Exists
     <ImageView
         android:id="@+id/alreadyuser"
         android:layout_width="280dp"
         android:layout_height="252dp"
+        android:elevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
