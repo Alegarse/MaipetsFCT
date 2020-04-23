@@ -22,6 +22,34 @@ Tambíen he estado pensando como realizar la web de gestión, algo que aún est�
 > :small_blue_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
 > :small_blue_diamond:[Guía para desarrolladores Android](https://developer.android.com/guide)<br/>
 
+##  :books:Semana 30 de Marzo al 3 de Abril de 2020
+### Contenido
+A la hora del código,he distribuido el inicio de la aplicación tenieno en cuenta los posible tipos de usuarios que podran hacer uso del contenido de la app, y conforme a ello he ido realizando dichas actividades, teniendo una interrupción debido a un fallo de ejecución en el emulador, crasheando la app, sin que haya podido aún solventarlo.<br/>
+### Bibliografía Utilizada
+:small_orange_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
+:small_orange_diamond:[Normativa y uso de componentes Material Design](https://material.io/develop/android/)<br/>
+
+##  :books:Semana 6 de Abril al 10 de Abril de 2020
+### Contenido
+A nivel de código no he avanzado debido a que persiste el error y no he sabido solventarlo; sí he seguido trabajando acerca de como modelar la interacción del usuario con la app y como realizarla acorde a la normativa de google, todo en forma de lectura comprensiva, esta semana ha sido complicada.<br/>
+### Bibliografía Utilizada
+:small_orange_diamond:[Guía arquitectura apps](https://developer.android.com/jetpack/docs/guide?hl=es-419)<br/>
+:small_orange_diamond:[Política de desarrolladores](https://play.google.com/intl/es/about/developer-content-policy/)<br/>
+
+##  :books:Semana 13 de Abril al 17 de Abril de 2020
+### Contenido
+Tras una consulta y aclaración al profesorado, finalmente consigo solventar la parte que hacía que fallase la app y puedo continuar con su desarrollo. Realizadas las pantallas de login y registro para cada uno de los usuarios.
+### Bibliografía Utilizada
+:small_orange_diamond:[Login con google en Android](https://jonathanmelgoza.com/blog/como-hacer-un-login-con-google-en-android/)<br/>
+:small_orange_diamond:[Normativa y uso de componentes Material Design](https://material.io/develop/android/)<br/>
+
+##  :books:Semana 20 de Abril al 24 de Abril de 2020
+### Contenido
+He editado la base de datos para tratar de usar la misma que ladela versión anterior, y estoy consultando como poder realizar la web de administración para ir teniendo una idea de como diseñarla, dado que aún no lo tengo muy claro. Si sé que se realizara su linkeo desde la app cuando detecte que quien la esté usando sea administrador.<br/>
+Para la próxima semana si me meteré de lleno en darle mas forma al código de la app.<br/>
+### Bibliografía Utilizada
+:small_orange_diamond:[Legislación para páginas web](https://webysocialmedia.es/legislacion-aplicable-las-paginas-web-espanolas/)<br/>
+:small_orange_diamond:[Busqueda de ideas](https://amalialopezacera.com/pagina-web-administracion-publica/)<br/>
 
 ---
 
