@@ -17,4 +17,17 @@
     <string name="cancel">CANCELAR</string>
     <string name="slogan">La gestión de tus mascotas en unos pocos clics</string>
     <string name="login">ENTRAR</string>
+    <string name="razsoc">Razón social</string>
+    <string name="dir">Dirección</string>
+    <string name="telef">Teléfono</string>
+    <string name="pelu">Peluquería de mascotas</string>
+    <string name="alim">Alimentación</string>
+    <string name="guarde">Guardería de mascotas</string>
+    <string name="protec">Protectora de animales</string>
+    <string name="serv">Servicios</string>
+    <string name="chooseServ">"Elige el tipo de servicio: "</string>
+    <string name="e_empty">Por favor rellena todos los campos</string>
+    <string name="e_pass">Error. Las contraseñas no coinciden</string>
+    <string name="ok_register">¡Registrado correctamente!</string>
+    <string name="e_register">¡Error en elregistro!</string>
 </resources>

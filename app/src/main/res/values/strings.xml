@@ -17,4 +17,19 @@
     <string name="cancel">CANCEL</string>
     <string name="slogan">Managing your pets in a few clicks</string>
     <string name="login">LOGIN</string>
+    <string name="razsoc">Business name</string>
+    <string name="dir">Direction</string>
+    <string name="telef">Telephone</string>
+    <string name="pelu">Haircut\'s pet</string>
+    <string name="alim">Feeding</string>
+    <string name="guarde">Pet nursery</string>
+    <string name="protec">Animal shelter</string>
+    <string name="serv">Services</string>
+    <string name="chooseServ">"Choose Service Type: "</string>
+    <string name="e_empty">Please fill al the fields</string>
+    <string name="e_pass">Error. Passwords is not equals</string>
+    <string name="ok_register">Registered!</string>
+    <string name="e_register">Register error!</string>
+
+
 </resources>
