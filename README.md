@@ -70,8 +70,8 @@ Tras codificarlos y dejarlos vacios, la aplicaciones fue testeada y logueaba cor
 
 ##  :books:Revisión del 11 de Mayo de 2020
 Adjunto el enlace de la aplicacion tal cual tengo desarrollada hasta ahora y el video explicativo.<br/>
-:small_orange_diamond:[Apk de la aplicación](https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-debug.apk)<br/>
-:small_orange_diamond:[Video explicativo]()
+:floppy_disk:[Apk de la aplicación](https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-debug.apk)<br/>
+:video_camera:[Video explicativo]()
 
 ---
 
