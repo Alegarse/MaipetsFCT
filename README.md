@@ -68,6 +68,11 @@ Tras codificarlos y dejarlos vacios, la aplicaciones fue testeada y logueaba cor
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
 
+##  :books:Revisión del 11 de Mayo de 2020
+Adjunto el enlace de la aplicacion tal cual tengo desarrollada hasta ahora y el video explicativo.<br/>
+:small_orange_diamond:[Apk de la aplicación](https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-debug.apk)<br/>
+:small_orange_diamond:[Video explicativo]()
+
 ---
 
 ## Descripcion
