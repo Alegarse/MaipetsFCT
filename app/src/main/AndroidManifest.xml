@@ -8,9 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
 
-        <activity android:name=".AnotherServRegister"></activity>
+        <activity android:name=".UsersActivity"></activity>
+        <activity android:name=".AnotherServRegister" />
         <activity android:name=".VetRegister" />
         <activity android:name=".FamilyRegister" />
         <activity android:name=".LoginActivity" />

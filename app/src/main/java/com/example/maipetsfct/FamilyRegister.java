@@ -19,6 +19,7 @@ public class FamilyRegister extends AppCompatActivity {
     public Button btnCan, btnReg;
     private EditText nombre, apellidos, pass, conf_pass;
     private EditText email;
+    private String cod = "uno";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;
@@ -91,10 +92,10 @@ public class FamilyRegister extends AppCompatActivity {
                                 String uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
-                                Usuario usuario = new Usuario(nom,ape,ema,pwd);
+                                Usuario usuario = new Usuario(nom,ape,ema,pwd,cod);
 
                                 // 3. Obtenemos referencia al documento de usuarios en FB
-                                DatabaseReference dbref = fbdatabase.getReference("usuarios/familias");
+                                DatabaseReference dbref = fbdatabase.getReference("usuarios");
 
                                 // 4. Guardamos la información en RealTime Database
                                 dbref.child(uid).setValue(usuario) ;

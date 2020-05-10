@@ -30,4 +30,8 @@
     <string name="e_pass">Error. Las contraseñas no coinciden</string>
     <string name="ok_register">¡Registrado correctamente!</string>
     <string name="e_register">¡Error en elregistro!</string>
+    <string name="perfil">Perfil</string>
+    <string name="masc">Mascotas</string>
+    <string name="log_nok">Error en el Login</string>
+    <string name="log_ok">Logeado correctamente</string>
 </resources>

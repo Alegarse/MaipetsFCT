@@ -23,6 +23,7 @@ public class AnotherServRegister extends AppCompatActivity {
     private EditText dire, telef, pass, conf_pass;
     private EditText email;
     private Spinner serv;
+    private String cod = "tres";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;
@@ -107,10 +108,10 @@ public class AnotherServRegister extends AppCompatActivity {
                                 String uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
-                                Usuario usuario = new Usuario(ser,dir,tel,ema,pwd);
+                                Usuario usuario = new Usuario(ser,dir,tel,ema,pwd,cod);
 
                                 // 3. Obtenemos referencia al documento de usuarios en FB
-                                DatabaseReference dbref = fbdatabase.getReference("usuarios/otrosServicios");
+                                DatabaseReference dbref = fbdatabase.getReference("usuarios");
 
                                 // 4. Guardamos la información en RealTime Database
                                 dbref.child(uid).setValue(usuario) ;
