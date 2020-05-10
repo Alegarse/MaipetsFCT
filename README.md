@@ -72,7 +72,7 @@ Edit: Solventado a ultima hora del día 10 de Mayo. Comienzo a recodificar el co
 ##  :books:Revisión del 11 de Mayo de 2020
 Adjunto el enlace de la aplicacion tal cual tengo desarrollada hasta ahora y el video explicativo.<br/>
 :floppy_disk:[Apk de la aplicación](https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-debug.apk)<br/>
-:video_camera:[Video explicativo]()
+:video_camera:[Video explicativo](https://www.youtube.com/watch?v=Ls5dAsGvQQ4)<br/>
 
 ---
 
