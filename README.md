@@ -64,6 +64,7 @@ Comienzo con el desarrollo de la pagina principal de la aplicación a través de
 He compuesto la actividad principal en tres fragmentos diferentes, que acaparan el perfil de usuario, la pagina principal de mascotas y el tercero, de servicios disponiles para las mascotas.<br/>
 Realizada correctamente la opción paralogeo a través de Firebase.<br/>
 Tras codificarlos y dejarlos vacios, la aplicaciones fue testeada y logueaba correctamente,pero no cambiaba entre fragmentos. Posteriormente he realizado el inflado decada uno de los fragmentos a través del NavController, pero al tratar de loguear la app crashea altratar de inicializar la actividad de usuario. Trás diversos testers y debugeos,aún no he conseguido solventarlo.<br/>
+Edit: Solventado a ultima hora del día 10 de Mayo. Comienzo a recodificar el codigo principal existente de la app para la integracion en la actividad pricipal,algo que no incluyo en esta version preliminr para evitar crasheos.<br/>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
