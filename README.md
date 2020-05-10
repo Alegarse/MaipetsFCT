@@ -51,6 +51,23 @@ Para la próxima semana si me meteré de lleno en darle mas forma al código de 
 :small_orange_diamond:[Legislación para páginas web](https://webysocialmedia.es/legislacion-aplicable-las-paginas-web-espanolas/)<br/>
 :small_orange_diamond:[Busqueda de ideas](https://amalialopezacera.com/pagina-web-administracion-publica/)<br/>
 
+##  :books:Semana 27 de Abril al 1 de Mayo de 2020
+### Contenido
+He seguido desarrollando los registros para que para cada usuario la aplicacion sepa distinguir la diferencia de perfil. Ello queda reflejado en la base de datos atendienda a uncódigo que incorpora cada usuario para posteriormente poder distinguirlos.<br/>
+Comienzo con el desarrollo de la pagina principal de la aplicación a través del uso de fragmentos.<br/>
+### Bibliografía Utilizada
+:small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
+:small_orange_diamond:[Cómo comunicar contenido con otros fragmentos](https://developer.android.com/training/basics/fragments/communicating?hl=es)<br/>
+
+##  :books:Semana 4 de Mayo al 8 de Mayo de 2020
+### Contenido
+He compuesto la actividad principal en tres fragmentos diferentes, que acaparan el perfil de usuario, la pagina principal de mascotas y el tercero, de servicios disponiles para las mascotas.<br/>
+Realizada correctamente la opción paralogeo a través de Firebase.<br/>
+Tras codificarlos y dejarlos vacios, la aplicaciones fue testeada y logueaba correctamente,pero no cambiaba entre fragmentos. Posteriormente he realizado el inflado decada uno de los fragmentos a través del NavController, pero al tratar de loguear la app crashea altratar de inicializar la actividad de usuario. Trás diversos testers y debugeos,aún no he conseguido solventarlo.<br/>
+
+### Bibliografía Utilizada
+:small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
+
 ---
 
 ## Descripcion
