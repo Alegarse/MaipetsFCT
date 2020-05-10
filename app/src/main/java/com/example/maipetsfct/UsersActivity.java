@@ -31,11 +31,8 @@ public class UsersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
-        // Para ocultar la action bar y que no de problemas con los estilos de Material Design
-        getSupportActionBar().hide();
 
         bnv = findViewById(R.id.bottom_navigation);
-
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;
 
