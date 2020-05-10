@@ -18,6 +18,9 @@ public class NewUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_user);
 
+        // Para ocultar la action bar y que no de problemas con los estilos de Material Design
+        getSupportActionBar().hide();
+
         //Localizo las imagenes que actuarán como botones
         familyPets = findViewById(R.id.familyuser);
         vetPets = findViewById(R.id.vetuser);

@@ -17,6 +17,9 @@ public class PostMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_main);
 
+        // Para ocultar la action bar y que no de problemas con los estilos de Material Design
+        getSupportActionBar().hide();
+
         //Localizo las imagenes que actuarán como botones
         newUser = findViewById(R.id.newuser);
         alreadyUser = findViewById(R.id.alreadyuser);

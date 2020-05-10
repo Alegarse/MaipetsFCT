@@ -37,6 +37,12 @@
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="log_nok">Login error</string>
     <string name="log_ok">Correct Login</string>
+    <string name="label_logout">Logout</string>
+    <string name="edit_masc">Update pet values</string>
+    <string name="del_masc">Delete pet</string>
+    <string name="info">About Maipets</string>
+    <string name="share">Share...</string>
+    <string name="uc">Developing...</string>
 
 
 </resources>

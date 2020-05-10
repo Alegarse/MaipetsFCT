@@ -1,5 +1,6 @@
 package com.example.maipetsfct;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 public class ServicesFragment extends Fragment {
@@ -33,6 +35,15 @@ public class ServicesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_services, container, false);
 
         prueba = view.findViewById(R.id.provisional3);
+
+        Activity activity = getActivity();
+
+        prueba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity, R.string.uc, Toast.LENGTH_LONG).show();
+            }
+        });
 
         return  view;
     }

@@ -34,4 +34,10 @@
     <string name="masc">Mascotas</string>
     <string name="log_nok">Error en el Login</string>
     <string name="log_ok">Logeado correctamente</string>
+    <string name="label_logout">Cerrar sesión</string>
+    <string name="edit_masc">Actualizar datos de mascota</string>
+    <string name="del_masc">Borrar mascota</string>
+    <string name="info">Acerca de Maipets</string>
+    <string name="share">Compartir...</string>
+    <string name="uc">En desarollo...</string>
 </resources>

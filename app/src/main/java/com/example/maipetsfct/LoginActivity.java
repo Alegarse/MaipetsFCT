@@ -35,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Para ocultar la action bar y que no de problemas con los estilos de Material Design
+        getSupportActionBar().hide();
+
         // Inicializamos Firebase
         mAuth = FirebaseAuth.getInstance();
 
