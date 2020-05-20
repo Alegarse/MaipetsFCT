@@ -44,6 +44,13 @@ public class Usuario implements Serializable {
         this.email = email;
     }
 
+    public Usuario(String nombre, String apellidos, String email, String contra) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.contrasena = contra;
+    }
+
     // Getters y Setters
 
     public String getNombre() {

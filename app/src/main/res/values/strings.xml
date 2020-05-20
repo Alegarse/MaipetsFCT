@@ -43,6 +43,17 @@
     <string name="info">About Maipets</string>
     <string name="share">Share...</string>
     <string name="uc">Developing...</string>
+    <string name="addM">ADD PET</string>
+    <string name="no_add">Pet not added</string>
+    <string name="editMasc">Edit Pet Values</string>
+    <string name="editType">Specie</string>
+    <string name="editRace">Race</string>
+    <string name="editColor" translatable="false">Color</string>
+    <string name="editDate">Birth Date</string>
+    <string name="ed_prof">Save Profile</string>
+    <string name="del_prof">Delete profile</string>
+    <string name="save_ok">Saved!</string>
+    <string name="desc">Enter your description here...</string>
 
 
 </resources>

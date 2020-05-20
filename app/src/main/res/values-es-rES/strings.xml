@@ -40,4 +40,14 @@
     <string name="info">Acerca de Maipets</string>
     <string name="share">Compartir...</string>
     <string name="uc">En desarollo...</string>
+    <string name="addM">AÑADIR MASCOTA</string>
+    <string name="no_add">Mascota no añadida</string>
+    <string name="editMasc">Actualizar datos de mascota</string>
+    <string name="editType">Especie</string>
+    <string name="editRace">Raza</string>
+    <string name="editDate">Nacido el:</string>
+    <string name="ed_prof">Guardar Perfil</string>
+    <string name="del_prof">Borrar Cuenta</string>
+    <string name="save_ok">¡Guardado!</string>
+    <string name="desc">Escriba aqúi su descripción...</string>
 </resources>
