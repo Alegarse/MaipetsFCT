@@ -33,6 +33,7 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_users);
 
         bnv = findViewById(R.id.bottom_navigation);
+
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;
 

@@ -1,8 +1,13 @@
 package com.example.maipetsfct.models;
 
-public class mascota {
+import android.net.Uri;
+import android.widget.ImageView;
 
-    //private int imagen;
+import java.io.Serializable;
+
+public class mascota implements Serializable {
+
+    private Uri urlImage;
     private String nombre;
     private String tipo;
     private String raza;
@@ -21,13 +26,14 @@ public class mascota {
         this.fechaNac = fechaNac;
     }
 
-    /*public int getImagen() {
-        return imagen;
+    public mascota(Uri urlImage,String nombre, String tipo, String raza, String color, String fechaNac) {
+        this.urlImage = urlImage;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.raza = raza;
+        this.color = color;
+        this.fechaNac = fechaNac;
     }
-
-    public void setImagen(int imagen) {
-        this.imagen = imagen;
-    }*/
 
     public String getNombre() {
         return nombre;
@@ -68,6 +74,10 @@ public class mascota {
     public void setFechaNac(String fechaNac) {
         this.fechaNac = fechaNac;
     }
+
+    public Uri getUrlImage() { return urlImage; }
+
+    public void setUrlImage(Uri urlImage) { this.urlImage = urlImage; }
 
     @Override
     public String toString() {

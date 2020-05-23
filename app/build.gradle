@@ -39,7 +39,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // Para es uso de camaraa través de la librería Magical Camera
-    compile 'com.frosquivel:magicalcamera:6.0.0'
+    implementation 'com.frosquivel:magicalcamera:6.0.0'
 
 
     // Linea para que funcione Material Design + SnackBar
@@ -52,4 +52,8 @@ dependencies {
     // Funcionamiento conexión Firebase
     implementation 'com.google.firebase:firebase-auth:19.3.1'
     implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+
+    // Para el uso de Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

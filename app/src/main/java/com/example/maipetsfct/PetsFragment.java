@@ -98,6 +98,7 @@ public class PetsFragment extends Fragment {
                 mascotaAdapter = new MascotaAdapter(activity,mascotas);
                 mascotaAdapter.setMascotas(mascotas) ;
                 recyclerView.setAdapter(mascotaAdapter);
+
             }
 
             @Override
