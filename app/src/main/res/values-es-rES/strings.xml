@@ -50,4 +50,13 @@
     <string name="del_prof">Borrar Cuenta</string>
     <string name="save_ok">¡Guardado!</string>
     <string name="desc">Escriba aqúi su descripción...</string>
+    <string name="imgSave">"La imagen se ha guardado, por favor mira en esta ruta: "</string>
+    <string name="imgNoSave">Lo siento, su foto no se ha guardado en el dispositivo</string>
+    <string name="select">Seleccionar imagen desde:</string>
+    <string name="goOut">Para cerrar la ventana pulse fuera de ella</string>
+    <string name="cam">Cámara</string>
+    <string name="gal">Galería</string>
+    <string name="change">Editar campos para actualizarlos</string>
+    <string name="user">"Usuario: "</string>
+    <string name="delImg">Borrar imagen</string>
 </resources>

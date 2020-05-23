@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#EBD6BEAB"
+    android:backgroundTint="#EBC1BEBB"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
     android:id="@+id/cv"
@@ -18,7 +18,6 @@
 
         <ImageView
             android:id="@+id/aniImg"
-            app:srcCompat="@drawable/mascotas"
             android:layout_width="110dp"
             android:layout_height="150dp"
             android:layout_margin="5dp"

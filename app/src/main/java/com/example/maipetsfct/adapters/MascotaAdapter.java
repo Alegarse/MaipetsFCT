@@ -1,15 +1,19 @@
 package com.example.maipetsfct.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.maipetsfct.PetsFragment;
+import com.example.maipetsfct.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.mascota;
 
@@ -43,6 +47,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     @Override
     public void onBindViewHolder(@NonNull MascotaViewHolder holder, int position) {
         mascota masc = mascotas.get(position);
+        holder.imagen.setImageResource(R.drawable.mascotas);
         holder.nombre.setText(mascotas.get(position).getNombre());
         holder.tipo.setText(mascotas.get(position).getTipo());
         holder.raza.setText(mascotas.get(position).getRaza());
@@ -63,7 +68,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
-        //public ImageView imagen;
+        ImageView imagen;
         TextView nombre, tipo, raza, color, fechaNac;
         // ImageView image;
 
@@ -73,7 +78,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
             super(v);
             this.view = v;
-            //imagen = (ImageView) v.findViewById(R.id.aniImg);
+            imagen = v.findViewById(R.id.aniImg);
             nombre = v.findViewById(R.id.nombre);
             tipo = v.findViewById(R.id.tipo);
             raza = v.findViewById(R.id.raza);
@@ -81,8 +86,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             fechaNac = v.findViewById(R.id.fechaNac);
 
             v.setOnCreateContextMenuListener(this);
-
-
         }
 
         @Override

@@ -1,8 +1,8 @@
 package com.example.maipetsfct;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,8 +17,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.maipetsfct.models.Usuario;
-import com.frosquivel.magicalcamera.MagicalCamera;
-import com.frosquivel.magicalcamera.MagicalPermissions;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +24,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 
 public class ProfileFragment extends Fragment {
@@ -33,17 +34,13 @@ public class ProfileFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText nombre, apellidos, email, contra;
     private ImageView imgPerfil;
+    private String Url;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference;
-
-    // Elementos para la cámara
-    static MagicalPermissions magicalPermissions;
-    static MagicalCamera magicalCamera;
-    static final int resol = 50;
-
+    private StorageReference mStorageRef;
 
     public ProfileFragment() {
         // Constructor vacio requerido
@@ -52,9 +49,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,10 +62,11 @@ public class ProfileFragment extends Fragment {
         //Obtenemos la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance() ;
 
-        //Obtenemos la instancia de FirebaseDatabase
+        //Obtenemos la instancia de FirebaseDatabase y Storage
         fbdatabase =  FirebaseDatabase.getInstance() ;
         String uid = mAuth.getCurrentUser().getUid();
         reference = FirebaseDatabase.getInstance().getReference();
+        mStorageRef = FirebaseStorage.getInstance().getReference();
 
         // Instanciamos
         delPerf = view.findViewById(R.id.delProf);
@@ -81,30 +77,29 @@ public class ProfileFragment extends Fragment {
         contra = view.findViewById(R.id.passP);
         imgPerfil = view.findViewById(R.id.imgPerfil);
 
-        // Opción cambiar foto del perfil
 
-        // Permisos para el uso de la camara
-        String[] permisos = new String[]
-                {
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
-                };
+        // Verificamos la imagen del perfil
+        if (Url == null) {
+            SharedPreferences prefs = getActivity().getSharedPreferences("Preferences", 0);
+            Url = prefs.getString("Url","");
+            if ( Url == ""){
+                imgPerfil.setImageResource(R.drawable.profile);
+            } else {
+                onResume();
+                Picasso.get().load(Url).into(imgPerfil);
+            }
+        }
+        onResume();
 
-        //Instanciamos la cámara
-        magicalPermissions = new MagicalPermissions(this, permisos);
-        magicalCamera = new MagicalCamera(activity,resol,magicalPermissions);
-
-        //Lanzamos la camara para sacar la fotografía
+        //Lanzamos el popup de selección para la imagen de perfil
         imgPerfil.setOnClickListener(v ->
         {
-            magicalCamera.takeFragmentPhoto(ProfileFragment.this);
+            Intent select = new Intent(activity,PopUpSelect.class);
+            startActivity(select);
         });
 
 
-
-
-
+        // Datos del perfil del usuario
         // Mostramos los datos en los campos de datos
         reference.child("usuarios").child(uid).addValueEventListener(new ValueEventListener() {
             @Override
@@ -119,7 +114,6 @@ public class ProfileFragment extends Fragment {
                     apellidos.setText(apeFb);
                     email.setText(emaFb);
                     contra.setText(passFb);
-
                 }
             }
 
@@ -177,14 +171,11 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        magicalCamera.resultPhoto(requestCode, resultCode, data);
-        magicalCamera.resultPhoto(requestCode, resultCode, data, MagicalCamera.ORIENTATION_ROTATE_90);
-
-        // Seteamos el bitmap a la imagen de perfil
-        imgPerfil.setImageBitmap(magicalCamera.getPhoto());
+    public void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getActivity().getSharedPreferences("Preferences", 0);
+        Url = prefs.getString("Url","");
+        Picasso.get().load(Url).into(imgPerfil);
 
     }
 
@@ -193,6 +184,4 @@ public class ProfileFragment extends Fragment {
     {
         return edit.getText().toString().trim() ;
     }
-
-
 }

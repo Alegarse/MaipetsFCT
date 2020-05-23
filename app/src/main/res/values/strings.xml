@@ -54,6 +54,15 @@
     <string name="del_prof">Delete profile</string>
     <string name="save_ok">Saved!</string>
     <string name="desc">Enter your description here...</string>
+    <string name="imgSave">The photo is save in device, please check this path:</string>
+    <string name="imgNoSave">Sorry your photo don\'t write in device</string>
+    <string name="select">Choose image from:</string>
+    <string name="goOut">For close the PopUp, simply touch outside</string>
+    <string name="cam">Camera</string>
+    <string name="gal">Gallery</string>
+    <string name="change">Edit values to update</string>
+    <string name="user">User:</string>
+    <string name="delImg">Delete Photo</string>
 
 
 </resources>
