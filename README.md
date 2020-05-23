@@ -98,7 +98,7 @@ Comienzo a programar la actividad para poder añadir nuevas mascotas a cada usua
 :small_orange_diamond:[Ciclo de vida actividad](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=es)<br/>
 
 
----<br/>
+---
 ---
 
 ## Descripcion
