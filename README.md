@@ -88,12 +88,14 @@ Respecto a la página web para la parte HTML5 y CSS, he empezado a realizarla, t
 
 ##  :books:Semana 18 de Mayo al 22 de Mayo de 2020
 ### Contenido
-Continuo modificando el fragmento de perfil, tratando de implementar el poder tomar una fotografía y ponerla de imagen de perfil a través de la librería [MagicalCamera](https://github.com/fabian7593/MagicalCamera).Este desarrolloserá tambien aplicable a las fotografías de las mascotas en el fragmento de listado de cards de la actividad principal del usuario.<br/>
-Respecto al fragmento dedicado el perfil de usuario he empezando a maquetarlo.<br/>
+Se ha modificado el fragmento de perfil, tratando de implementar el poder tomar una fotografía y ponerla de imagen de perfil a través de la librería [MagicalCamera](https://github.com/fabian7593/MagicalCamera).Este desarrollo será tambien aplicable a las fotografías de las mascotas en el fragmento de listado de cards de la actividad principal del usuario.<br/>
+Edit: Terminado el fragmento del profile, en el que se ha habilitado el métdo OnResume para que cuando se vualeva a esta actividad y detecte cambio de imagen, la actualice.<br/>
+Comienzo a programar la actividad para poder añadir nuevas mascotas a cada usuario.<br/>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
 :small_orange_diamond:[MagicalCamera](https://github.com/fabian7593/MagicalCamera)<br/>
+:small_orange_diamond:[Ciclo de vida actividad](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=es)<br/>
 
 
 ---
