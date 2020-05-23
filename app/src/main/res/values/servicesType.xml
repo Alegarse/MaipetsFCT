@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="servicios">
+        <item>@string/chooseServ</item>
+        <item>@string/pelu</item>
+        <item>@string/alim</item>
+        <item>@string/guarde</item>
+        <item>@string/protec</item>
+    </string-array>
+</resources>

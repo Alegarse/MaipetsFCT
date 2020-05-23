@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name" translatable="false">Maipets</string>
+    <string name="welcome">WELCOME</string>
+    <string name="welcome1">We will help you configure the application ...</string>
+    <string name="newuser">I\'m  a new user</string>
+    <string name="alreadyuser">Actually I have an account</string>
+    <string name="familyuser">Family with pets</string>
+    <string name="vetuser">Veterinary clinic</string>
+    <string name="anotheruser">Other services for pets</string>
+    <string name="regtext">Please, fill all the fields</string>
+    <string name="name">Name</string>
+    <string name="surname">Surnames</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="repassword">Password again</string>
+    <string name="register">REGISTER</string>
+    <string name="cancel">CANCEL</string>
+    <string name="slogan">Managing your pets in a few clicks</string>
+    <string name="login">LOGIN</string>
+    <string name="razsoc">Business name</string>
+    <string name="dir">Direction</string>
+    <string name="telef">Telephone</string>
+    <string name="pelu">Haircut\'s pet</string>
+    <string name="alim">Feeding</string>
+    <string name="guarde">Pet nursery</string>
+    <string name="protec">Animal shelter</string>
+    <string name="serv">Services</string>
+    <string name="chooseServ">"Choose Service Type: "</string>
+    <string name="e_empty">Please fill al the fields</string>
+    <string name="e_pass">Error. Passwords is not equals</string>
+    <string name="ok_register">Registered!</string>
+    <string name="e_register">Register error!</string>
+    <string name="perfil">Profile</string>
+    <string name="masc">Pets</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="log_nok">Login error</string>
+    <string name="log_ok">Correct Login</string>
+    <string name="label_logout">Logout</string>
+    <string name="edit_masc">Update pet values</string>
+    <string name="del_masc">Delete pet</string>
+    <string name="info">About Maipets</string>
+    <string name="share">Share...</string>
+    <string name="uc">Developing...</string>
+    <string name="addM">ADD PET</string>
+    <string name="no_add">Pet not added</string>
+    <string name="editMasc">Edit Pet Values</string>
+    <string name="editType">Specie</string>
+    <string name="editRace">Race</string>
+    <string name="editColor" translatable="false">Color</string>
+    <string name="editDate">Birth Date</string>
+    <string name="ed_prof">Save Profile</string>
+    <string name="del_prof">Delete profile</string>
+    <string name="save_ok">Saved!</string>
+    <string name="desc">Enter your description here...</string>
+    <string name="imgSave">The photo is save in device, please check this path:</string>
+    <string name="imgNoSave">Sorry your photo don\'t write in device</string>
+    <string name="select">Choose image from:</string>
+    <string name="goOut">For close the PopUp, simply touch outside</string>
+    <string name="cam">Camera</string>
+    <string name="gal">Gallery</string>
+    <string name="change">Edit values to update</string>
+    <string name="user">User:</string>
+    <string name="delImg">Delete Photo</string>
+
+
+</resources>
