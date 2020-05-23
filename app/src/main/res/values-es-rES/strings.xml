@@ -59,4 +59,8 @@
     <string name="change">Editar campos para actualizarlos</string>
     <string name="user">"Usuario: "</string>
     <string name="delImg">Borrar imagen</string>
+    <string name="add">AÑADIR</string>
+    <string name="addMasc">Introduzca los datos de su mascota</string>
+    <string name="ficDel">Ficha de mascota eliminada</string>
+    <string name="ficEd">Ficha de mascota actualizada</string>
 </resources>

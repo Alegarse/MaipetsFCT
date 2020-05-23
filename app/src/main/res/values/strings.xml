@@ -63,6 +63,10 @@
     <string name="change">Edit values to update</string>
     <string name="user">User:</string>
     <string name="delImg">Delete Photo</string>
+    <string name="add">ADD</string>
+    <string name="addMasc">Enter your pet\'s information</string>
+    <string name="ficDel">Pet token removed</string>
+    <string name="ficEd">Pet token updated</string>
 
 
 </resources>

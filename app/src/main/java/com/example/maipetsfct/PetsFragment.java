@@ -1,6 +1,7 @@
 package com.example.maipetsfct;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,7 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -23,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -35,6 +39,7 @@ public class PetsFragment extends Fragment {
     private FirebaseAuth fbauth ;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference,ref;
+    private StorageReference mStorageRef;
 
 
     // Colección de mascotas
@@ -110,19 +115,53 @@ public class PetsFragment extends Fragment {
 
         registerForContextMenu(recyclerView);
 
-        /*
+
         // Defino escuchador para el botón AÑADIR
         btnAdd.setOnClickListener(viewAdd -> {
 
             // Intencion para proceder a añadir mascota
-            Intent add = new Intent(PetsFragment.this, InsertActivity.class);
+            Intent add = new Intent(activity, AddMascActivity.class);
 
             // Empezar la intención
             startActivityForResult(add, COD_REGISTRO);
         });
-         */
+
 
 
         return view;
+    }
+
+    // Menú contextual para las tarjetas de las mascotas
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getActivity().getMenuInflater().inflate(R.menu.contextual, menu);
+
+    }
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.ctxEdd:
+
+                mascota pet = mascotas.get(mascotaAdapter.getIndex());
+
+                Intent irAEditar = new Intent(getActivity().getApplicationContext(), ModiMascota.class);
+                irAEditar.putExtra("nombreMascota",pet.getNombre());
+                irAEditar.putExtra("especieMascota",pet.getTipo());
+                irAEditar.putExtra("razaMascota",pet.getRaza());
+                irAEditar.putExtra("colorMascota",pet.getColor());
+                irAEditar.putExtra("fechaMascota",pet.getFechaNac());
+                startActivity(irAEditar);
+                break;
+
+            case R.id.ctxDel:
+                View v;
+                String uid = fbauth.getCurrentUser().getUid();
+                String UUID = ref.child("mascotas").child(uid).push().getKey();
+                ref.child("mascotas").child(uid).child(UUID).removeValue();
+                Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }

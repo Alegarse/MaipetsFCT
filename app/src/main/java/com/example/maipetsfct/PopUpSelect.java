@@ -41,7 +41,7 @@ public class PopUpSelect extends Activity {
     // Elementos para la cámara
     static MagicalPermissions magicalPermissions;
     static MagicalCamera magicalCamera;
-    static final int resol = 50;
+    static final int resol = 30;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;

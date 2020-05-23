@@ -19,8 +19,11 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PopUpSelect"
-            android:theme="@style/AppTheme.PopUp"></activity>
+        <activity android:name=".ModiMascota"></activity>
+        <activity android:name=".AddMascActivity" />
+        <activity
+            android:name=".PopUpSelect"
+            android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".UsersActivity" />
         <activity android:name=".AnotherServRegister" />
         <activity android:name=".VetRegister" />
