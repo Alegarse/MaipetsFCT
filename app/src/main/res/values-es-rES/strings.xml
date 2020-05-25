@@ -42,7 +42,7 @@
     <string name="uc">En desarollo...</string>
     <string name="addM">AÑADIR MASCOTA</string>
     <string name="no_add">Mascota no añadida</string>
-    <string name="editMasc">Actualizar datos de mascota</string>
+    <string name="editMasc">Ver vicha completa</string>
     <string name="editType">Especie</string>
     <string name="editRace">Raza</string>
     <string name="editDate">Nacido el:</string>
@@ -63,4 +63,5 @@
     <string name="addMasc">Introduzca los datos de su mascota</string>
     <string name="ficDel">Ficha de mascota eliminada</string>
     <string name="ficEd">Ficha de mascota actualizada</string>
+    <string name="cardPet">Tarjeta Identificativa</string>
 </resources>

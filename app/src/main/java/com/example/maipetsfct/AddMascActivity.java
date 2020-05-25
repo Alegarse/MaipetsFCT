@@ -2,11 +2,9 @@ package com.example.maipetsfct;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.example.maipetsfct.models.mascota;
@@ -15,9 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 import java.util.UUID;
 
 public class AddMascActivity extends AppCompatActivity {
@@ -80,7 +76,7 @@ public class AddMascActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 // Sacamos el valor de los campos
-                final String aUid = uid.trim();
+                final String uUid = uid.trim();
                 final String aNombre = nombre.getText().toString().trim();
                 final String aTipo = tipo.getText().toString().trim();
                 final String aRaza = raza.getText().toString().trim();
@@ -94,12 +90,12 @@ public class AddMascActivity extends AppCompatActivity {
                     return ;
                 } else {
 
-                    String uid = UUID.randomUUID().toString();
+                    String mUid = UUID.randomUUID().toString();
                     mascota masc = new mascota(aNombre,aTipo,aRaza,aColor,aFecha);
 
-                    DatabaseReference dbref = fbdatabase.getReference("mascotas/"+aUid);
+                    DatabaseReference dbref = fbdatabase.getReference("mascotas/"+uUid);
 
-                    dbref.child(uid).setValue(masc) ;
+                    dbref.child(mUid).setValue(masc) ;
 
                     fbauth.signOut();
                     setResult(RESULT_OK);

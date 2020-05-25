@@ -21,6 +21,7 @@ import com.example.maipetsfct.models.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,13 +37,14 @@ public class ProfileFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText nombre, apellidos, email, contra;
     private ImageView imgPerfil;
-    private String Url, ruta;
+    private String ruta;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference;
     private StorageReference mStorageRef;
+    FirebaseUser usuario;
 
     public ProfileFragment() {
         // Constructor vacio requerido
@@ -86,6 +88,7 @@ public class ProfileFragment extends Fragment {
         String uid = mAuth.getCurrentUser().getUid();
         reference = FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
+        usuario = mAuth.getInstance().getCurrentUser();
 
         // Instanciamos
         delPerf = view.findViewById(R.id.delProf);
@@ -118,6 +121,7 @@ public class ProfileFragment extends Fragment {
         imgPerfil.setOnClickListener(v ->
         {
             Intent select = new Intent(activity,PopUpSelect.class);
+            select.putExtra("code",1);
             startActivity(select);
         });
 
@@ -152,6 +156,7 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
+                usuario.delete();
                 reference.child("usuarios").child(uid).removeValue();
                 reference.child("mascotas").child(uid).removeValue();
                 mAuth.signOut();

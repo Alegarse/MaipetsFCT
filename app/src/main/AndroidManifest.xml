@@ -19,7 +19,9 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ModiMascota"></activity>
+        <activity android:name=".PopPet"
+            android:theme="@style/AppTheme.PopUp"/>
+        <activity android:name=".ModiMascota" />
         <activity android:name=".AddMascActivity" />
         <activity
             android:name=".PopUpSelect"

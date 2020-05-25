@@ -47,8 +47,6 @@ public class PetsFragment extends Fragment {
     RecyclerView recyclerView;
     MascotaAdapter mascotaAdapter;
 
-    mascota mascotaelegida;
-
     public PetsFragment() {
         // Constructor vacio requerido
     }
@@ -145,17 +143,16 @@ public class PetsFragment extends Fragment {
 
                 mascota pet = mascotas.get(mascotaAdapter.getIndex());
 
-                Intent irAEditar = new Intent(getActivity().getApplicationContext(), ModiMascota.class);
-                irAEditar.putExtra("nombreMascota",pet.getNombre());
-                irAEditar.putExtra("especieMascota",pet.getTipo());
-                irAEditar.putExtra("razaMascota",pet.getRaza());
-                irAEditar.putExtra("colorMascota",pet.getColor());
-                irAEditar.putExtra("fechaMascota",pet.getFechaNac());
+                Intent irAEditar = new Intent(getActivity().getApplicationContext(), PopPet.class);
+                irAEditar.putExtra("nombre",pet.getNombre());
+                irAEditar.putExtra("especie",pet.getTipo());
+                irAEditar.putExtra("raza",pet.getRaza());
+                irAEditar.putExtra("color",pet.getColor());
+                irAEditar.putExtra("fecha",pet.getFechaNac());
                 startActivity(irAEditar);
                 break;
 
             case R.id.ctxDel:
-                View v;
                 String uid = fbauth.getCurrentUser().getUid();
                 String UUID = ref.child("mascotas").child(uid).push().getKey();
                 ref.child("mascotas").child(uid).child(UUID).removeValue();

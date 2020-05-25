@@ -25,7 +25,7 @@
         android:id="@+id/cameraBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#2AD537"
         android:drawableBottom="@drawable/cam"
         android:drawableTint="#FFF"
@@ -33,7 +33,7 @@
         android:text="@string/cam"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/options" />
 
@@ -41,7 +41,7 @@
         android:id="@+id/galleryBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:backgroundTint="#2C8EDC"
         android:drawableBottom="@drawable/gal"
         android:drawableTint="#FFF"
@@ -49,7 +49,7 @@
         android:text="@string/gal"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/options" />
 
@@ -57,7 +57,7 @@
         android:id="@+id/goOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="@string/goOut"
         android:textColor="#FFFFFF"

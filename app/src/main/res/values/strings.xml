@@ -45,7 +45,7 @@
     <string name="uc">Developing...</string>
     <string name="addM">ADD PET</string>
     <string name="no_add">Pet not added</string>
-    <string name="editMasc">Edit Pet Values</string>
+    <string name="editMasc">View full record</string>
     <string name="editType">Specie</string>
     <string name="editRace">Race</string>
     <string name="editColor" translatable="false">Color</string>
@@ -67,6 +67,7 @@
     <string name="addMasc">Enter your pet\'s information</string>
     <string name="ficDel">Pet token removed</string>
     <string name="ficEd">Pet token updated</string>
+    <string name="cardPet">Identification Card</string>
 
 
 </resources>

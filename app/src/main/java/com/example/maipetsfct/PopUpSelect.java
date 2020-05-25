@@ -2,9 +2,7 @@ package com.example.maipetsfct;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,8 +33,10 @@ public class PopUpSelect extends Activity {
 
     private Button gallery, camera;
     private Bitmap bitMap;
-    private String ruta;
-    private int option;
+    private int option,code;
+    Bundle codes;
+    String path;
+    StorageReference profileImgPath;
 
     // Elementos para la cámara
     static MagicalPermissions magicalPermissions;
@@ -45,7 +45,6 @@ public class PopUpSelect extends Activity {
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
-    private FirebaseDatabase fbdatabase;
     private StorageReference mStorage;
 
     @Override
@@ -56,11 +55,15 @@ public class PopUpSelect extends Activity {
         gallery = findViewById(R.id.galleryBtn);
         camera = findViewById(R.id.cameraBtn);
 
+        codes = getIntent().getExtras();
+
+        // Para distinguir entre imagen de perfil o de mascota
+        code = codes.getInt("code");
+
         //Obtenemos la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance() ;
 
-        //Obtenemos la instancia de FirebaseDatabase y Storage
-        fbdatabase =  FirebaseDatabase.getInstance() ;
+        //Obtenemos la instancia de Storage
         mStorage = FirebaseStorage.getInstance().getReference();
 
 
@@ -125,7 +128,15 @@ public class PopUpSelect extends Activity {
         bitMap = magicalCamera.getPhoto();
 
         // Guardamos la imagen en el dispositivo
-        String path = magicalCamera.savePhotoInMemoryDevice(magicalCamera.getPhoto(),"ProfileImg","Maipets", MagicalCamera.JPEG, true);
+        //Distinguimos si es imagen de perfil o para la mascota
+        if (code == 1 ){
+            path = magicalCamera.savePhotoInMemoryDevice(magicalCamera.getPhoto(),"ProfileImg","Maipets", MagicalCamera.JPEG, true);
+        }
+        if (code == 2 ){
+            path = magicalCamera.savePhotoInMemoryDevice(magicalCamera.getPhoto(),"PetImg","Maipets", MagicalCamera.JPEG, true);
+        }
+
+
 
         if(path != null){
             Toast.makeText(PopUpSelect.this, getString(R.string.imgSave) + path, Toast.LENGTH_SHORT).show();
@@ -135,7 +146,13 @@ public class PopUpSelect extends Activity {
 
         //Subimos la foto a Firebase
         Uri file = Uri.fromFile(new File(path));
-        StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg");
+
+        if (code == 1 ){
+            profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg");
+        }
+        if (code == 2 ){
+            profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg");
+        }
 
         profileImgPath.putFile(file)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -146,7 +163,7 @@ public class PopUpSelect extends Activity {
                             @Override
                             public void onSuccess(Uri uri) {
                                 Uri downloadUrl = uri;
-                                ruta = downloadUrl.toString();
+                                String ruta = downloadUrl.toString();
                                 finish();
                             }
                         });
@@ -159,13 +176,5 @@ public class PopUpSelect extends Activity {
                         // ...
                     }
                 });
-/*
-        Intent pasarUrl = new Intent (this, ProfileFragment.class);
-        pasarUrl.putExtra("Url",ruta);
-        startActivity(pasarUrl);
-         */
-
         }
-
-
 }

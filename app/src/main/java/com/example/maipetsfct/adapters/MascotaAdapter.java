@@ -1,7 +1,6 @@
 package com.example.maipetsfct.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.maipetsfct.PetsFragment;
-import com.example.maipetsfct.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.mascota;
 
@@ -53,7 +50,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.raza.setText(mascotas.get(position).getRaza());
         holder.color.setText(mascotas.get(position).getColor());
         holder.fechaNac.setText(mascotas.get(position).getFechaNac());
-        // Picasso.get().load(mascotas.get(position).getImage()).into(holder.image);
+        // Picasso.get().load(mascotas.getImage().into(holder.image);
 
         holder.BindHolder(mascotas.get(position));
     }
@@ -95,7 +92,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        // Aqui meto para abrir en un popup lainformacion de lamascot
                     }
                 });
                 itemView.setOnLongClickListener(new View.OnLongClickListener() {
