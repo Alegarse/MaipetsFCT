@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#EBC1BEBB"
+    android:backgroundTint="#B38E3333"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
     android:id="@+id/cv"
@@ -29,52 +29,19 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="44dp"
+            android:layout_toEndOf="@+id/aniImg"
             android:layout_toRightOf="@+id/aniImg"
+            android:gravity="center"
             android:text="Nombre"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/tipo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/nombre"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@+id/aniImg"
-            android:text="Animal:"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Raza:"
-            android:id="@+id/raza"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/tipo"
-            android:layout_toRightOf="@+id/aniImg" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Color:"
-            android:id="@+id/color"
-            android:layout_marginLeft="10dp"
-            android:layout_below="@+id/raza"
-            android:layout_toRightOf="@+id/aniImg" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Fecha nacimiento:"
-            android:layout_toRightOf="@+id/aniImg"
-            android:layout_below="@+id/color"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/fechaNac"/>
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="#000" />
 
 
     </RelativeLayout>

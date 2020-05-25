@@ -8,22 +8,31 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PopPet extends Activity {
 
     // Parámetros de conexión a Firebase
     private FirebaseAuth mAuth ;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     private StorageReference mStorage;
 
     // Definimos los elementos de la actividad
@@ -61,8 +70,13 @@ public class PopPet extends Activity {
         //Obtenemos la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance() ;
 
-        //Obtenemos la instancia de Storage
+        //Obtenemos la instancia de Storage y Database
         mStorage = FirebaseStorage.getInstance().getReference();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
+
+        // Obtenemos el UID del usuario logueado
+        String uid = mAuth.getCurrentUser().getUid();
 
         // Diseño de la ventana emergente
         DisplayMetrics dm = new DisplayMetrics();
@@ -90,6 +104,7 @@ public class PopPet extends Activity {
         color = findViewById(R.id.color2Pet);
         fecha = findViewById(R.id.date2Pet);
         imgPet = findViewById(R.id.imgPet);
+        guardar = findViewById(R.id.saved);
 
         imgPet.setImageResource(R.drawable.petscard);
 
@@ -130,6 +145,35 @@ public class PopPet extends Activity {
             Intent select = new Intent(this,PopUpSelect.class);
             select.putExtra("code",2);
             startActivity(select);
+        });
+
+        // Boton de guardar los cambios realizados
+        guardar.setOnClickListener(v -> {
+            Map<String, Object> datosAct = new HashMap<>();
+
+            // Recogemos los datos actualizados
+            final String nombreAct =  nombre.getText().toString().trim();
+            final String especieAct =  especie.getText().toString().trim();
+            final String razaAct =  raza.getText().toString().trim();
+            final String colorAct =  color.getText().toString().trim();
+            final String fechaAct =  fecha.getText().toString().trim();
+
+            // Los agregamos a nuestro HashMap
+            datosAct.put("nombre",nombreAct);
+            datosAct.put("tipo",especieAct);
+            datosAct.put("raza",razaAct);
+            datosAct.put("color",colorAct);
+            datosAct.put("fechaNac",fechaAct);
+
+            // Actualizamos en Firebase
+            databaseReference.child("mascotas").child(uid).child("aUid").updateChildren(datosAct)
+                    .addOnSuccessListener((OnSuccessListener)(aVoid) ->
+                    {
+                        Toast.makeText(this,R.string.save_ok,Toast.LENGTH_LONG).show();
+                        finish();
+                    }).addOnFailureListener((e -> {
+                Toast.makeText(this,R.string.nosave,Toast.LENGTH_LONG).show();
+            }));
         });
 
     }

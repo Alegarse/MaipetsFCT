@@ -155,7 +155,7 @@ public class PetsFragment extends Fragment {
             case R.id.ctxDel:
                 String uid = fbauth.getCurrentUser().getUid();
                 String UUID = ref.child("mascotas").child(uid).push().getKey();
-                ref.child("mascotas").child(uid).child(UUID).removeValue();
+                ref.child("mascotas").child(uid).child("aUid").removeValue();
                 Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
                 break;
         }

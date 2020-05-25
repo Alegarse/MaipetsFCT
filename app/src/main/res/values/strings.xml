@@ -68,6 +68,7 @@
     <string name="ficDel">Pet token removed</string>
     <string name="ficEd">Pet token updated</string>
     <string name="cardPet">Identification Card</string>
+    <string name="nosave">Save error</string>
 
 
 </resources>

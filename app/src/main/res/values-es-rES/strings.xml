@@ -64,4 +64,5 @@
     <string name="ficDel">Ficha de mascota eliminada</string>
     <string name="ficEd">Ficha de mascota actualizada</string>
     <string name="cardPet">Tarjeta Identificativa</string>
+    <string name="nosave">Error al guardar</string>
 </resources>

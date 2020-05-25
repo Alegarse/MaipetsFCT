@@ -46,11 +46,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         mascota masc = mascotas.get(position);
         holder.imagen.setImageResource(R.drawable.mascotas);
         holder.nombre.setText(mascotas.get(position).getNombre());
-        holder.tipo.setText(mascotas.get(position).getTipo());
-        holder.raza.setText(mascotas.get(position).getRaza());
-        holder.color.setText(mascotas.get(position).getColor());
-        holder.fechaNac.setText(mascotas.get(position).getFechaNac());
-        // Picasso.get().load(mascotas.getImage().into(holder.image);
 
         holder.BindHolder(mascotas.get(position));
     }
@@ -66,8 +61,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public class MascotaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
         ImageView imagen;
-        TextView nombre, tipo, raza, color, fechaNac;
-        // ImageView image;
+        TextView nombre;
 
         public View view;
 
@@ -77,11 +71,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             this.view = v;
             imagen = v.findViewById(R.id.aniImg);
             nombre = v.findViewById(R.id.nombre);
-            tipo = v.findViewById(R.id.tipo);
-            raza = v.findViewById(R.id.raza);
-            color = v.findViewById(R.id.color);
-            fechaNac = v.findViewById(R.id.fechaNac);
-
             v.setOnCreateContextMenuListener(this);
         }
 
