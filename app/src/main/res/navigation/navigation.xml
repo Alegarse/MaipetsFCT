@@ -8,17 +8,17 @@
 
     <fragment
         android:id="@+id/perfil"
-        android:name="com.example.maipetsfct.ProfileFragment"
+        android:name="com.example.maipetsfct.fragments.ProfileFragment"
         android:label="@string/perfil"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/masc"
-        android:name="com.example.maipetsfct.PetsFragment"
+        android:name="com.example.maipetsfct.fragments.PetsFragment"
         android:label="@string/masc"
         tools:layout="@layout/fragment_pets" />
     <fragment
         android:id="@+id/serv"
-        android:name="com.example.maipetsfct.ServicesFragment"
+        android:name="com.example.maipetsfct.fragments.ServicesFragment"
         android:label="@string/serv"
         tools:layout="@layout/fragment_services" />
 

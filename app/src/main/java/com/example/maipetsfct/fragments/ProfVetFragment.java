@@ -1,8 +1,7 @@
-package com.example.maipetsfct;
+package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -17,6 +16,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.maipetsfct.MainActivity;
+import com.example.maipetsfct.PopUpSelect;
+import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -31,11 +33,10 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-
-public class ProfileFragment extends Fragment {
+public class ProfVetFragment extends Fragment {
 
     private Button delPerf, editPerf;
-    private EditText nombre, apellidos, email, contra;
+    private EditText bussname, direction, telefono, email, contra;
     private ImageView imgPerfil;
     private String ruta;
 
@@ -46,8 +47,8 @@ public class ProfileFragment extends Fragment {
     private StorageReference mStorageRef;
     FirebaseUser usuario;
 
-    public ProfileFragment() {
-        // Constructor vacio requerido
+    public ProfVetFragment(){
+
     }
 
     @Override
@@ -76,7 +77,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_prof, container, false);
 
         Activity activity = getActivity();
 
@@ -93,10 +94,11 @@ public class ProfileFragment extends Fragment {
         // Instanciamos
         delPerf = view.findViewById(R.id.delProf);
         editPerf= view.findViewById(R.id.edProf);
-        nombre = view.findViewById(R.id.nameP);
-        apellidos = view.findViewById(R.id.apeP);
-        email = view.findViewById(R.id.emaP);
-        contra = view.findViewById(R.id.passP);
+        bussname = view.findViewById(R.id.nameB);
+        direction = view.findViewById(R.id.dirB);
+        telefono = view.findViewById(R.id.telB);
+        email = view.findViewById(R.id.emaB);
+        contra = view.findViewById(R.id.passB);
         imgPerfil = view.findViewById(R.id.imgPerfil);
 
 
@@ -120,7 +122,7 @@ public class ProfileFragment extends Fragment {
         //Lanzamos el popup de selección para la imagen de perfil
         imgPerfil.setOnClickListener(v ->
         {
-            Intent select = new Intent(activity,PopUpSelect.class);
+            Intent select = new Intent(activity, PopUpSelect.class);
             select.putExtra("code",1);
             startActivity(select);
         });
@@ -133,12 +135,14 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()){
-                    String nameFb = dataSnapshot.child("nombre").getValue().toString();
-                    String apeFb = dataSnapshot.child("apellidos").getValue().toString();
+                    String bussnameFb = dataSnapshot.child("razon").getValue().toString();
+                    String dirFb = dataSnapshot.child("direccion").getValue().toString();
+                    String telFb = dataSnapshot.child("telefono").getValue().toString();
                     String emaFb = dataSnapshot.child("email").getValue().toString();
                     String passFb = dataSnapshot.child("contrasena").getValue().toString();
-                    nombre.setText(nameFb);
-                    apellidos.setText(apeFb);
+                    bussname.setText(bussnameFb);
+                    direction.setText(dirFb);
+                    telefono.setText(telFb);
                     email.setText(emaFb);
                     contra.setText(passFb);
                 }
@@ -158,9 +162,9 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 usuario.delete();
                 reference.child("usuarios").child(uid).removeValue();
-                reference.child("mascotas").child(uid).removeValue();
+                reference.child("servicios").child(uid).removeValue();
                 mAuth.signOut();
-                Intent salir = new Intent(activity,MainActivity.class);
+                Intent salir = new Intent(activity, MainActivity.class);
                 startActivity(salir);
             }
         });
@@ -171,13 +175,14 @@ public class ProfileFragment extends Fragment {
             private View v;
             @Override
             public void onClick(View v) {
-                final String nom = getField(nombre);
-                final String ape = getField(apellidos);
+                final String bnom = getField(bussname);
+                final String dir = getField(direction);
+                final String tel = getField(telefono);
                 final String ema = getField(email);
                 final String pwd = getField(contra);
 
                 // Verificamos que se han introducido todos los campos
-                if (ema.isEmpty() || nom.isEmpty() || ape.isEmpty() ||
+                if (ema.isEmpty() || bnom.isEmpty() || dir.isEmpty() || tel.isEmpty() ||
                         pwd.isEmpty())
                 {
                     Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
@@ -185,7 +190,7 @@ public class ProfileFragment extends Fragment {
                 }
                 String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(nom,ape,ema,pwd);
+                Usuario usuario = new Usuario(bnom,dir,tel,ema,pwd);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 
@@ -205,4 +210,5 @@ public class ProfileFragment extends Fragment {
     {
         return edit.getText().toString().trim() ;
     }
+
 }

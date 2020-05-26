@@ -1,4 +1,4 @@
-package com.example.maipetsfct;
+package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.maipetsfct.R;
 
 
 public class ServicesFragment extends Fragment {

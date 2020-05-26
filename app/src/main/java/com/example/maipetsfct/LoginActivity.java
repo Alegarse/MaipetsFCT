@@ -26,9 +26,12 @@ public class LoginActivity extends AppCompatActivity {
     // Inicializamos variables u objetos que intervienen en la actividad
     private EditText email, password;
     private Button login, cancel;
+    String codify;
 
     private FirebaseAuth mAuth ;
     private FirebaseDatabase fbdatabase ;
+
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                             // 3. Obtenemos referencia al usuario logueado
                             DatabaseReference userRef = fbdatabase.getReference().child("usuarios/"+uid);
 
+
                             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -108,6 +112,9 @@ public class LoginActivity extends AppCompatActivity {
                                     // comprobar que existe el hijo que busco
                                     if (dataSnapshot.hasChildren())
                                     {
+                                        // Obtenemos el codigo del usuario para seleccionar activity
+                                        codify = dataSnapshot.child("codigo").getValue().toString();
+
                                         // Obtenemos los datos del usuario logeado
                                         Usuario usuario = dataSnapshot.getValue(Usuario.class) ;
 
@@ -115,13 +122,20 @@ public class LoginActivity extends AppCompatActivity {
                                         Bundle bundle = new Bundle() ;
                                         bundle.putSerializable("_usuario", usuario) ;
 
-                                        // Pasamos a la actividad de usuario
-                                        Intent intent = new Intent(LoginActivity.this, UsersActivity.class) ;
+                                        // Creamos el intent de usuario segun cual sea
+                                        switch (codify){
+                                            case "fam":
+                                                intent = new Intent(LoginActivity.this, UsersActivity.class);
+                                                break;
+                                            case "vet":
+                                                intent = new Intent(LoginActivity.this, VetActivity.class) ;
+                                                break;
+                                            case "ser":
+                                                intent = new Intent(LoginActivity.this, ServActivity.class) ;
+                                                break;
+                                        }
 
-                                        // Almacenamos información en la intencion
-                                        intent.putExtras(bundle) ;
-
-                                        // Lanzamos la intención
+                                        intent.putExtras(bundle);
                                         startActivity(intent);
                                     }
                                 }

@@ -38,8 +38,8 @@
     <string name="log_nok">Login error</string>
     <string name="log_ok">Correct Login</string>
     <string name="label_logout">Logout</string>
-    <string name="edit_masc">Update pet values</string>
-    <string name="del_masc">Delete pet</string>
+    <string name="edit_masc">Update values</string>
+    <string name="del_masc">Delete</string>
     <string name="info">About Maipets</string>
     <string name="share">Share...</string>
     <string name="uc">Developing...</string>
@@ -65,10 +65,17 @@
     <string name="delImg">Delete Photo</string>
     <string name="add">ADD</string>
     <string name="addMasc">Enter your pet\'s information</string>
-    <string name="ficDel">Pet token removed</string>
-    <string name="ficEd">Pet token updated</string>
+    <string name="ficDel">Token removed</string>
+    <string name="ficEd">Token updated</string>
     <string name="cardPet">Identification Card</string>
     <string name="nosave">Save error</string>
+    <string name="addS">ADD SERVICE</string>
+    <string name="disServ">Available services</string>
+    <string name="s_noadd">Service not added</string>
+    <string name="addServ">Enter your Service Information</string>
+    <string name="nameS">Service name</string>
+    <string name="descS">Service description</string>
+    <string name="descr">Description</string>
 
 
 </resources>

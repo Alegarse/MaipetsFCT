@@ -10,28 +10,29 @@
     android:paddingRight="20dp"
     android:paddingTop="20dp"
     android:background="@color/colorBack"
-    tools:context=".fragments.PetsFragment">
+    tools:context=".fragments.ServicesFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mascShows"
+        android:id="@+id/servShows"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
-
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/addMasc"
+        android:id="@+id/addServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="64dp"
         android:backgroundTint="#000000"
-        android:text="@string/addM"
+        android:text="@string/addS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.989"

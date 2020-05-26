@@ -35,8 +35,8 @@
     <string name="log_nok">Error en el Login</string>
     <string name="log_ok">Logeado correctamente</string>
     <string name="label_logout">Cerrar sesión</string>
-    <string name="edit_masc">Actualizar datos de mascota</string>
-    <string name="del_masc">Borrar mascota</string>
+    <string name="edit_masc">Actualizar datos</string>
+    <string name="del_masc">Eliminar</string>
     <string name="info">Acerca de Maipets</string>
     <string name="share">Compartir...</string>
     <string name="uc">En desarollo...</string>
@@ -61,8 +61,15 @@
     <string name="delImg">Borrar imagen</string>
     <string name="add">AÑADIR</string>
     <string name="addMasc">Introduzca los datos de su mascota</string>
-    <string name="ficDel">Ficha de mascota eliminada</string>
-    <string name="ficEd">Ficha de mascota actualizada</string>
+    <string name="ficDel">Ficha eliminada</string>
+    <string name="ficEd">Ficha actualizada</string>
     <string name="cardPet">Tarjeta Identificativa</string>
     <string name="nosave">Error al guardar</string>
+    <string name="addS">AÑADIR SERVICIO</string>
+    <string name="disServ">Servicios disponibles</string>
+    <string name="s_noadd">Servicio no añadido</string>
+    <string name="addServ">Introduzca la información de su servicio</string>
+    <string name="nameS">Nombre del servicio</string>
+    <string name="descS">Descripción</string>
+    <string name="descr">Descripción</string>
 </resources>

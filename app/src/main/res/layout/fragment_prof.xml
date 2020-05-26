@@ -20,69 +20,83 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameP"
+        android:id="@+id/nameB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="100dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="center"
-        android:hint="@string/name"
+        android:gravity="left"
+        android:hint="@string/razsoc"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#2D304E"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPerfil" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/apeP"
+        android:id="@+id/dirB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="center"
-        android:hint="@string/surname"
+        android:gravity="left"
+        android:hint="@string/dir"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#2D304E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameP" />
+        app:layout_constraintTop_toBottomOf="@+id/nameB" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/emaP"
+        android:id="@+id/telB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="center"
-        android:inputType="textEmailAddress"
-        android:hint="@string/email"
-        android:textSize="15dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="#3F51B5"
+        android:gravity="left"
+        android:hint="@string/telef"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#2D304E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apeP" />
+        app:layout_constraintTop_toBottomOf="@+id/dirB" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/passP"
-        android:layout_width="100dp"
+        android:id="@+id/emaB"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="center"
-        android:inputType="textPassword"
-        android:hint="@string/password"
+        android:gravity="left"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#3F51B5"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apeP" />
+        app:layout_constraintTop_toBottomOf="@+id/telB" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passB"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_toRightOf="@+id/aniImg"
+        android:gravity="left"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/telB" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/delProf"
@@ -126,39 +140,6 @@
         app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPerfil" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="108dp"
-        android:text="@string/user"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPerfil" />
-
-    <TextView
-        android:id="@+id/emailP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/email"
-        android:textSize="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/passsP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="60dp"
-        android:text="@string/password"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apeP" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class mascota implements Serializable {
 
     private Uri urlImage;
+    private String codigo;
     private String nombre;
     private String tipo;
     private String raza;
@@ -17,8 +18,8 @@ public class mascota implements Serializable {
     public mascota() {
     }
 
-    public mascota(String nombre, String tipo, String raza, String color, String fechaNac) {
-        //this.imagen = imagen;
+    public mascota(String codigo,String nombre, String tipo, String raza, String color, String fechaNac) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.raza = raza;
@@ -26,13 +27,22 @@ public class mascota implements Serializable {
         this.fechaNac = fechaNac;
     }
 
-    public mascota(Uri urlImage,String nombre, String tipo, String raza, String color, String fechaNac) {
+    public mascota(Uri urlImage,String codigo, String nombre, String tipo, String raza, String color, String fechaNac) {
         this.urlImage = urlImage;
+        this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
         this.raza = raza;
         this.color = color;
         this.fechaNac = fechaNac;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombre() {

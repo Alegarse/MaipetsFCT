@@ -7,16 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.maipetsfct.models.mascota;
+import com.example.maipetsfct.models.servicio;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Calendar;
 import java.util.UUID;
 
-public class AddMascActivity extends AppCompatActivity {
+public class AddServActivity extends AppCompatActivity {
 
     private FirebaseAuth fbauth ;
     private FirebaseDatabase fbdatabase ;
@@ -24,16 +23,12 @@ public class AddMascActivity extends AppCompatActivity {
     // Botones y elementos
     private Button cancAdd, okAdd;
     private EditText nombre;
-    private EditText tipo;
-    private EditText raza;
-    private EditText color;
-    private EditText fecha;
-    private Calendar calendario = Calendar.getInstance();
+    private EditText descripcion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_masc);
+        setContentView(R.layout.activity_add_serv);
 
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;
@@ -43,21 +38,11 @@ public class AddMascActivity extends AppCompatActivity {
 
         String uid = fbauth.getCurrentUser().getUid();
 
-        // Inicializamos los botones y campos
+        // Inicializamoslos elementos
         cancAdd = findViewById(R.id.cancAddBtn);
         okAdd = findViewById(R.id.addBtn);
-        nombre = findViewById(R.id.addName);
-        tipo = findViewById(R.id.addType);
-        raza = findViewById(R.id.addRace);
-        color = findViewById(R.id.addCol);
-        fecha = findViewById(R.id.addFec);
-
-        // Escuchador para la seleccion de fecha
-        fecha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+        nombre= findViewById(R.id.addNameS);
+        descripcion = findViewById(R.id.addDescS);
 
         // Escuchador para el botón Cancelar
         cancAdd.setOnClickListener(new View.OnClickListener() {
@@ -73,34 +58,27 @@ public class AddMascActivity extends AppCompatActivity {
         //Escuchador para el boton añadir
         okAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-
-                // Sacamos el valor de los campos
+            public void onClick(View v) {
+                // Obtenemos el valor de los campos
                 final String uUid = uid.trim();
-                final String mUid = UUID.randomUUID().toString();
-                final String aNombre = nombre.getText().toString().trim();
-                final String aTipo = tipo.getText().toString().trim();
-                final String aRaza = raza.getText().toString().trim();
-                final String aColor = color.getText().toString().trim();
-                final String aFecha = fecha.getText().toString().trim();
+                final String sNombre = nombre.getText().toString().trim();
+                final String sDescripcion = descripcion.getText().toString().trim();
+
+                String sUid = UUID.randomUUID().toString();
 
                 //Verificamos que los campos contienen información
-                if (aNombre.isEmpty() || aTipo.isEmpty() || aRaza.isEmpty() || aColor.isEmpty() || aFecha.isEmpty())
-                {
+                if (sNombre.isEmpty() || sDescripcion.isEmpty()) {
                     Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
                     return ;
                 } else {
+                    servicio serv = new servicio(sUid,uUid,sNombre,sDescripcion);
 
-                    mascota masc = new mascota(mUid,aNombre,aTipo,aRaza,aColor,aFecha);
+                    DatabaseReference dbref = fbdatabase.getReference("servicios");
 
-                    DatabaseReference dbref = fbdatabase.getReference("mascotas/"+uUid);
-
-                    dbref.child(mUid).setValue(masc) ;
+                    dbref.child(sUid).setValue(serv);
 
                     fbauth.signOut();
                     setResult(RESULT_OK);
-
                     finish();
                     return;
                 }

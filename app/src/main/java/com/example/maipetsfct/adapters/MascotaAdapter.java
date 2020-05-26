@@ -81,7 +81,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // Aqui meto para abrir en un popup lainformacion de lamascot
+
                     }
                 });
                 itemView.setOnLongClickListener(new View.OnLongClickListener() {

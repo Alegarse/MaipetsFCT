@@ -19,7 +19,7 @@ public class FamilyRegister extends AppCompatActivity {
     public Button btnCan, btnReg;
     private EditText nombre, apellidos, pass, conf_pass;
     private EditText email;
-    private String cod = "uno";
+    private String cod = "fam";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;

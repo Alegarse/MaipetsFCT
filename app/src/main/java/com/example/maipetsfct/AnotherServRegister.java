@@ -23,7 +23,7 @@ public class AnotherServRegister extends AppCompatActivity {
     private EditText dire, telef, pass, conf_pass;
     private EditText email;
     private Spinner serv;
-    private String cod = "tres";
+    private String cod = "ser";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;

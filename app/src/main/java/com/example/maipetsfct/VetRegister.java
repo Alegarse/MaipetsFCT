@@ -19,7 +19,7 @@ public class VetRegister extends AppCompatActivity {
     public Button btnCan, btnReg;
     private EditText razSoc, dire, telef, pass, conf_pass;
     private EditText email;
-    private String cod = "dos";
+    private String cod = "vet";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;

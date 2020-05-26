@@ -39,7 +39,7 @@ public class PopPet extends Activity {
     private ImageView imgPet;
     private EditText nombre, especie, raza, color, fecha;
     private Button guardar;
-    private String ruta;
+    private String ruta,codigo;
 
 
     @Override
@@ -131,6 +131,7 @@ public class PopPet extends Activity {
         String razaB = datos.getString("raza");
         String colorB = datos.getString("color");
         String fechaB = datos.getString("fecha");
+        codigo = datos.getString("codigo");
 
         // Los asociamos a cada campo de edición
         nombre.setText(nombreB);
@@ -166,7 +167,7 @@ public class PopPet extends Activity {
             datosAct.put("fechaNac",fechaAct);
 
             // Actualizamos en Firebase
-            databaseReference.child("mascotas").child(uid).child("aUid").updateChildren(datosAct)
+            databaseReference.child("mascotas").child(uid).child(codigo).updateChildren(datosAct)
                     .addOnSuccessListener((OnSuccessListener)(aVoid) ->
                     {
                         Toast.makeText(this,R.string.save_ok,Toast.LENGTH_LONG).show();
