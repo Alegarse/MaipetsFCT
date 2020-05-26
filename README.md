@@ -89,13 +89,26 @@ Respecto a la página web para la parte HTML5 y CSS, he empezado a realizarla, t
 ##  :books:Semana 18 de Mayo al 22 de Mayo de 2020
 ### Contenido
 Se ha modificado el fragmento de perfil, tratando de implementar el poder tomar una fotografía y ponerla de imagen de perfil a través de la librería [MagicalCamera](https://github.com/fabian7593/MagicalCamera).Este desarrollo será tambien aplicable a las fotografías de las mascotas en el fragmento de listado de cards de la actividad principal del usuario.<br/>
-Edit: Terminado el fragmento del profile, en el que se ha habilitado el métdo OnResume para que cuando se vualeva a esta actividad y detecte cambio de imagen, la actualice.<br/>
+Edit: Terminado el fragmento del profile, en el que se ha habilitado el método OnResume para que cuando se vuelva a esta actividad y detecte cambio de imagen, la actualice.<br/>
 Comienzo a programar la actividad para poder añadir nuevas mascotas a cada usuario.<br/>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
 :small_orange_diamond:[MagicalCamera](https://github.com/fabian7593/MagicalCamera)<br/>
 :small_orange_diamond:[Ciclo de vida actividad](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=es)<br/>
+
+
+##  :books:Semana 25 de Mayo al 29 de Mayo de 2020
+### Contenido
+Terminada la parte a nivel usuario doméstico, a falta de implementar la lectura de los servicios disponibles agregados por los perfiles profesionales.<br/>
+Arreglada la navegación, lectura, edición y borrado de datos anidados en el arbol dedirectorios de Firebase, configurandose la BBDD en tres tablas que son Usuarios, Mascotas y Servicios. En la primera se distingue entre cada tipo de usuario por su ID único y por su codigo que indica el tipo de usuario. En la segunda, existen subdirectorios por cada usuario y en ellos estás sus mascotas, cada una con su ID único. En cuanto a la tercera, están ordenados por ID único, conteniendo cada uno el código del profesional al que pertenece.<br/>
+Edit: Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simple.<br/>
+
+### Bibliografía Utilizada
+:small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
+:small_orange_diamond:[MagicalCamera](https://github.com/fabian7593/MagicalCamera)<br/>
+:small_orange_diamond:[Ciclo de vida actividad](https://developer.android.com/guide/components/activities/activity-lifecycle?hl=es)<br/>
+:small_orange_diamond:[Apertura archivos](https://developer.android.com/guide/topics/providers/document-provider?hl=es-419)<br/>
 
 
 ---
