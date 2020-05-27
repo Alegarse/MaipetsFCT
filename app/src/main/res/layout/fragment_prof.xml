@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
+    android:scrollbars="vertical"
     tools:context=".fragments.ProfileFragment">
 
 
@@ -27,14 +35,13 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="100dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="left"
+        android:gravity="center_horizontal"
         android:hint="@string/razsoc"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#2D304E"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPerfil" />
 
@@ -43,12 +50,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="left"
+        android:gravity="center_horizontal"
         android:hint="@string/dir"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#2D304E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameB" />
 
@@ -57,12 +64,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="left"
+        android:gravity="center_horizontal"
         android:hint="@string/telef"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#2D304E"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dirB" />
 
@@ -72,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="left"
+        android:gravity="center"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -87,14 +94,14 @@
         android:id="@+id/passB"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/aniImg"
-        android:gravity="left"
+        android:gravity="center"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telB" />
 
@@ -143,3 +150,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

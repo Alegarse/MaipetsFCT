@@ -1,19 +1,19 @@
 package com.example.maipetsfct;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.maipetsfct.fragments.MyDatePicker;
 import com.example.maipetsfct.models.mascota;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Calendar;
 import java.util.UUID;
 
 public class AddMascActivity extends AppCompatActivity {
@@ -27,8 +27,7 @@ public class AddMascActivity extends AppCompatActivity {
     private EditText tipo;
     private EditText raza;
     private EditText color;
-    private EditText fecha;
-    private Calendar calendario = Calendar.getInstance();
+    private static EditText fecha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +51,7 @@ public class AddMascActivity extends AppCompatActivity {
         color = findViewById(R.id.addCol);
         fecha = findViewById(R.id.addFec);
 
-        // Escuchador para la seleccion de fecha
-        fecha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+        fecha.setKeyListener(null);
 
         // Escuchador para el botón Cancelar
         cancAdd.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +62,12 @@ public class AddMascActivity extends AppCompatActivity {
                 finish();
                 return;
             }
+        });
+
+        // Escuchador fecha
+        fecha.setOnClickListener(v -> {
+            DialogFragment fragment = new MyDatePicker();
+            fragment.show(getSupportFragmentManager(),"Date Picker");
         });
 
         //Escuchador para el boton añadir
@@ -106,5 +106,9 @@ public class AddMascActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public static void populateSetDateText (int day, int month, int year) {
+        fecha.setText(day + "/" + month + "/" + year);
     }
 }

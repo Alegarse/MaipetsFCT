@@ -1,6 +1,7 @@
 package com.example.maipetsfct.adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.mascota;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -23,6 +28,12 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     Context context;
 
     private int position;
+
+    private FirebaseAuth mAuth ;
+    private StorageReference mStorage;
+
+
+
 
     public MascotaAdapter(Context c, ArrayList<mascota> m) {
         context = c;
@@ -38,14 +49,19 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     @NonNull
     @Override
     public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        mascota m = mascotas.get(position);
+
+
         return new MascotaViewHolder(LayoutInflater.from(context).inflate(R.layout.mascota_card,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull MascotaViewHolder holder, int position) {
         mascota masc = mascotas.get(position);
-        holder.imagen.setImageResource(R.drawable.mascotas);
+
         holder.nombre.setText(mascotas.get(position).getNombre());
+        holder.imagen.setImageResource(R.drawable.petscard);
 
         holder.BindHolder(mascotas.get(position));
     }
@@ -65,12 +81,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
         public View view;
 
-        public MascotaViewHolder(View v){
+        public MascotaViewHolder(View v) {
 
             super(v);
             this.view = v;
             imagen = v.findViewById(R.id.aniImg);
             nombre = v.findViewById(R.id.nombre);
+
             v.setOnCreateContextMenuListener(this);
         }
 
@@ -81,7 +98,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                     }
                 });
                 itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -92,9 +108,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                     }
                 });
             }
-
     }
-
-
 
 }

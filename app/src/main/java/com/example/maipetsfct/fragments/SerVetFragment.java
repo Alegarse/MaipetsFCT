@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.maipetsfct.AddServActivity;
-import com.example.maipetsfct.PopServ;
+import com.example.maipetsfct.popups.PopServ;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.ServicioAdapter;
 import com.example.maipetsfct.models.servicio;

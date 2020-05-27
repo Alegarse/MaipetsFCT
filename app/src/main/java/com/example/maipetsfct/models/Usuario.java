@@ -28,7 +28,8 @@ public class Usuario implements Serializable {
         this.codigo = code;
     }
     //Usuario tipo clinica o servicio
-    public Usuario(String razon, String direccion, String telefono, String email, String contrasena, String code) {
+    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code) {
+        this.actividad = actividad;
         this.razon = razon;
         this.direccion = direccion;
         this.telefono = telefono;

@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
+
+import com.example.maipetsfct.registros.FamilyRegister;
+import com.example.maipetsfct.registros.VetRegister;
 
 public class NewUserActivity extends AppCompatActivity {
 
     private ImageView familyPets;
-    private ImageView vetPets;
-    private ImageView anotherPets;
+    private ImageView serPets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +24,7 @@ public class NewUserActivity extends AppCompatActivity {
 
         //Localizo las imagenes que actuarán como botones
         familyPets = findViewById(R.id.familyuser);
-        vetPets = findViewById(R.id.vetuser);
-        anotherPets = findViewById(R.id.anotheruser);
+        serPets = findViewById(R.id.seruser);
 
         //Creo las intenciones para su redirección
         familyPets.setOnClickListener(v -> {
@@ -32,14 +32,9 @@ public class NewUserActivity extends AppCompatActivity {
             startActivity(familyRegister);
         });
 
-        vetPets.setOnClickListener(v -> {
+        serPets.setOnClickListener(v -> {
             Intent vetRegister = new Intent(NewUserActivity.this, VetRegister.class);
             startActivity(vetRegister);
-        });
-
-        anotherPets.setOnClickListener(v -> {
-            Intent anotherRegister = new Intent(NewUserActivity.this, AnotherServRegister.class);
-            startActivity(anotherRegister);
         });
     }
 }

@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FamilyRegister">
+    tools:context=".registros.FamilyRegister">
 
     <ImageView
         android:id="@+id/imageLogo"
@@ -140,31 +140,33 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Boton para registrarse -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/regBtnRegister"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/register"
-        app:backgroundTint="#8BC34A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirmPRegisterLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
 
     <!-- Botón para cancelar registro -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/regBtnCancel"
-        android:layout_width="200dp"
+        android:id="@+id/regBtnRegister"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cancel"
-        app:backgroundTint="#F44336"
+        android:layout_marginTop="52dp"
+        android:text="@string/register"
+        app:backgroundTint="#47B60F"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/regBtnRegister"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+        app:layout_constraintTop_toBottomOf="@+id/confirmPRegisterLayout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/regBtnCancel"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="@string/cancel"
+        app:backgroundTint="#5C6359"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPRegisterLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

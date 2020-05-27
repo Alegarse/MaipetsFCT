@@ -19,22 +19,24 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PopServ"
-            android:theme="@style/AppTheme.PopUp"/>
+        <activity android:name=".PopReset"
+            android:theme="@style/AppTheme.PopUp" />
+        <activity
+            android:name=".popups.PopServ"
+            android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".AddServActivity" />
         <activity android:name=".ServActivity" />
         <activity android:name=".VetActivity" />
         <activity
-            android:name=".PopPet"
+            android:name=".popups.PopPet"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".AddMascActivity" />
         <activity
-            android:name=".PopUpSelect"
+            android:name=".popups.PopUpSelect"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".UsersActivity" />
-        <activity android:name=".AnotherServRegister" />
-        <activity android:name=".VetRegister" />
-        <activity android:name=".FamilyRegister" />
+        <activity android:name=".registros.VetRegister" />
+        <activity android:name=".registros.FamilyRegister" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".PostMainActivity" />

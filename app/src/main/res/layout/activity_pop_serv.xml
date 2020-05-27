@@ -7,36 +7,18 @@
     android:layout_height="match_parent"
     android:background="@drawable/pop_pet"
     android:scrollbars="vertical"
-    tools:context=".PopPet">
+    tools:context=".popups.PopPet">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/saved"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#008BC34A"
-        android:drawableBottom="@drawable/saved"
-        android:drawableTint="#27D134"
-        android:gravity="center"
-        android:paddingVertical="1dp"
+    <ImageView
+        android:id="@+id/imgPet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/nameServ"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:gravity="left"
-        android:text="@string/name"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.132"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/servicios" />
 
     <EditText
         android:id="@+id/name2Serv"
@@ -44,47 +26,73 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="164dp"
         android:gravity="left"
         android:text="Nombre mascota"
         android:textSize="15dp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imgPet" />
+
+    <EditText
+        android:id="@+id/desc2Serv"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="left"
+        android:text="Especie mascota"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.731"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name2Serv" />
 
     <TextView
         android:id="@+id/descServ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:gravity="left"
         android:text="@string/descr"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameServ" />
 
-    <EditText
-        android:id="@+id/desc2Serv"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="1dp"
-        android:text="Especie mascota"
-        android:textSize="15dp"
-        android:textStyle="italic"
+    <TextView
+        android:id="@+id/nameServ"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
         android:gravity="left"
+        android:text="@string/name"
+        android:textSize="15dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.651"
+        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name2Serv" />
+        app:layout_constraintTop_toTopOf="@+id/imgPet" />
 
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#326DCA"
+        android:drawableTint="#27D134"
+        android:gravity="center"
+        android:paddingVertical="1dp"
+        android:text="@string/saving"
+        app:icon="@drawable/saved"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc2Serv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

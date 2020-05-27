@@ -2,6 +2,7 @@
 <resources>
     <string-array name="servicios">
         <item>@string/chooseServ</item>
+        <item>@string/vetuser</item>
         <item>@string/pelu</item>
         <item>@string/alim</item>
         <item>@string/guarde</item>

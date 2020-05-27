@@ -17,7 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.maipetsfct.MainActivity;
-import com.example.maipetsfct.PopUpSelect;
+import com.example.maipetsfct.popups.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;

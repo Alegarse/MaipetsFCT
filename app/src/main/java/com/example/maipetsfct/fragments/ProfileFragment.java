@@ -1,13 +1,14 @@
 package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,7 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.maipetsfct.MainActivity;
-import com.example.maipetsfct.PopUpSelect;
+import com.example.maipetsfct.popups.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -159,12 +160,24 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                usuario.delete();
-                reference.child("usuarios").child(uid).removeValue();
-                reference.child("mascotas").child(uid).removeValue();
-                mAuth.signOut();
-                Intent salir = new Intent(activity, MainActivity.class);
-                startActivity(salir);
+
+                AlertDialog.Builder myBuild = new AlertDialog.Builder(activity);
+                myBuild.setTitle(R.string.cDel);
+                myBuild.setMessage(R.string.yesDel);
+                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
+                    usuario.delete();
+                    reference.child("usuarios").child(uid).removeValue();
+                    reference.child("mascotas").child(uid).removeValue();
+                    mAuth.signOut();
+                    Intent salir = new Intent(activity, MainActivity.class);
+                    startActivity(salir);
+                });
+                myBuild.setNegativeButton("No", (dialogInterface, i) ->
+                        dialogInterface.cancel());
+
+                AlertDialog dialog = myBuild.create();
+                dialog.show();
+
             }
         });
 

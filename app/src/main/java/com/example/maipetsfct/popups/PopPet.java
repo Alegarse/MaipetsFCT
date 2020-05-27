@@ -1,6 +1,4 @@
-package com.example.maipetsfct;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.maipetsfct.popups;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,13 +6,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.maipetsfct.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,23 +41,6 @@ public class PopPet extends Activity {
 
 
     @Override
-    public void onResume() {
-        super.onResume();
-        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg") != null) {
-
-            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg");
-            profileImgPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Uri downloadUrl = uri;
-                    ruta = downloadUrl.toString();
-                    Picasso.get().load(ruta).into(imgPet);
-                }
-            });
-        }
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_pet);
@@ -86,7 +67,7 @@ public class PopPet extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.9),(int)(height*.9));
+        getWindow().setLayout((int)(width*.85),(int)(height*.76));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;
@@ -108,10 +89,19 @@ public class PopPet extends Activity {
 
         imgPet.setImageResource(R.drawable.petscard);
 
-        // Verificamos si ya existe la imagen del perfil
-        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg") != null) {
+        // Recogemos los datos que nos llegan
+        Bundle datos = getIntent().getExtras();
+        String nombreB = datos.getString("nombre");
+        String especieB = datos.getString("especie");
+        String razaB = datos.getString("raza");
+        String colorB = datos.getString("color");
+        String fechaB = datos.getString("fecha");
+        codigo = datos.getString("codigo");
 
-            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg");
+        // Verificamos si ya existe la imagen del perfil
+        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg") != null) {
+
+            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg");
             profileImgPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
@@ -124,15 +114,6 @@ public class PopPet extends Activity {
             imgPet.setImageResource(R.drawable.petscard);
         }
 
-        // Recogemos los datos que nos llegan
-        Bundle datos = getIntent().getExtras();
-        String nombreB = datos.getString("nombre");
-        String especieB = datos.getString("especie");
-        String razaB = datos.getString("raza");
-        String colorB = datos.getString("color");
-        String fechaB = datos.getString("fecha");
-        codigo = datos.getString("codigo");
-
         // Los asociamos a cada campo de edición
         nombre.setText(nombreB);
         especie.setText(especieB);
@@ -143,8 +124,9 @@ public class PopPet extends Activity {
         //Lanzamos el popup de selección para la imagen de la mascota
         imgPet.setOnClickListener(v ->
         {
-            Intent select = new Intent(this,PopUpSelect.class);
+            Intent select = new Intent(this, PopUpSelect.class);
             select.putExtra("code",2);
+            select.putExtra("codigo",codigo);
             startActivity(select);
         });
 
@@ -177,5 +159,22 @@ public class PopPet extends Activity {
             }));
         });
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg") != null) {
+
+            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg");
+            profileImgPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    Uri downloadUrl = uri;
+                    ruta = downloadUrl.toString();
+                    Picasso.get().load(ruta).into(imgPet);
+                }
+            });
+        }
     }
 }

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#B38E3333"
+    android:backgroundTint="#276698"
     app:cardCornerRadius="4dp"
     app:cardElevation="4dp"
     android:id="@+id/cv"
@@ -19,29 +19,27 @@
         <ImageView
             android:id="@+id/aniImg"
             android:layout_width="110dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:scaleType="centerCrop" />
+            android:layout_height="110dp"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="110dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="21dp"
-            android:layout_marginLeft="21dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="44dp"
+            android:layout_margin="5dp"
             android:layout_toEndOf="@+id/aniImg"
             android:layout_toRightOf="@+id/aniImg"
-            android:gravity="center"
+            android:gravity="center_vertical"
+            android:paddingLeft="35dp"
             android:text="Nombre"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30dp"
             android:textStyle="bold"
+            android:typeface="serif"
             android:textAllCaps="true"
-            android:textColor="#000" />
+            android:textColor="#CAD9DA" />
 
 
     </RelativeLayout>

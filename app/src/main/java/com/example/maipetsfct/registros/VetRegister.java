@@ -1,4 +1,4 @@
-package com.example.maipetsfct;
+package com.example.maipetsfct.registros;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,17 +10,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.maipetsfct.LoginActivity;
+import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
-public class AnotherServRegister extends AppCompatActivity {
+public class VetRegister extends AppCompatActivity {
 
     public Button btnCan, btnReg;
-    private EditText dire, telef, pass, conf_pass;
+    private EditText razSoc, dire, telef, pass, conf_pass;
     private EditText email;
     private Spinner serv;
     private String cod = "ser";
@@ -29,11 +30,10 @@ public class AnotherServRegister extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseDatabase fbdatabase ;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_another_serv_register);
+        setContentView(R.layout.activity_vet_register);
 
         // Para ocultar la action bar y que no de problemas con los estilos de Material Design
         getSupportActionBar().hide();
@@ -41,6 +41,7 @@ public class AnotherServRegister extends AppCompatActivity {
         // Instanciamos
         btnCan = findViewById(R.id.regBtnCancel);
         btnReg = findViewById(R.id.regBtnRegister);
+        razSoc= findViewById(R.id.regRazSoc);
         dire = findViewById(R.id.regDir);
         telef = findViewById(R.id.regTelf);
         email = findViewById(R.id.regEmail);
@@ -50,12 +51,7 @@ public class AnotherServRegister extends AppCompatActivity {
         // Código para el spinner de eleccion de tipo de servicio
         serv = findViewById(R.id.services_spinner);
         ArrayAdapter<CharSequence> adaptador = ArrayAdapter.createFromResource(this,R.array.servicios,R.layout.support_simple_spinner_dropdown_item);
-
-
-
         serv.setAdapter(adaptador);
-
-
 
         // Escuchador para el botón Cancelar
         btnCan.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +75,8 @@ public class AnotherServRegister extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cogemos el valor de los campos del formulario de registro
-
                 final String ser = serv.getSelectedItem().toString().trim();
+                final String raz = getField(razSoc);
                 final String dir = getField(dire);
                 final String tel = getField(telef);
                 final String ema = getField(email);
@@ -88,13 +84,12 @@ public class AnotherServRegister extends AppCompatActivity {
                 String cpwd = getField(conf_pass);
 
                 // Verificamos que se han introducido todos los campos
-                if (ema.isEmpty() || ser.isEmpty()|| dir.isEmpty() || tel.isEmpty() ||
-                        pwd.isEmpty() || cpwd.isEmpty())
+                if (ema.isEmpty() || raz.isEmpty() || dir.isEmpty() || tel.isEmpty() ||
+                        ser.isEmpty() || pwd.isEmpty() || cpwd.isEmpty())
                 {
                     Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
                     return ;
                 }
-
                 // Verificamos si las contraseñas coinciden
                 if (!pwd.equals(cpwd))
                 {
@@ -111,7 +106,7 @@ public class AnotherServRegister extends AppCompatActivity {
                                 String uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
-                                Usuario usuario = new Usuario(ser,dir,tel,ema,pwd,cod);
+                                Usuario usuario = new Usuario(ser,raz,dir,tel,ema,pwd,cod);
 
                                 // 3. Obtenemos referencia al documento de usuarios en FB
                                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
@@ -124,7 +119,7 @@ public class AnotherServRegister extends AppCompatActivity {
                                 setResult(RESULT_OK);
                                 finish();
                                 // Tras el registro correcto redirijo a la pagina de login
-                                Intent aLogin = new Intent(AnotherServRegister.this, LoginActivity.class);
+                                Intent aLogin = new Intent(VetRegister.this, LoginActivity.class);
                                 startActivity(aLogin);
 
                             } else {  // Usuario no se registra correctamente
@@ -134,8 +129,6 @@ public class AnotherServRegister extends AppCompatActivity {
                         });
             }
         });
-
-
     }
     // Método para obtener texto de los campos
     private String getField(EditText edit)

@@ -72,4 +72,14 @@
     <string name="nameS">Nombre del servicio</string>
     <string name="descS">Descripción</string>
     <string name="descr">Descripción</string>
+    <string name="passloose">¿Contraseña olvidada?</string>
+    <string name="resp">Restablecer contraseña</string>
+    <string name="instreset">Introduzca el correo con el que estes registrado en Maipets y recibirá un e-mail con un link para restablecer su contraseña.</string>
+    <string name="needEmail">Debe ingresar un correo electrónico</string>
+    <string name="mailsend">Correo electrónico enviado</string>
+    <string name="saving">Guardar cambios</string>
+    <string name="cDel">Confirmar borrado</string>
+    <string name="yesDel">¿Está seguro de borrar su perfil?</string>
+    <string name="afirmative">Si</string>
+    <string name="delPet">¿Esta seguro de borrar los datos de esta mascota?</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.maipetsfct;
+package com.example.maipetsfct.registros;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.maipetsfct.LoginActivity;
+import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;

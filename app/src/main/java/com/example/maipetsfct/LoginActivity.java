@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maipetsfct.models.Usuario;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     // Inicializamos variables u objetos que intervienen en la actividad
     private EditText email, password;
     private Button login, cancel;
+    private TextView resetPass;
     String codify;
 
     private FirebaseAuth mAuth ;
@@ -50,9 +52,9 @@ public class LoginActivity extends AppCompatActivity {
         // Referenciamos los campos y botones
         email = findViewById(R.id.userEmailLogin);
         password = findViewById(R.id.userPassLogin);
-
         login = findViewById(R.id.btnLogin);
         cancel = findViewById(R.id.btnCancel);
+        resetPass = findViewById(R.id.passLoose);
 
         // Datos para logeo de prueba temporal
         email.setText("aleboy80@gmail.com");
@@ -66,6 +68,15 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(RESULT_CANCELED);
                 finish();
                 return;
+            }
+        });
+
+        // Escuchador del boton recuperar contraseña
+        resetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reset = new Intent(LoginActivity.this,PopReset.class);
+                startActivity(reset);
             }
         });
 
@@ -127,11 +138,8 @@ public class LoginActivity extends AppCompatActivity {
                                             case "fam":
                                                 intent = new Intent(LoginActivity.this, UsersActivity.class);
                                                 break;
-                                            case "vet":
-                                                intent = new Intent(LoginActivity.this, VetActivity.class) ;
-                                                break;
                                             case "ser":
-                                                intent = new Intent(LoginActivity.this, ServActivity.class) ;
+                                                intent = new Intent(LoginActivity.this, VetActivity.class) ;
                                                 break;
                                         }
 

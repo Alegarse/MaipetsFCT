@@ -1,4 +1,4 @@
-package com.example.maipetsfct;
+package com.example.maipetsfct.popups;
 
 import android.Manifest;
 import android.app.Activity;
@@ -15,12 +15,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.maipetsfct.R;
 import com.frosquivel.magicalcamera.MagicalCamera;
 import com.frosquivel.magicalcamera.MagicalPermissions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -34,6 +34,7 @@ public class PopUpSelect extends Activity {
     private Button gallery, camera;
     private Bitmap bitMap;
     private int option,code;
+    private String codigoMasc;
     Bundle codes;
     String path;
     StorageReference profileImgPath;
@@ -59,6 +60,7 @@ public class PopUpSelect extends Activity {
 
         // Para distinguir entre imagen de perfil o de mascota
         code = codes.getInt("code");
+        codigoMasc = codes.getString("codigo");
 
         //Obtenemos la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance() ;
@@ -151,7 +153,7 @@ public class PopUpSelect extends Activity {
             profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg");
         }
         if (code == 2 ){
-            profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg.jpg");
+            profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_" + codigoMasc + ".jpg");
         }
 
         profileImgPath.putFile(file)

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,7 +20,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.maipetsfct.AddMascActivity;
-import com.example.maipetsfct.PopPet;
+import com.example.maipetsfct.MainActivity;
+import com.example.maipetsfct.popups.PopPet;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.MascotaAdapter;
 import com.example.maipetsfct.models.mascota;
@@ -157,13 +159,26 @@ public class PetsFragment extends Fragment {
                 break;
 
             case R.id.ctxDel:
-                mascota masc = mascotas.get(mascotaAdapter.getIndex());
-                String UUID = masc.getCodigo().toString();
-                String uid = fbauth.getCurrentUser().getUid();
 
-                ref.child("mascotas").child(uid).child(UUID).removeValue();
-                Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
-                break;
+                AlertDialog.Builder myBuild = new AlertDialog.Builder(getContext());
+                myBuild.setTitle(R.string.cDel);
+                myBuild.setMessage(R.string.delPet);
+                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
+
+                    mascota masc = mascotas.get(mascotaAdapter.getIndex());
+                    String UUID = masc.getCodigo();
+                    String uid = fbauth.getCurrentUser().getUid();
+
+                    ref.child("mascotas").child(uid).child(UUID).removeValue();
+                    Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
+
+                });
+                myBuild.setNegativeButton("No", (dialogInterface, i) ->
+                        dialogInterface.cancel());
+
+                AlertDialog dialog = myBuild.create();
+                dialog.show();
+
         }
         return super.onContextItemSelected(item);
     }
