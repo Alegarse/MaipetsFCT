@@ -14,6 +14,7 @@ public class Usuario implements Serializable {
     private String email;
     private String contrasena;
     private String codigo;
+    private String servCode;
 
     // Contructor vacío para Firebase
     public Usuario(){}
@@ -34,7 +35,7 @@ public class Usuario implements Serializable {
         this.contrasena = contra;
     }
     //Usuario tipo servicio
-    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code) {
+    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code, String servCode) {
         this.actividad = actividad;
         this.razon = razon;
         this.direccion = direccion;
@@ -42,6 +43,7 @@ public class Usuario implements Serializable {
         this.email = email;
         this.contrasena = contrasena;
         this.codigo = code;
+        this.servCode = servCode;
     }
     public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena) {
         this.actividad = actividad;
@@ -128,7 +130,16 @@ public class Usuario implements Serializable {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-// ToString
+
+    public String getServCode() {
+        return servCode;
+    }
+
+    public void setServCode(String servCode) {
+        this.servCode = servCode;
+    }
+
+    // ToString
 
     @Override
     public String toString() {

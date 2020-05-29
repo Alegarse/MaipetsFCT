@@ -2,6 +2,8 @@ package com.example.maipetsfct;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,10 +27,13 @@ public class AddServActivity extends AppCompatActivity {
     private EditText nombre;
     private EditText descripcion;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_serv);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;

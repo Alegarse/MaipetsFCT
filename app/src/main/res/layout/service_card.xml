@@ -21,7 +21,6 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_margin="5dp"
-            android:src="@drawable/imgserv"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -33,11 +32,13 @@
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/aniImg"
             android:layout_toRightOf="@+id/aniImg"
-            android:gravity="center"
+            android:gravity="center_vertical"
+            android:paddingLeft="35dp"
             android:text="Nombre"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="25dp"
             android:textStyle="bold"
+            android:typeface="serif"
             android:textAllCaps="true"
             android:textColor="#000" />
 

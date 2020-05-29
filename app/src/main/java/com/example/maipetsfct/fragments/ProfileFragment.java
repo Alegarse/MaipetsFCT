@@ -1,7 +1,6 @@
 package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +22,7 @@ import com.example.maipetsfct.popups.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,8 +32,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 
 public class ProfileFragment extends Fragment {
@@ -169,6 +172,27 @@ public class ProfileFragment extends Fragment {
                     usuario.delete();
                     reference.child("usuarios").child(uid).removeValue();
                     reference.child("mascotas").child(uid).removeValue();
+
+                    /* Para intentar borrar archivos del Storage, ya que no implementa borrar directorio
+                    No funciona, ver si da tiempo
+                    mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).listAll();
+                    StorageReference listRef = mStorageRef.child("images").child(mAuth.getCurrentUser().getUid());
+                    Task<ListResult> listPagetask = listRef.list(100);
+                    listPagetask.addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                        @Override
+                        public void onSuccess(ListResult listResult) {
+                            List<StorageReference> items = listResult.getItems();
+                            int tamanio = items.size();
+                            for (int m = 0; m < tamanio;m++){
+                                String item = items.get(m).toString();
+                                mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).child(item).delete();
+                            }
+
+                        }
+                    });
+
+                     */
+
                     mAuth.signOut();
                     Intent salir = new Intent(activity, MainActivity.class);
                     startActivity(salir);

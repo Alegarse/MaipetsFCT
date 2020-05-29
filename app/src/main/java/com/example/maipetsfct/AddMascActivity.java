@@ -3,6 +3,7 @@ package com.example.maipetsfct;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -30,10 +31,13 @@ public class AddMascActivity extends AppCompatActivity {
     private EditText color;
     private static EditText fecha;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_masc);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;

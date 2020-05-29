@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class ServicesFragment extends Fragment {
@@ -36,9 +37,11 @@ public class ServicesFragment extends Fragment {
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference,ref;
     private StorageReference mStorageRef;
+    int test = 0;
 
     // Colección de servicios de usuarios
     ArrayList<Usuario> usuarios;
+    ArrayList<String> repes = new ArrayList<>();
     RecyclerView recyclerView;
     UsuarioAdapter usuarioAdapter;
 
@@ -87,10 +90,17 @@ public class ServicesFragment extends Fragment {
                 usuarios.clear();
                 for (DataSnapshot data1: dataSnapshot.getChildren()) {
                     Usuario u = data1.getValue(Usuario.class);
-                    if (u.getActividad() != null) {
-                        usuarios.add(u);
-                    }
+
+                    // Para que no muestre servicios repetidos
+                        if (u.getActividad() != null) {
+                            if(repes.contains(u.getActividad())) {
+                            } else {
+                                usuarios.add(u);
+                                repes.add(u.getActividad());
+                            }
+                        }
                 }
+
                 usuarioAdapter = new UsuarioAdapter(activity,usuarios);
                 usuarioAdapter.setUsuarios(usuarios);
                 recyclerView.setAdapter(usuarioAdapter);

@@ -42,15 +42,16 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usu = usuarios.get(position);
 
-        if (usu.getActividad().equals("Clínica veterinaria")){
+
+        if (usu.getServCode().equals("1")){
             holder.imagen.setImageResource(R.drawable.clinica);
-        } else if (usu.getActividad().equals("Peluquería de mascotas")){
+        } else if (usu.getServCode().equals("2")){
             holder.imagen.setImageResource(R.drawable.peluqueria);
-        } else if (usu.getActividad().equals("Alimentación")){
+        } else if (usu.getServCode().equals("3")){
             holder.imagen.setImageResource(R.drawable.comida);
-        } else if (usu.getActividad().equals("Guardería de mascotas")){
+        } else if (usu.getServCode().equals("4")){
             holder.imagen.setImageResource(R.drawable.guarde);
-        }  else if (usu.getActividad().equals("Protectora de animales")){
+        }  else if (usu.getServCode().equals("5")){
             holder.imagen.setImageResource(R.drawable.protectora);
         }
 

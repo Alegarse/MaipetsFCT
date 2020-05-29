@@ -45,7 +45,7 @@ public class ProfVetFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText bussname, direction, telefono, email, contra;
     private ImageView imgPerfil;
-    private String ruta,sUid,actividadFb,code;
+    private String ruta,sUid,actividadFb,code,servCode;
 
     // Colección de clinica
     ArrayList<servicio> servicios;
@@ -159,6 +159,7 @@ public class ProfVetFragment extends Fragment {
                     String telFb = dataSnapshot.child("telefono").getValue().toString();
                     String emaFb = dataSnapshot.child("email").getValue().toString();
                     String passFb = dataSnapshot.child("contrasena").getValue().toString();
+                    servCode = dataSnapshot.child("servCode").getValue().toString();
                     bussname.setText(bussnameFb);
                     direction.setText(dirFb);
                     telefono.setText(telFb);
@@ -242,7 +243,7 @@ public class ProfVetFragment extends Fragment {
                 }
                 String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code);
+                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code,servCode);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 

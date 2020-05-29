@@ -2,7 +2,9 @@ package com.example.maipetsfct;
 
 import androidx.annotation.NonNull;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -22,10 +24,13 @@ public class PopReset extends Activity {
     private String mail = "";
     private FirebaseAuth mAuth;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_reset);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         email = findViewById(R.id.correoReset);
         enviar = findViewById(R.id.restP);
