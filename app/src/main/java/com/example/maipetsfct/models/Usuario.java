@@ -27,12 +27,6 @@ public class Usuario implements Serializable {
         this.contrasena =  contra;
         this.codigo = code;
     }
-    public Usuario(String nombre, String apellidos, String email) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
-    }
-
     public Usuario(String nombre, String apellidos, String email, String contra) {
         this.nombre = nombre;
         this.apellidos = apellidos;

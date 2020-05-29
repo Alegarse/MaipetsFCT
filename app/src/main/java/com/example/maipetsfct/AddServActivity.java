@@ -77,7 +77,7 @@ public class AddServActivity extends AppCompatActivity {
 
                     dbref.child(sUid).setValue(serv);
 
-                    fbauth.signOut();
+                    //fbauth.signOut();
                     setResult(RESULT_OK);
                     finish();
                     return;

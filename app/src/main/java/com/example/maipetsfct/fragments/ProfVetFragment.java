@@ -45,7 +45,7 @@ public class ProfVetFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText bussname, direction, telefono, email, contra;
     private ImageView imgPerfil;
-    private String ruta,sUid,actividadFb;
+    private String ruta,sUid,actividadFb,code;
 
     // Colección de servicios
     ArrayList<servicio> servicios;
@@ -100,6 +100,7 @@ public class ProfVetFragment extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         usuario = mAuth.getInstance().getCurrentUser();
+        code = "ser";
 
         // Instanciamos
         delPerf = view.findViewById(R.id.delProf);
@@ -241,7 +242,7 @@ public class ProfVetFragment extends Fragment {
                 }
                 String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd);
+                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 

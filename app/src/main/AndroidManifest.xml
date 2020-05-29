@@ -25,7 +25,6 @@
             android:name=".popups.PopServ"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".AddServActivity" />
-        <activity android:name=".ServActivity" />
         <activity android:name=".VetActivity" />
         <activity
             android:name=".popups.PopPet"

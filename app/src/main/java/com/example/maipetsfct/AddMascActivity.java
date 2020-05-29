@@ -99,9 +99,8 @@ public class AddMascActivity extends AppCompatActivity {
 
                     dbref.child(mUid).setValue(masc) ;
 
-                    fbauth.signOut();
+                    //fbauth.signOut();
                     setResult(RESULT_OK);
-
                     finish();
                     return;
                 }

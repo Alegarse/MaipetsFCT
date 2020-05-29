@@ -74,7 +74,7 @@ public class PopServ extends Activity {
 
         getWindow().setAttributes(params);
 
-        // Visualizado datos de mascota
+        // Visualizado datos
 
         // Instanciamos los elementos
         image = findViewById(R.id.imgService);

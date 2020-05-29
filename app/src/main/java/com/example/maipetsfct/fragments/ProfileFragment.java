@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText nombre, apellidos, email, contra;
     private ImageView imgPerfil;
-    private String ruta;
+    private String ruta,code;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
@@ -93,6 +93,7 @@ public class ProfileFragment extends Fragment {
         reference = FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         usuario = mAuth.getInstance().getCurrentUser();
+        code = "fam";
 
         // Instanciamos
         delPerf = view.findViewById(R.id.delProf);
@@ -201,7 +202,7 @@ public class ProfileFragment extends Fragment {
                 }
                 String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(nom,ape,ema,pwd);
+                Usuario usuario = new Usuario(nom,ape,ema,pwd,code);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 
