@@ -41,7 +41,19 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.Servic
     @Override
     public void onBindViewHolder(@NonNull ServicioViewHolder holder, int position) {
         servicio serv = servicios.get(position);
-        holder.imagen.setImageResource(R.drawable.clinica);
+
+        if (ser.getActividad().equals("Clínica veterinaria")){
+            holder.imagen.setImageResource(R.drawable.clinica);
+        } else if (usu.getActividad().equals("Peluquería de mascotas")){
+            holder.imagen.setImageResource(R.drawable.peluqueria);
+        } else if (usu.getActividad().equals("Alimentación")){
+            holder.imagen.setImageResource(R.drawable.comida);
+        } else if (usu.getActividad().equals("Guardería de mascotas")){
+            holder.imagen.setImageResource(R.drawable.guarde);
+        }  else if (usu.getActividad().equals("Protectora de animales")){
+            holder.imagen.setImageResource(R.drawable.protectora);
+        }
+        holder.imagen.setImageResource(R.drawable.imgserv);
         holder.nombre.setText(servicios.get(position).getNombre());
 
         holder.BindHolder(servicios.get(position));

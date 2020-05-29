@@ -25,8 +25,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     ArrayList<mascota> mascotas;
     Context context;
 
-    GetDownUrl descarga = new GetDownUrl();
-
     private int position;
 
     private FirebaseAuth mAuth ;

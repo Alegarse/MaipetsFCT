@@ -78,7 +78,7 @@ public class PopServ extends Activity {
 
         // Instanciamos los elementos
         image = findViewById(R.id.imgService);
-        image.setImageResource(R.drawable.clinica);
+        image.setImageResource(R.drawable.imgserv);
         nombre = findViewById(R.id.name2Serv);
         desc = findViewById(R.id.desc2Serv);
         guardar = findViewById(R.id.saved);
@@ -108,7 +108,7 @@ public class PopServ extends Activity {
             datosAct.put("desc",descAct);
 
             // Actualizamos en Firebase
-            databaseReference.child("clinica").child(codigo).updateChildren(datosAct)
+            databaseReference.child("servicios").child(codigo).updateChildren(datosAct)
                     .addOnSuccessListener((OnSuccessListener)(aVoid) ->
                     {
                         Toast.makeText(this,R.string.save_ok,Toast.LENGTH_LONG).show();
