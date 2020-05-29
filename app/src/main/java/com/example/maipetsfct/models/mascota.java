@@ -3,9 +3,18 @@ package com.example.maipetsfct.models;
 import android.net.Uri;
 import android.widget.ImageView;
 
+import com.example.maipetsfct.adapters.GetDownUrl;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.io.Serializable;
 
 public class mascota implements Serializable {
+
+    private FirebaseAuth mAuth;
+    private StorageReference mStorage;
 
     private Uri urlImage;
     private String codigo;
@@ -85,7 +94,22 @@ public class mascota implements Serializable {
         this.fechaNac = fechaNac;
     }
 
-    public Uri getUrlImage() { return urlImage; }
+    public Uri getUrlImage(String codigo) {
+
+        //Obtenemos la instancia de FirebaseAuth
+        mAuth = FirebaseAuth.getInstance() ;
+        String uid = FirebaseAuth.getInstance().getUid();
+        mStorage = FirebaseStorage.getInstance().getReference();
+
+        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_" + codigo + ".jpg") != null) {
+
+            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_" + codigo + ".jpg");
+            profileImgPath.getDownloadUrl().addOnSuccessListener(uri -> {
+                urlImage = uri;
+            });
+        }
+        return urlImage;
+    }
 
     public void setUrlImage(Uri urlImage) { this.urlImage = urlImage; }
 

@@ -43,7 +43,7 @@ public class SerVetFragment extends Fragment {
     DatabaseReference reference,ref;
     private StorageReference mStorageRef;
 
-    // Colección de servicios
+    // Colección de clinica
     ArrayList<servicio> servicios;
     RecyclerView recyclerView;
     ServicioAdapter servicioAdapter;
@@ -84,7 +84,7 @@ public class SerVetFragment extends Fragment {
         servicios = new ArrayList<servicio>();
 
         ref = FirebaseDatabase.getInstance().getReference();
-        reference = FirebaseDatabase.getInstance().getReference().child("servicios");
+        reference = FirebaseDatabase.getInstance().getReference().child("clinica");
         String uid = fbauth.getCurrentUser().getUid();
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -151,7 +151,7 @@ public class SerVetFragment extends Fragment {
             case R.id.ctxDel:
                 servicio ser = servicios.get(servicioAdapter.getIndex());
                 String UUID = ser.getsUid();
-                ref.child("servicios").child(UUID).removeValue();
+                ref.child("clinica").child(UUID).removeValue();
                 Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
                 break;
         }

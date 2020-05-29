@@ -47,7 +47,7 @@ public class ProfVetFragment extends Fragment {
     private ImageView imgPerfil;
     private String ruta,sUid,actividadFb,code;
 
-    // Colección de servicios
+    // Colección de clinica
     ArrayList<servicio> servicios;
 
     // Elementos para Firebase
@@ -115,7 +115,7 @@ public class ProfVetFragment extends Fragment {
         //////////////////////////////////////////////////////////////////////////////////
         // Para el posible borrado posterior
         servicios = new ArrayList<servicio>();
-        ref = FirebaseDatabase.getInstance().getReference().child("servicios");
+        ref = FirebaseDatabase.getInstance().getReference().child("clinica");
 
         ////////////////////////////////////////////////////////////////////////////////
 

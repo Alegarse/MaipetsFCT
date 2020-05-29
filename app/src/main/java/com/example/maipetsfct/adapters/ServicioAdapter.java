@@ -41,7 +41,7 @@ public class ServicioAdapter extends RecyclerView.Adapter<ServicioAdapter.Servic
     @Override
     public void onBindViewHolder(@NonNull ServicioViewHolder holder, int position) {
         servicio serv = servicios.get(position);
-        holder.imagen.setImageResource(R.drawable.servicios);
+        holder.imagen.setImageResource(R.drawable.clinica);
         holder.nombre.setText(servicios.get(position).getNombre());
 
         holder.BindHolder(servicios.get(position));

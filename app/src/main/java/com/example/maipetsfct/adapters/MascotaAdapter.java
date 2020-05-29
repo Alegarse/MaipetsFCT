@@ -1,7 +1,6 @@
 package com.example.maipetsfct.adapters;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.mascota;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -26,6 +24,8 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     ArrayList<mascota> mascotas;
     Context context;
+
+    GetDownUrl descarga = new GetDownUrl();
 
     private int position;
 
@@ -61,7 +61,13 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         mascota masc = mascotas.get(position);
 
         holder.nombre.setText(mascotas.get(position).getNombre());
-        holder.imagen.setImageResource(R.drawable.petscard);
+
+        //Carga imagen Url
+        if (masc.getUrlImage(masc.getCodigo()) != null) {
+            Picasso.get().load(masc.getUrlImage(masc.getCodigo())).into(holder.imagen);
+        } else {
+
+        }   holder.imagen.setImageResource(R.drawable.petscard);
 
         holder.BindHolder(mascotas.get(position));
     }
@@ -94,7 +100,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {}
 
-            public void BindHolder (mascota item){
+        public void BindHolder (mascota item){
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -107,7 +113,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                         return false;
                     }
                 });
-            }
+        }
     }
 
 }

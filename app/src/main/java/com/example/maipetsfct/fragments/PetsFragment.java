@@ -104,6 +104,7 @@ public class PetsFragment extends Fragment {
 
                 mascotaAdapter = new MascotaAdapter(activity,mascotas);
                 mascotaAdapter.setMascotas(mascotas) ;
+                mascotaAdapter.notifyDataSetChanged();
                 recyclerView.setAdapter(mascotaAdapter);
 
             }

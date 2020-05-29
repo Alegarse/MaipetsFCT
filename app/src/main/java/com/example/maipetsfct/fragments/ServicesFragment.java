@@ -37,7 +37,7 @@ public class ServicesFragment extends Fragment {
     DatabaseReference reference,ref;
     private StorageReference mStorageRef;
 
-    // Colección de servicios
+    // Colección de clinica
     ArrayList<Usuario> usuarios;
     RecyclerView recyclerView;
     UsuarioAdapter usuarioAdapter;

@@ -41,8 +41,12 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usu = usuarios.get(position);
+        if (usu.getActividad().equals("Clínica veterinaria")){
+            holder.imagen.setImageResource(R.drawable.clinica);
+        } else if (usu.getActividad().equals("Peluquería de mascotas")){
+            holder.imagen.setImageResource(R.drawable.peluqueria);
+        }
 
-        holder.imagen.setImageResource(R.drawable.servicios);
         holder.nombre.setText(usuarios.get(position).getActividad());
 
         holder.BindHolder(usuarios.get(position));

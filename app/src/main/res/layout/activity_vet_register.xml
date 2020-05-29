@@ -39,7 +39,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
 
-        <!-- Campo para spinner de servicios prof -->
+        <!-- Campo para spinner de clinica prof -->
         <Spinner
             android:id="@+id/services_spinner"
             android:layout_width="300dp"

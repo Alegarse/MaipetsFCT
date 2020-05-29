@@ -73,7 +73,7 @@ public class AddServActivity extends AppCompatActivity {
                 } else {
                     servicio serv = new servicio(sUid,uUid,sNombre,sDescripcion);
 
-                    DatabaseReference dbref = fbdatabase.getReference("servicios");
+                    DatabaseReference dbref = fbdatabase.getReference("clinica");
 
                     dbref.child(sUid).setValue(serv);
 
