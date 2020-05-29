@@ -10,7 +10,7 @@
     tools:context=".popups.PopPet">
 
     <ImageView
-        android:id="@+id/imgPet"
+        android:id="@+id/imgService"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="24dp"
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPet" />
+        app:layout_constraintTop_toTopOf="@+id/imgService" />
 
     <EditText
         android:id="@+id/desc2Serv"
@@ -77,7 +77,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgPet" />
+        app:layout_constraintTop_toTopOf="@+id/imgService" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saved"

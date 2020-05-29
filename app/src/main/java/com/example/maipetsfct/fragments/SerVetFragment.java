@@ -72,7 +72,7 @@ public class SerVetFragment extends Fragment {
         //Obtenemos la instancia de FirebaseDatabase
         fbdatabase =  FirebaseDatabase.getInstance();
 
-        String uid = fbauth.getCurrentUser().getUid();
+
 
         Activity activity = getActivity();
 
@@ -85,6 +85,7 @@ public class SerVetFragment extends Fragment {
 
         ref = FirebaseDatabase.getInstance().getReference();
         reference = FirebaseDatabase.getInstance().getReference().child("servicios");
+        String uid = fbauth.getCurrentUser().getUid();
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -93,7 +94,10 @@ public class SerVetFragment extends Fragment {
                 servicios.clear();
                 for (DataSnapshot data1: dataSnapshot.getChildren()) {
                     servicio s = data1.getValue(servicio.class);
-                    servicios.add(s);
+
+                    if (s.getUid().equals(uid)) {
+                        servicios.add(s);
+                    }
                 }
                 servicioAdapter = new ServicioAdapter(activity,servicios);
                 servicioAdapter.setServicios(servicios);

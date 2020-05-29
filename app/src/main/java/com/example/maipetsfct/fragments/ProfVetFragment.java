@@ -1,12 +1,14 @@
 package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,8 +17,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.maipetsfct.MainActivity;
+import com.example.maipetsfct.adapters.ServicioAdapter;
+import com.example.maipetsfct.models.servicio;
 import com.example.maipetsfct.popups.PopUpSelect;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.models.Usuario;
@@ -33,17 +38,22 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 public class ProfVetFragment extends Fragment {
 
     private Button delPerf, editPerf;
     private EditText bussname, direction, telefono, email, contra;
     private ImageView imgPerfil;
-    private String ruta;
+    private String ruta,sUid,actividadFb;
+
+    // Colección de servicios
+    ArrayList<servicio> servicios;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
     private FirebaseDatabase fbdatabase;
-    DatabaseReference reference;
+    DatabaseReference reference,ref;
     private StorageReference mStorageRef;
     FirebaseUser usuario;
 
@@ -101,6 +111,13 @@ public class ProfVetFragment extends Fragment {
         contra = view.findViewById(R.id.passB);
         imgPerfil = view.findViewById(R.id.imgPerfil);
 
+        //////////////////////////////////////////////////////////////////////////////////
+        // Para el posible borrado posterior
+        servicios = new ArrayList<servicio>();
+        ref = FirebaseDatabase.getInstance().getReference().child("servicios");
+
+        ////////////////////////////////////////////////////////////////////////////////
+
 
         // Verificamos si ya existe la imagen del perfil
         if (mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg") != null) {
@@ -135,6 +152,7 @@ public class ProfVetFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 if (dataSnapshot.exists()){
+                    actividadFb = dataSnapshot.child("actividad").getValue().toString();
                     String bussnameFb = dataSnapshot.child("razon").getValue().toString();
                     String dirFb = dataSnapshot.child("direccion").getValue().toString();
                     String telFb = dataSnapshot.child("telefono").getValue().toString();
@@ -160,12 +178,45 @@ public class ProfVetFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                usuario.delete();
-                reference.child("usuarios").child(uid).removeValue();
-                reference.child("servicios").child(uid).removeValue();
-                mAuth.signOut();
-                Intent salir = new Intent(activity, MainActivity.class);
-                startActivity(salir);
+
+                AlertDialog.Builder myBuild = new AlertDialog.Builder(activity);
+                myBuild.setTitle(R.string.cDel);
+                myBuild.setMessage(R.string.yesDel);
+                myBuild.setPositiveButton(R.string.afirmative, (dialog, which) -> {
+
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            for (DataSnapshot data1: dataSnapshot.getChildren()) {
+                                String key = data1.getKey();
+                                servicio s = data1.getValue(servicio.class);
+                                String useUid = s.getUid();
+                                    if(useUid.equals(uid)){
+                                        ref.child(key).removeValue();
+                                    }
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    reference.child("usuarios").child(uid).removeValue();
+                    usuario.delete();
+
+                    mAuth.signOut();
+                    Intent salir = new Intent(activity, MainActivity.class);
+                    startActivity(salir);
+                });
+
+                myBuild.setNegativeButton("No", (dialogInterface, i) ->
+                        dialogInterface.cancel());
+
+                AlertDialog dialog = myBuild.create();
+                dialog.show();
             }
         });
 
@@ -190,7 +241,7 @@ public class ProfVetFragment extends Fragment {
                 }
                 String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(bnom,dir,tel,ema,pwd);
+                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 

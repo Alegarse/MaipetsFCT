@@ -20,7 +20,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.maipetsfct.AddMascActivity;
-import com.example.maipetsfct.MainActivity;
 import com.example.maipetsfct.popups.PopPet;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.MascotaAdapter;

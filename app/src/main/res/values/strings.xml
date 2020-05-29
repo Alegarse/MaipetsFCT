@@ -83,9 +83,10 @@
     <string name="mailsend">Email successfully sent</string>
     <string name="saving">Upload changes</string>
     <string name="cDel">Confim delete</string>
-    <string name="yesDel">Are you sure to delete your profile?</string>
+    <string name="yesDel">Are you sure to delete your profile? You will lose all your saved data</string>
     <string name="afirmative">Yes</string>
     <string name="delPet">Are you sure to delete this pet data?</string>
+    <string name="dispServ">Available Services</string>
 
 
 </resources>

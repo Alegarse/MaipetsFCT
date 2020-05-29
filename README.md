@@ -102,7 +102,7 @@ Comienzo a programar la actividad para poder añadir nuevas mascotas a cada usua
 ### Contenido
 Terminada la parte a nivel usuario doméstico, a falta de implementar la lectura de los servicios disponibles agregados por los perfiles profesionales.<br/>
 Arreglada la navegación, lectura, edición y borrado de datos anidados en el arbol dedirectorios de Firebase, configurandose la BBDD en tres tablas que son Usuarios, Mascotas y Servicios. En la primera se distingue entre cada tipo de usuario por su ID único y por su codigo que indica el tipo de usuario. En la segunda, existen subdirectorios por cada usuario y en ellos estás sus mascotas, cada una con su ID único. En cuanto a la tercera, están ordenados por ID único, conteniendo cada uno el código del profesional al que pertenece.<br/>
-Edit: Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simple.<br/>
+Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simple.<br/>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>

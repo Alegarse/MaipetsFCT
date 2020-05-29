@@ -27,18 +27,6 @@ public class Usuario implements Serializable {
         this.contrasena =  contra;
         this.codigo = code;
     }
-    //Usuario tipo clinica o servicio
-    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code) {
-        this.actividad = actividad;
-        this.razon = razon;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.email = email;
-        this.contrasena = contrasena;
-        this.codigo = code;
-    }
-
-
     public Usuario(String nombre, String apellidos, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -51,6 +39,27 @@ public class Usuario implements Serializable {
         this.email = email;
         this.contrasena = contra;
     }
+    //Usuario tipo servicio
+    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code) {
+        this.actividad = actividad;
+        this.razon = razon;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.contrasena = contrasena;
+        this.codigo = code;
+    }
+    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena) {
+        this.actividad = actividad;
+        this.razon = razon;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
+        this.contrasena = contrasena;
+    }
+
+
+
 
     // Getters y Setters
 

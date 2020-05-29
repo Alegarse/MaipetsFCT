@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.maipetsfct.R;
@@ -30,6 +31,7 @@ public class PopServ extends Activity {
     private StorageReference mStorage;
 
     // Definimos los elementos de la actividad
+    private ImageView image;
     private EditText nombre, desc;
     private Button guardar;
     private String codigo;
@@ -75,6 +77,8 @@ public class PopServ extends Activity {
         // Visualizado datos de mascota
 
         // Instanciamos los elementos
+        image = findViewById(R.id.imgService);
+        image.setImageResource(R.drawable.servicios);
         nombre = findViewById(R.id.name2Serv);
         desc = findViewById(R.id.desc2Serv);
         guardar = findViewById(R.id.saved);
