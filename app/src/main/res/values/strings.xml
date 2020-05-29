@@ -87,6 +87,8 @@
     <string name="afirmative">Yes</string>
     <string name="delPet">Are you sure to delete this pet data?</string>
     <string name="dispServ">Available Services</string>
+    <string name="citaServ">" Manage appointments"</string>
+    <string name="dataServ">See more data</string>
 
 
 </resources>

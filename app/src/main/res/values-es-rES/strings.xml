@@ -83,4 +83,6 @@
     <string name="afirmative">Si</string>
     <string name="delPet">¿Esta seguro de borrar los datos de esta mascota?</string>
     <string name="dispServ">Servicios disponibles</string>
+    <string name="citaServ">Gestionar citas</string>
+    <string name="dataServ">Ver más datos</string>
 </resources>
