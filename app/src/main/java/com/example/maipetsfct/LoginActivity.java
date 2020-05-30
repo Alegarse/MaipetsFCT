@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.maipetsfct.models.Usuario;
+import com.example.maipetsfct.popups.PopReset;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -80,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         resetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent reset = new Intent(LoginActivity.this,PopReset.class);
+                Intent reset = new Intent(LoginActivity.this, PopReset.class);
                 startActivity(reset);
             }
         });

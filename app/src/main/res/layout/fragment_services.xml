@@ -13,23 +13,6 @@
     tools:context=".fragments.ServicesFragment">
 
 
-    <TextView
-        android:id="@+id/welcome1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:inputType="textMultiLine"
-        android:longClickable="true"
-        android:text="@string/dispServ"
-        android:textColor="#000"
-        android:textSize="23dp"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/servsList"
         android:layout_width="match_parent"
@@ -39,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome1"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.026" />
 
 

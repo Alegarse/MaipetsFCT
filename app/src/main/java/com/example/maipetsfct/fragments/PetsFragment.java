@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.maipetsfct.AddMascActivity;
+import com.example.maipetsfct.CitasActivity;
 import com.example.maipetsfct.popups.PopPet;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.MascotaAdapter;
@@ -157,6 +158,15 @@ public class PetsFragment extends Fragment {
                 irAEditar.putExtra("fecha",pet.getFechaNac());
                 startActivity(irAEditar);
                 break;
+
+            case R.id.ctxCita:
+
+                mascota masco = mascotas.get(mascotaAdapter.getIndex());
+
+                Intent irACita = new Intent(getActivity().getApplicationContext(), CitasActivity.class);
+                irACita.putExtra("codigo",masco.getCodigo());
+                irACita.putExtra("nombre",masco.getNombre());
+                startActivity(irACita);
 
             case R.id.ctxDel:
 

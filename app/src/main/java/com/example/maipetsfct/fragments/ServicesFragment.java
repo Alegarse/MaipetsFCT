@@ -23,7 +23,6 @@ import com.example.maipetsfct.models.Usuario;
 
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.UsuarioAdapter;
-import com.example.maipetsfct.popups.PopPet;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -129,9 +128,12 @@ public class ServicesFragment extends Fragment {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.ctxEdd:
+            case R.id.cxtSac:
 
                 Usuario usu = usuarios.get(usuarioAdapter.getIndex());
+                Intent irACitas = new Intent(getActivity().getApplicationContext(), DatesActivity.class);
+                irACitas.putExtra("servCode",usu.getServCode());
+                startActivity(irACitas);
 /*
                 Intent irAEditar = new Intent(getActivity().getApplicationContext(), PopPet.class);
                 irAEditar.putExtra("codigo",usu.getCodigo());
@@ -145,7 +147,7 @@ public class ServicesFragment extends Fragment {
  */
                 break;
 
-            case R.id.ctxDel:
+            case R.id.ctxDatos:
 
                 AlertDialog.Builder myBuild = new AlertDialog.Builder(getContext());
                 myBuild.setTitle(R.string.cDel);
