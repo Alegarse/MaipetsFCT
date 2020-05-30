@@ -1,6 +1,7 @@
 package com.example.maipetsfct.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.maipetsfct.R;
+import com.example.maipetsfct.ServDispActivity;
 import com.example.maipetsfct.models.Usuario;
 
 import java.util.ArrayList;
 
-public class ActividadAdapter extends RecyclerView.Adapter<ActividadAdapter.UsuarioViewHolder> {
+public class ActividadAdapter
+        extends RecyclerView.Adapter<ActividadAdapter.UsuarioViewHolder>
+        implements View.OnClickListener {
 
     ArrayList<Usuario> usuarios;
     Context context;
+
+    private View.OnClickListener listener;
 
     private int position;
 
@@ -34,7 +40,12 @@ public class ActividadAdapter extends RecyclerView.Adapter<ActividadAdapter.Usua
 
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new UsuarioViewHolder(LayoutInflater.from(context).inflate(R.layout.servdates_card,parent,false));
+
+        View view = LayoutInflater.from(context).inflate(R.layout.servdates_card,parent,false);
+
+        view.setOnClickListener(this);
+
+        return new UsuarioViewHolder(view);
     }
 
     @Override
@@ -44,6 +55,7 @@ public class ActividadAdapter extends RecyclerView.Adapter<ActividadAdapter.Usua
         holder.nombre.setText(usuarios.get(position).getActividad());
 
         holder.BindHolder(usuarios.get(position));
+        holder.view.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +64,17 @@ public class ActividadAdapter extends RecyclerView.Adapter<ActividadAdapter.Usua
     }
     public int getIndex(){
         return position;
+    }
+
+    public void setOnClickListener (View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
     }
 
     public class UsuarioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{

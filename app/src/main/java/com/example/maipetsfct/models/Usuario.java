@@ -34,6 +34,7 @@ public class Usuario implements Serializable {
         this.email = email;
         this.contrasena = contra;
     }
+
     //Usuario tipo servicio
     public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code, String servCode) {
         this.actividad = actividad;
@@ -44,14 +45,6 @@ public class Usuario implements Serializable {
         this.contrasena = contrasena;
         this.codigo = code;
         this.servCode = servCode;
-    }
-    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena) {
-        this.actividad = actividad;
-        this.razon = razon;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.email = email;
-        this.contrasena = contrasena;
     }
 
 

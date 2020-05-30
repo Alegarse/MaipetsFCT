@@ -97,4 +97,5 @@
     <string name="solic">Solicitar</string>
     <string name="locat">Ubicación:</string>
     <string name="selecAct">Seleccione una modalidad</string>
+    <string name="sel">"Seleccionado: "</string>
 </resources>

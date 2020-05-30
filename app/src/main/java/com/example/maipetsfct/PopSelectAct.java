@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.maipetsfct.adapters.ActividadAdapter;
 import com.example.maipetsfct.models.Usuario;
@@ -68,15 +70,31 @@ public class PopSelectAct extends AppCompatActivity {
 
                     // Para que no muestre actividades repetidas
                     if (u.getActividad() != null) {
-                        if(repes.contains(u.getActividad())) {
+                        if(repes.contains(u.getServCode())) {
                         } else {
                             usuarios.add(u);
-                            repes.add(u.getActividad());
+                            repes.add(u.getServCode());
                         }
                     }
                 }
                 actividadAdapter = new ActividadAdapter(getApplicationContext(),usuarios);
                 actividadAdapter.setUsuarios(usuarios);
+
+                actividadAdapter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        Usuario user = usuarios.get(recyclerView.getChildAdapterPosition(v));
+                        Toast.makeText(getApplicationContext(),"Selected: "+ usuarios.get(recyclerView.getChildAdapterPosition(v)).getActividad(), Toast.LENGTH_SHORT).show();
+
+                        Intent irASelServ = new Intent(PopSelectAct.this,ServDispActivity.class);
+                        irASelServ.putExtra("nombreMasc",nombreMasc);
+                        irASelServ.putExtra("actividad", user.getActividad());
+                        irASelServ.putExtra("mail",user.getEmail());
+                        startActivity(irASelServ);
+                        }
+                });
+
                 recyclerView.setAdapter(actividadAdapter);
             }
 
@@ -88,40 +106,5 @@ public class PopSelectAct extends AppCompatActivity {
         registerForContextMenu(recyclerView);
 
     }
-    // Menú contextual para las tarjetas de las mascotas
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        this.getMenuInflater().inflate(R.menu.servicesmenu, menu);
 
-    }
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.ctxDatos:
-
-                AlertDialog.Builder myBuild = new AlertDialog.Builder(this);
-                myBuild.setTitle(R.string.cDel);
-                myBuild.setMessage(R.string.delPet);
-                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
-/*
-                    Usuario usua = usuarios.get(usuarioAdapter.getIndex());
-                    String UUID = usua.getCodigo();
-                    String uid = fbauth.getCurrentUser().getUid();
-
-                    ref.child("usuarios").child(uid).child(UUID).removeValue();
-                    Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
- */
-                });
-
-
-                myBuild.setNegativeButton("No", (dialogInterface, i) ->
-                        dialogInterface.cancel());
-
-                AlertDialog dialog = myBuild.create();
-                dialog.show();
-
-        }
-        return super.onContextItemSelected(item);
-    }
 }

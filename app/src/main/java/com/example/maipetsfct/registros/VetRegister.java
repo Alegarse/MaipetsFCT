@@ -27,7 +27,7 @@ public class VetRegister extends AppCompatActivity {
     private EditText email;
     private Spinner serv;
     private String cod = "ser";
-    private String servCode;
+    private String servCode,uid;
 
     // Para realizar el registro
     private FirebaseAuth mAuth;
@@ -127,7 +127,7 @@ public class VetRegister extends AppCompatActivity {
                             if (task.isSuccessful())  // Usuario se registra correctamente
                             {
                                 // 1.Obtenemos UID del usuario registrado
-                                String uid = mAuth.getUid();
+                                uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
                                 Usuario usuario = new Usuario(ser,raz,dir,tel,ema,pwd,cod,servCode);

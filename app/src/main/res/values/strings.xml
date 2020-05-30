@@ -101,6 +101,7 @@
     <string name="solic">Apply for</string>
     <string name="locat">Location:</string>
     <string name="selecAct">Select a modality</string>
+    <string name="sel">Selected:</string>
 
 
 </resources>

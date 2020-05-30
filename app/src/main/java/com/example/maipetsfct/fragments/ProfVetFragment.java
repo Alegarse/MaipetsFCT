@@ -111,7 +111,6 @@ public class ProfVetFragment extends Fragment {
         email = view.findViewById(R.id.emaB);
         contra = view.findViewById(R.id.passB);
         imgPerfil = view.findViewById(R.id.imgPerfil);
-
         //////////////////////////////////////////////////////////////////////////////////
         // Para el posible borrado posterior
         servicios = new ArrayList<servicio>();
@@ -241,7 +240,6 @@ public class ProfVetFragment extends Fragment {
                     Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
                     return ;
                 }
-                String uid = mAuth.getUid();
 
                 Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code,servCode);
 

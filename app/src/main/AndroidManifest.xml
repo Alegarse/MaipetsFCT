@@ -19,7 +19,8 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PopSelectAct"/>
+        <activity android:name=".ServDispActivity"></activity>
+        <activity android:name=".PopSelectAct" />
         <activity android:name=".CitasActivity" />
         <activity
             android:name=".popups.PopReset"

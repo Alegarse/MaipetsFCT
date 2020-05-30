@@ -100,9 +100,10 @@ Comienzo a programar la actividad para poder añadir nuevas mascotas a cada usua
 
 ##  :books:Semana 25 de Mayo al 29 de Mayo de 2020
 ### Contenido
-Terminada la parte a nivel usuario doméstico, a falta de implementar la lectura de los servicios disponibles agregados por los perfiles profesionales.<br/>
-Arreglada la navegación, lectura, edición y borrado de datos anidados en el arbol dedirectorios de Firebase, configurandose la BBDD en tres tablas que son Usuarios, Mascotas y Servicios. En la primera se distingue entre cada tipo de usuario por su ID único y por su codigo que indica el tipo de usuario. En la segunda, existen subdirectorios por cada usuario y en ellos estás sus mascotas, cada una con su ID único. En cuanto a la tercera, están ordenados por ID único, conteniendo cada uno el código del profesional al que pertenece.<br/>
-Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simple.<br/>
+Terminada la parte a nivel usuario doméstico, a falta de implementar la lectura de los servicios disponibles agregados por los perfiles profesionales. Edit: Terminado.<br/>
+Arreglada la navegación, lectura, edición y borrado de datos anidados en el arbol dedirectorios de Firebase, configurandose la BBDD en cuatro tablas que son Usuarios, Mascotas, Servicios y Citas. En la primera se distingue entre cada tipo de usuario por su ID único y por su codigo que indica el tipo de usuario; En la segunda, existen subdirectorios por cada usuario y en ellos estás sus mascotas, cada una con su ID único; En la tercera, están ordenados por ID único, conteniendo cada uno el código del profesional al que pertenece.Y en la última, figuran datos tanto del profesional, como del usuario que realia lacita y para que mascota.<br/>
+Realizada otra opcion del menu contextual para mascotas, que lleva poder pedir citas en los diferentes servicios registrados en la app. Solo pueden sacarse citas si el servicio ha sido registrado por algún profesional.<br/> Implementado método onClick para que funcione en un adapter, a la hra de seleccionar datos internos, ya que es menos óptimo a mi entender tener que usar menú contextual.<br/>
+Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simple, en po de que puedan disponer los usuarios de una app fácil de manejar e intuitiva.<br/>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Documentación fragmentos](https://developer.android.com/guide/components/fragments?hl=es-419)<br/>
