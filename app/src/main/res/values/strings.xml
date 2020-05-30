@@ -87,19 +87,20 @@
     <string name="afirmative">Yes</string>
     <string name="delPet">Are you sure to delete this pet data?</string>
     <string name="dispServ">Available Services</string>
-    <string name="citaServ">" Manage appointments"</string>
+    <string name="citaServ">Manage appointments</string>
     <string name="dataServ">See more data</string>
-    <string name="cabDate">Concert a date</string>
+    <string name="cabDate">New date</string>
     <string name="chooseOpt">Choose available option</string>
     <string name="choBus">Choose a business in the spinner</string>
-    <string name="citasSac">Scheduled appointments</string>
-    <string name="citaPara">Date for:</string>
+    <string name="citasSac">Scheduled dates</string>
+    <string name="citaPara">Dates for:</string>
     <string name="citaDonde">Business:</string>
     <string name="date">Date:</string>
     <string name="hour">Hour:</string>
     <string name="dateFor">Concert a date for</string>
     <string name="solic">Apply for</string>
     <string name="locat">Location:</string>
+    <string name="selecAct">Select a modality</string>
 
 
 </resources>

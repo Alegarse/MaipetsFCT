@@ -85,15 +85,16 @@
     <string name="dispServ">Servicios disponibles</string>
     <string name="citaServ">Gestionar citas</string>
     <string name="dataServ">Ver más datos</string>
-    <string name="cabDate">Concertar una cita</string>
+    <string name="cabDate">Nueva cita</string>
     <string name="chooseOpt">Elija una opción disponible</string>
     <string name="choBus">Elija un negocio del desplegable</string>
     <string name="citasSac">Citas programadas</string>
-    <string name="citaPara">Cita para:</string>
+    <string name="citaPara">Citas para:</string>
     <string name="citaDonde">"Negocio: "</string>
     <string name="date">Fecha:</string>
     <string name="hour">Hora:</string>
     <string name="dateFor">"Sacar cita para "</string>
     <string name="solic">Solicitar</string>
     <string name="locat">Ubicación:</string>
+    <string name="selecAct">Seleccione una modalidad</string>
 </resources>
