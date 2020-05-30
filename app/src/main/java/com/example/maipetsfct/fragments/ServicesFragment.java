@@ -128,25 +128,6 @@ public class ServicesFragment extends Fragment {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.cxtSac:
-
-                Usuario usu = usuarios.get(usuarioAdapter.getIndex());
-                Intent irACitas = new Intent(getActivity().getApplicationContext(), DatesActivity.class);
-                irACitas.putExtra("servCode",usu.getServCode());
-                startActivity(irACitas);
-/*
-                Intent irAEditar = new Intent(getActivity().getApplicationContext(), PopPet.class);
-                irAEditar.putExtra("codigo",usu.getCodigo());
-                irAEditar.putExtra("nombre",usu.getNombre());
-                irAEditar.putExtra("especie",usu.getTipo());
-                irAEditar.putExtra("raza",usu.getRaza());
-                irAEditar.putExtra("color",usu.getColor());
-                irAEditar.putExtra("fecha",usu.getFechaNac());
-                startActivity(irAEditar);
-
- */
-                break;
-
             case R.id.ctxDatos:
 
                 AlertDialog.Builder myBuild = new AlertDialog.Builder(getContext());

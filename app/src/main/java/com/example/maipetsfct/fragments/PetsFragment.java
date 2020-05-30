@@ -167,6 +167,7 @@ public class PetsFragment extends Fragment {
                 irACita.putExtra("codigo",masco.getCodigo());
                 irACita.putExtra("nombre",masco.getNombre());
                 startActivity(irACita);
+                break;
 
             case R.id.ctxDel:
 
