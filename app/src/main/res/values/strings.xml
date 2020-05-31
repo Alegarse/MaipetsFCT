@@ -95,13 +95,16 @@
     <string name="citasSac">Scheduled dates</string>
     <string name="citaPara">Dates for:</string>
     <string name="citaDonde">Business:</string>
-    <string name="date">Date:</string>
-    <string name="hour">Hour:</string>
+    <string name="date">Date</string>
+    <string name="hour">Hour</string>
     <string name="dateFor">Concert a date for</string>
     <string name="solic">Apply for</string>
     <string name="locat">Location:</string>
     <string name="selecAct">Select a modality</string>
     <string name="sel">Selected:</string>
+    <string name="sacarCita">Make an appointment</string>
+    <string name="formato_fecha">mm/dd/yyyy</string>
+    <string name="formato_hora" translatable="false">hh:mm</string>
 
 
 </resources>

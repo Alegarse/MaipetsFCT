@@ -91,11 +91,13 @@
     <string name="citasSac">Citas programadas</string>
     <string name="citaPara">Citas para:</string>
     <string name="citaDonde">"Negocio: "</string>
-    <string name="date">Fecha:</string>
-    <string name="hour">Hora:</string>
+    <string name="date">Fecha</string>
+    <string name="hour">Hora</string>
     <string name="dateFor">"Sacar cita para "</string>
     <string name="solic">Solicitar</string>
     <string name="locat">Ubicación:</string>
     <string name="selecAct">Seleccione una modalidad</string>
     <string name="sel">"Seleccionado: "</string>
+    <string name="sacarCita">Sacar cita</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
 </resources>
