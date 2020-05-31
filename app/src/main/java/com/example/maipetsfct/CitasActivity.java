@@ -1,6 +1,7 @@
 package com.example.maipetsfct;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,9 +10,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.maipetsfct.adapters.CitasAdapter;
 import com.example.maipetsfct.models.Cita;
@@ -72,19 +76,20 @@ public class CitasActivity extends AppCompatActivity {
 
         // ZONA PARA LOS CARDVIEW DE CITAS                  ######################################
         recyclerView = findViewById(R.id.citasList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(CitasActivity.this));
 
         citas = new ArrayList<Cita>();
+        reference = FirebaseDatabase.getInstance().getReference();
         ref = FirebaseDatabase.getInstance().getReference().child("citas");
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                citas.clear();
 
+                citas.clear();
                 for (DataSnapshot dataCita: dataSnapshot.getChildren()) {
                     Cita c = dataCita.getValue(Cita.class);
-                    if (c.getIdUsuario().equals(uid) || (c.getNombreMascota().equals(nameM))) {
+                    if (c.getIdUsuario().equals(uid) && (c.getNombreMascota().equals(nameM))) {
                         citas.add(c);
                     }
                 }
@@ -99,9 +104,43 @@ public class CitasActivity extends AppCompatActivity {
 
             }
         });
+        registerForContextMenu(recyclerView);
+    }
 
 
+    // Menú contextual para las tarjetas de las citas
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.citas_menu, menu);
+    }
 
 
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.ctxDelC:
+
+                AlertDialog.Builder myBuild = new AlertDialog.Builder(this);
+                myBuild.setTitle(R.string.cDel);
+                myBuild.setMessage(R.string.delCita);
+                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
+
+                    Cita cita = citas.get(citaAdapter.getIndex());
+                    String UUID = cita.getIdCita();
+
+                    ref.child(UUID).removeValue();
+                    Toast.makeText(this,R.string.ficDel, Toast.LENGTH_LONG).show();
+
+                });
+                myBuild.setNegativeButton("No", (dialogInterface, i) ->
+                        dialogInterface.cancel());
+
+                AlertDialog dialog = myBuild.create();
+                dialog.show();
+
+        }
+        return super.onContextItemSelected(item);
     }
 }

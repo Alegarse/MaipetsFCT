@@ -45,15 +45,13 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
         Cita cita = citas.get(position);
 
         holder.imagen.setImageResource(R.drawable.petscard);
+        holder.addCal.setImageResource(R.drawable.addcal);
         holder.nombreMasc.setText(citas.get(position).getNombreMascota());
         holder.nombreCita.setText(citas.get(position).getNombreCita());
         holder.fechaCita.setText(citas.get(position).getFechaCita());
         holder.horaCita.setText(citas.get(position).getHoraCita());
 
         holder.BindHolder(citas.get(position));
-
-
-
     }
 
     @Override
@@ -62,7 +60,7 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
 
     public class CitaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
-        ImageView imagen;
+        ImageView imagen,addCal;
         TextView nombreMasc,nombreCita,horaCita,fechaCita;
 
         public View view;
@@ -71,10 +69,12 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
             super(v);
             this.view = v;
             imagen = v.findViewById(R.id.imgMasc);
+            addCal = v.findViewById(R.id.addCalendar);
             nombreMasc = v.findViewById(R.id.citaPara);
             nombreCita = v.findViewById(R.id.citaEn);
             fechaCita = v.findViewById(R.id.citaFecha);
             horaCita = v.findViewById(R.id.citaHora);
+
             v.setOnCreateContextMenuListener(this);
         }
 

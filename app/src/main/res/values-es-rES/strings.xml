@@ -87,8 +87,8 @@
     <string name="dataServ">Ver más datos</string>
     <string name="cabDate">Nueva cita</string>
     <string name="chooseOpt">Elija una opción disponible</string>
-    <string name="choBus">Elija un negocio del desplegable</string>
-    <string name="citasSac">Citas programadas</string>
+    <string name="choBus">↞  Elija un negocio  ↠</string>
+    <string name="citasSac">Citas programadas para:</string>
     <string name="citaPara">Citas para:</string>
     <string name="citaDonde">"Negocio: "</string>
     <string name="date">Fecha</string>
@@ -100,4 +100,10 @@
     <string name="sel">"Seleccionado: "</string>
     <string name="sacarCita">Sacar cita</string>
     <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="delCita">¿Está seguro de borrar esta cita?</string>
+    <string name="descCliVet">" Especialidad de la práctica veterinaria que se ocupa de las enfermedades y su prevención, manejo, comportamiento, nutrición, selección genética, medicina preventiva y curativa, identificación y experiencia de perros, gatos y otras mascotas."</string>
+    <string name="descGuarde">Una guardería de mascotas es un establecimiento en el que puedes dejar a tu mascotade forma habitual —por ejemplo todas las mañanas, mientras estás en el trabajo—, tan solo unas horas en momentos puntuales, o varios días; el tiempo que necesites. La diferencia fundamental con respecto a una residencia es que en las guarderías de mascotas no hay jaulas.</string>
+    <string name="descAlim">Son tiendas que venden un tipo de alimentacion pra animales en concreto (pájaros, perros, peces, animales exóticos, etc.) y sus accesorios.</string>
+    <string name="descProtec">Son entidades sin ánimo de lucro cuyo fin principal es ayudar en todo lo posible al mundo de los animales y el respeto del medio ambiente. Y más generalmente, se suelen centrar en el mundo de los Animales de Compañía, ello no quiere decir que dejen de lado el resto de animales que viven en nuestra sociedad.</string>
+    <string name="descPelu">Las peluquerías de mascotas son centros profesionales especializados en higiene y estética que tienen como finalidad la preservación de la salud de nuestras mascotas.</string>
 </resources>

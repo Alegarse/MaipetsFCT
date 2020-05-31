@@ -139,7 +139,7 @@ public class PetsFragment extends Fragment {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        getActivity().getMenuInflater().inflate(R.menu.contextual, menu);
+        getActivity().getMenuInflater().inflate(R.menu.context2, menu);
 
     }
     @Override

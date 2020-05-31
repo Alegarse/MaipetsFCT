@@ -15,8 +15,8 @@ import com.example.maipetsfct.models.Usuario;
 
 import java.util.ArrayList;
 
-public class ActividadAdapter
-        extends RecyclerView.Adapter<ActividadAdapter.UsuarioViewHolder>
+public class UsuarioAdapter2
+        extends RecyclerView.Adapter<UsuarioAdapter2.UsuarioViewHolder>
         implements View.OnClickListener {
 
     ArrayList<Usuario> usuarios;
@@ -26,7 +26,7 @@ public class ActividadAdapter
 
     private int position;
 
-    public ActividadAdapter(Context c,ArrayList<Usuario> u) {
+    public UsuarioAdapter2(Context c,ArrayList<Usuario> u) {
         this.context = c;
         this.usuarios = u;
     }
@@ -39,10 +39,9 @@ public class ActividadAdapter
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.servdates_card,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.date_card,parent,false);
 
         view.setOnClickListener(this);
-
         return new UsuarioViewHolder(view);
     }
 
@@ -50,7 +49,8 @@ public class ActividadAdapter
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usu = usuarios.get(position);
 
-        holder.nombre.setText(usuarios.get(position).getActividad());
+
+        holder.nombre.setText(usuarios.get(position).getRazon());
 
         holder.BindHolder(usuarios.get(position));
         holder.view.setOnClickListener(this);
@@ -85,8 +85,7 @@ public class ActividadAdapter
 
             super(v);
             this.view = v;
-
-            nombre = v.findViewById(R.id.nombreActiv);
+            nombre = v.findViewById(R.id.nombrecito);
             v.setOnCreateContextMenuListener(this);
         }
 

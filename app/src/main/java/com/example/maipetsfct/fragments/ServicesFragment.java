@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.maipetsfct.PopUpInfoS;
 import com.example.maipetsfct.models.Usuario;
 
 import com.example.maipetsfct.R;
@@ -95,10 +96,10 @@ public class ServicesFragment extends Fragment {
 
                     // Para que no muestre servicios repetidos
                         if (u.getActividad() != null) {
-                            if(repes.contains(u.getActividad())) {
+                            if(repes.contains(u.getServCode())) {
                             } else {
                                 usuarios.add(u);
-                                repes.add(u.getActividad());
+                                repes.add(u.getServCode());
                             }
                         }
                 }
@@ -130,26 +131,12 @@ public class ServicesFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.ctxDatos:
 
-                AlertDialog.Builder myBuild = new AlertDialog.Builder(getContext());
-                myBuild.setTitle(R.string.cDel);
-                myBuild.setMessage(R.string.delPet);
-                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
-/*
-                    Usuario usua = usuarios.get(usuarioAdapter.getIndex());
-                    String UUID = usua.getCodigo();
-                    String uid = fbauth.getCurrentUser().getUid();
+                Usuario usuario = usuarios.get(usuarioAdapter.getIndex());
 
-                    ref.child("usuarios").child(uid).child(UUID).removeValue();
-                    Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
- */
-                });
-
-
-                myBuild.setNegativeButton("No", (dialogInterface, i) ->
-                        dialogInterface.cancel());
-
-                AlertDialog dialog = myBuild.create();
-                dialog.show();
+                Intent verInfo = new Intent(getActivity(), PopUpInfoS.class);
+                verInfo.putExtra("servCode",usuario.getServCode());
+                verInfo.putExtra("titulo",usuario.getActividad());
+                startActivity(verInfo);
 
         }
         return super.onContextItemSelected(item);

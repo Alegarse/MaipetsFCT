@@ -91,6 +91,7 @@ public class PopSelectAct extends AppCompatActivity {
                         irASelServ.putExtra("nombreMasc",nombreMasc);
                         irASelServ.putExtra("actividad", user.getActividad());
                         irASelServ.putExtra("mail",user.getEmail());
+                        irASelServ.putExtra("servCode",user.getServCode());
                         startActivity(irASelServ);
                         }
                 });

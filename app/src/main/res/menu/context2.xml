@@ -2,6 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/ctxEdd" android:title="@string/edit_masc" />
+    <item android:id="@+id/ctxCita" android:title="@string/citaServ"/>
     <item android:id="@+id/ctxDel" android:title="@string/del_masc" />
 
 </menu>

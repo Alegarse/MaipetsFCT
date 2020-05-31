@@ -91,8 +91,8 @@
     <string name="dataServ">See more data</string>
     <string name="cabDate">New date</string>
     <string name="chooseOpt">Choose available option</string>
-    <string name="choBus">Choose a business in the spinner</string>
-    <string name="citasSac">Scheduled dates</string>
+    <string name="choBus">↞  Choose a business   ↠</string>
+    <string name="citasSac">Scheduled dates for:</string>
     <string name="citaPara">Dates for:</string>
     <string name="citaDonde">Business:</string>
     <string name="date">Date</string>
@@ -105,6 +105,12 @@
     <string name="sacarCita">Make an appointment</string>
     <string name="formato_fecha">mm/dd/yyyy</string>
     <string name="formato_hora" translatable="false">hh:mm</string>
+    <string name="delCita">Are you sure to delete this date?</string>
+    <string name="descCliVet">Specialty of the veterinary practice that deals with diseases and their prevention, management, behavior, nutrition, genetic selection, preventive and curative medicine, identification and expertise of dogs, cats and other pets</string>
+    <string name="descGuarde">A pet sitting is a place where you can leave your pet on a regular basis - for example, every morning, while you are at work -, just a few hours at specific times, or several days; the time you need. The fundamental difference from a residence is that there are no cages in pet kindergartens</string>
+    <string name="descAlim">They are stores that sell a type feeding for specific animals (birds, dogs, fish, exotic animals, etc.) and their accessories.</string>
+    <string name="descProtec">They are non-profit entities whose main purpose is to help as much as possible the world of animals and respect for the environment. And more generally, they tend to focus on the world of Companion Animals, this does not mean that they leave aside the rest of the animals that live in our society.</string>
+    <string name="descPelu">Pet hairdressers are professional centers specialized in hygiene and aesthetics that aim to preserve the health of our pets.</string>
 
 
 </resources>
