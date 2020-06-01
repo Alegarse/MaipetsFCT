@@ -61,12 +61,11 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         holder.nombre.setText(mascotas.get(position).getNombre());
 
         //Carga imagen Url
-        if (masc.getUrlImage(masc.getCodigo()) != null) {
-            Picasso.get().load(masc.getUrlImage(masc.getCodigo())).into(holder.imagen);
+        if (masc.getUrlImage().equals("empty")) {
+            holder.imagen.setImageResource(R.drawable.petscard);
         } else {
-
-        }   holder.imagen.setImageResource(R.drawable.petscard);
-
+            Picasso.get().load(masc.getUrlImage()).into(holder.imagen);
+        }
         holder.BindHolder(mascotas.get(position));
     }
 

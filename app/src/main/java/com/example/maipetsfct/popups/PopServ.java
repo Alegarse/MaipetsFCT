@@ -1,8 +1,6 @@
 package com.example.maipetsfct.popups;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -40,13 +38,10 @@ public class PopServ extends Activity {
 
 
 
-    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_serv);
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Inicializamos FireBase
         FirebaseApp.initializeApp(this);

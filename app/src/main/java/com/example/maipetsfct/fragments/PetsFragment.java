@@ -150,6 +150,7 @@ public class PetsFragment extends Fragment {
                 mascota pet = mascotas.get(mascotaAdapter.getIndex());
 
                 Intent irAEditar = new Intent(getActivity().getApplicationContext(), PopPet.class);
+                irAEditar.putExtra("urlImage",pet.getUrlImage());
                 irAEditar.putExtra("codigo",pet.getCodigo());
                 irAEditar.putExtra("nombre",pet.getNombre());
                 irAEditar.putExtra("especie",pet.getTipo());

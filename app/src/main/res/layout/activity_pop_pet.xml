@@ -29,11 +29,20 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/petscard" />
+
+    <ImageView
+        android:id="@+id/editIMG"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/editimg"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPet"
+        app:layout_constraintEnd_toEndOf="@+id/imgPet" />
 
     <EditText
         android:id="@+id/name2Pet"
@@ -192,6 +201,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/date2Pet" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

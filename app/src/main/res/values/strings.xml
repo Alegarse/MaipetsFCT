@@ -111,6 +111,9 @@
     <string name="descAlim">They are stores that sell a type feeding for specific animals (birds, dogs, fish, exotic animals, etc.) and their accessories.</string>
     <string name="descProtec">They are non-profit entities whose main purpose is to help as much as possible the world of animals and respect for the environment. And more generally, they tend to focus on the world of Companion Animals, this does not mean that they leave aside the rest of the animals that live in our society.</string>
     <string name="descPelu">Pet hairdressers are professional centers specialized in hygiene and aesthetics that aim to preserve the health of our pets.</string>
+    <string name="pChoBus">Please, clic one business</string>
+    <string name="sFecha">Please, select a date</string>
+    <string name="sHora">Please, select a hour</string>
 
 
 </resources>

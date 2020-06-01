@@ -13,7 +13,7 @@ public class mascota implements Serializable {
     private FirebaseAuth mAuth;
     private StorageReference mStorage;
 
-    private Uri urlImage;
+    private String urlImage;
     private String codigo;
     private String nombre;
     private String tipo;
@@ -33,7 +33,7 @@ public class mascota implements Serializable {
         this.fechaNac = fechaNac;
     }
 
-    public mascota(Uri urlImage,String codigo, String nombre, String tipo, String raza, String color, String fechaNac) {
+    public mascota(String urlImage,String codigo, String nombre, String tipo, String raza, String color, String fechaNac) {
         this.urlImage = urlImage;
         this.codigo = codigo;
         this.nombre = nombre;
@@ -91,24 +91,13 @@ public class mascota implements Serializable {
         this.fechaNac = fechaNac;
     }
 
-    public Uri getUrlImage(String codigo) {
-
-        //Obtenemos la instancia de FirebaseAuth
-        mAuth = FirebaseAuth.getInstance() ;
-        String uid = FirebaseAuth.getInstance().getUid();
-        mStorage = FirebaseStorage.getInstance().getReference();
-
-        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_" + codigo + ".jpg") != null) {
-
-            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_" + codigo + ".jpg");
-            profileImgPath.getDownloadUrl().addOnSuccessListener(uri -> {
-                urlImage = uri;
-            });
-        }
+    public String getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(Uri urlImage) { this.urlImage = urlImage; }
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
 
     @Override
     public String toString() {

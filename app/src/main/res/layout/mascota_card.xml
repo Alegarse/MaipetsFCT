@@ -21,6 +21,8 @@
             android:id="@+id/aniImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:padding="8dp"
+            android:scaleType="centerCrop"
             android:layout_alignParentStart="true"
             android:layout_marginStart="7dp"
             android:layout_marginTop="5dp"

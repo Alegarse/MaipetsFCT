@@ -1,10 +1,6 @@
 package com.example.maipetsfct.popups;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -20,13 +16,10 @@ public class PopUpInfoS extends Activity {
     private TextView titulo, informacion;
     private String servCode,tit;
 
-    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_info_s);
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         imagen = findViewById(R.id.imgDescInfo);
         titulo = findViewById(R.id.nameServInfo);

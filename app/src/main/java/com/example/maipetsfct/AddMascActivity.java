@@ -25,6 +25,7 @@ public class AddMascActivity extends AppCompatActivity {
 
     // Botones y elementos
     private Button cancAdd, okAdd;
+    private String ruta = "empty";
     private EditText nombre;
     private EditText tipo;
     private EditText raza;
@@ -97,7 +98,7 @@ public class AddMascActivity extends AppCompatActivity {
                     return ;
                 } else {
 
-                    mascota masc = new mascota(mUid,aNombre,aTipo,aRaza,aColor,aFecha);
+                    mascota masc = new mascota(ruta,mUid,aNombre,aTipo,aRaza,aColor,aFecha);
 
                     DatabaseReference dbref = fbdatabase.getReference("mascotas/"+uUid);
 

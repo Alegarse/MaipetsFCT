@@ -1,10 +1,8 @@
 package com.example.maipetsfct.popups;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -50,13 +48,10 @@ public class PopUpSelect extends Activity {
     private FirebaseAuth mAuth;
     private StorageReference mStorage;
 
-    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_up_select);
-
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         gallery = findViewById(R.id.galleryBtn);
         camera = findViewById(R.id.cameraBtn);

@@ -38,7 +38,8 @@ import java.util.UUID;
 
 public class ServDispActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView mFecha, mHora;
+    private TextView mFecha;
+    private TextView mHora;
     private ImageButton get_fecha,get_hora;
     private Button sacarCita;
     private String razonSoc;
@@ -87,6 +88,10 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
         mHora = findViewById(R.id.muestra_hora);
         get_fecha = findViewById(R.id.coge_fecha);
         get_hora = findViewById(R.id.coge_hora);
+
+        // Para tester
+        mHora.setText("hora");
+        mFecha.setText("fecha");
 
         sacarCita.setText(getText(R.string.dateFor) + " " + nombreMasc);
 
@@ -155,35 +160,40 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
 
                 final String cUid = UUID.randomUUID().toString();
+                final String horaCita,fechaCita,nombreCita;
 
-                // Valor de los campos
-                final String nombreCita = razonSoc.trim();
-                final String fechaCita = mFecha.getText().toString().trim();
-                final String horaCita = mHora.getText().toString().trim();
-                final String nombreMascota = nombreMasc.trim();
-                final String ident = uid.trim();
+                    if (razonSoc == null){
+                        Snackbar.make(v, getResources().getText(R.string.pChoBus), Snackbar.LENGTH_LONG).show();
+                        return ;
+                    } else {
+                        nombreCita = razonSoc;
+                    }
+                    if (mFecha.toString().equals("fecha")){
+                        Snackbar.make(v, getResources().getText(R.string.sFecha), Snackbar.LENGTH_LONG).show();
+                        return ;
+                    } else {
+                        fechaCita = mFecha.getText().toString();
+                    }
+                    if (mHora.toString().equals("hora")){
+                        Snackbar.make(v, getResources().getText(R.string.sHora), Snackbar.LENGTH_LONG).show();
+                        return ;
+                    } else {
+                        horaCita = mHora.getText().toString();
+                    }
 
-                //Verificamos que los campos contienen información
-                if (nombreCita.isEmpty() || fechaCita.isEmpty() || horaCita.isEmpty() || nombreMascota.isEmpty() || ident.isEmpty())
-                {
-                    Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
-                    return ;
-                } else {
-                    Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
-                    DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
-                    dbref.setValue(cita);
 
-                    Intent volver = new Intent(ServDispActivity.this,UsersActivity.class);
-                    startActivity(volver);
+                final String nombreMascota = nombreMasc;
+                final String ident = uid;
 
-                    //setResult(RESULT_OK);
-                    //finish();
-                    //return;
-                }
-            }
+                        Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
+                        DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
+                        dbref.setValue(cita);
+
+                        setResult(RESULT_OK);
+                        finish();
+                        return;
+                    }
         });
-
-
     }
 
     @Override

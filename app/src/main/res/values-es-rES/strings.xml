@@ -106,4 +106,7 @@
     <string name="descAlim">Son tiendas que venden un tipo de alimentacion pra animales en concreto (pájaros, perros, peces, animales exóticos, etc.) y sus accesorios.</string>
     <string name="descProtec">Son entidades sin ánimo de lucro cuyo fin principal es ayudar en todo lo posible al mundo de los animales y el respeto del medio ambiente. Y más generalmente, se suelen centrar en el mundo de los Animales de Compañía, ello no quiere decir que dejen de lado el resto de animales que viven en nuestra sociedad.</string>
     <string name="descPelu">Las peluquerías de mascotas son centros profesionales especializados en higiene y estética que tienen como finalidad la preservación de la salud de nuestras mascotas.</string>
+    <string name="pChoBus">Por favor, haga clic en un negocio</string>
+    <string name="sFecha">Por favor, seleccione una fecha</string>
+    <string name="sHora">Por favor, seleccione una hora</string>
 </resources>

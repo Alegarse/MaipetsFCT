@@ -1,9 +1,7 @@
 package com.example.maipetsfct.popups;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -39,16 +37,14 @@ public class PopPet extends Activity {
     private ImageView imgPet;
     private EditText nombre, especie, raza, color, fecha;
     private Button guardar;
-    private String ruta,codigo;
+    private String rutaB,codigo;
 
 
-    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_pet);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Inicializamos FireBase
         FirebaseApp.initializeApp(this);
@@ -96,6 +92,7 @@ public class PopPet extends Activity {
 
         // Recogemos los datos que nos llegan
         Bundle datos = getIntent().getExtras();
+        rutaB = datos.getString("urlImage");
         String nombreB = datos.getString("nombre");
         String especieB = datos.getString("especie");
         String razaB = datos.getString("raza");
@@ -103,6 +100,13 @@ public class PopPet extends Activity {
         String fechaB = datos.getString("fecha");
         codigo = datos.getString("codigo");
 
+        if (rutaB.equals("empty")) {
+            imgPet.setImageResource(R.drawable.petscard);
+        } else {
+            Picasso.get().load(rutaB).into(imgPet);
+        }
+
+        /*
         // Verificamos si ya existe la imagen del perfil
         if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg") != null) {
 
@@ -117,7 +121,10 @@ public class PopPet extends Activity {
             });
         } else {
             imgPet.setImageResource(R.drawable.petscard);
+            ruta = "empty";
         }
+
+         */
 
         // Los asociamos a cada campo de edición
         nombre.setText(nombreB);
@@ -147,8 +154,9 @@ public class PopPet extends Activity {
             final String fechaAct =  fecha.getText().toString().trim();
 
             // Los agregamos a nuestro HashMap
+            datosAct.put("urlImage",rutaB);
             datosAct.put("nombre",nombreAct);
-            datosAct.put("tipo",especieAct);
+            datosAct.put("especie",especieAct);
             datosAct.put("raza",razaAct);
             datosAct.put("color",colorAct);
             datosAct.put("fechaNac",fechaAct);
@@ -176,8 +184,8 @@ public class PopPet extends Activity {
                 @Override
                 public void onSuccess(Uri uri) {
                     Uri downloadUrl = uri;
-                    ruta = downloadUrl.toString();
-                    Picasso.get().load(ruta).into(imgPet);
+                    rutaB = downloadUrl.toString();
+                    Picasso.get().load(rutaB).into(imgPet);
                 }
             });
         }
