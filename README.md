@@ -112,6 +112,23 @@ Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simpl
 :small_orange_diamond:[Apertura archivos](https://developer.android.com/guide/topics/providers/document-provider?hl=es-419)<br/>
 
 
+##  :books:Semana 1 de Junio al 5 de Junio de 2020
+### Contenido
+Terminado el grueo de la app Android, a falta de realizar más tester. Se han realizado ya comprobaciones para evitar loopers en el funcionamiento, además de verificaciones decontenido de los campos solicitados al usuario.<br/>
+Implementados servicios y notificaciones, además de añadir audios personalizados a la aplicación.<br/>
+En el tema estético me he basado en una composición básica de 3 colores, que son el negro,blanco y amarillo anaranjado,para unamejor visualización, además de estar adaptada a personas con daltonismo, y verificado este apartado por un conocido con esta peculiaridad visual.<br/>
+Usado storage de Firebase para elalmacenamiento de las imagenes, referenciadas estas, sean de perfil o de mascotas, a su correspondiente ficha en la BBDD relacional.<br/>
+Comienzo maquetado de la página web, ya que descarto una versiñon anterior por no adaptarse a mis preferencias.<br/>
+
+### Bibliografía Utilizada
+:small_orange_diamond:[Descripción general del proveedor de calendario](https://developer.android.com/guide/topics/providers/calendar-provider.html)<br/>
+:small_orange_diamond:[Cómo firmar tu app](https://developer.android.com/studio/publish/app-signing?hl=es-419)<br/>
+:small_orange_diamond:[Descripción general de MediaPlayer](https://developer.android.com/guide/topics/media/mediaplayer?hl=es)<br/>
+:small_orange_diamond:[Descripción general de los servicios](https://developer.android.com/guide/components/services?hl=es-419)<br/>
+:small_orange_diamond:[Icons Material Design](https://material.io/resources/icons/?style=baseline)<br/>
+
+
+
 ---
 ---
 
