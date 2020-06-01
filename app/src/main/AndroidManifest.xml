@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.maipetsfct">
-    <!-- Para poder usar internet -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- Para poder usar la cámara -->
-    <uses-permission android:name="android.permission.CAMERA" />
 
+    <!-- PERMISOS  -->
+    <!-- Para poder usar internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Para poder usar la cámara -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true" /> <!-- Para poder escribir y leer en el dispositivo -->
+        android:required="true" />
+    <!-- Para poder escribir y leer en el dispositivo -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Para poder acceder al calendario -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
 
     <application
         android:allowBackup="true"
@@ -19,6 +26,11 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- Defino el servicio parapoder usarlo-->
+        <service android:name=".services.initService" />
+
+        <!-- Actividades de la APP -->
         <activity android:name=".popups.PopUpInfoS"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".ServDispActivity" />

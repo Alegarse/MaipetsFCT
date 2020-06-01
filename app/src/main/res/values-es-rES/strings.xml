@@ -109,4 +109,7 @@
     <string name="pChoBus">Por favor, haga clic en un negocio</string>
     <string name="sFecha">Por favor, seleccione una fecha</string>
     <string name="sHora">Por favor, seleccione una hora</string>
+    <string name="notiTitle">Cita guardada</string>
+    <string name="notiDesc1">Se ha guardado la cita para</string>
+    <string name="notiDesc2">en el calendario</string>
 </resources>

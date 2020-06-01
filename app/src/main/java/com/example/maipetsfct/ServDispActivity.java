@@ -2,21 +2,25 @@ package com.example.maipetsfct;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.TimePickerDialog;
-import android.content.Intent;
+import android.content.ContentResolver;
 import android.content.pm.ActivityInfo;
+import android.media.AudioAttributes;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -43,6 +47,21 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
     private ImageButton get_fecha,get_hora;
     private Button sacarCita;
     private String razonSoc;
+
+    // Necesarios para la notificacion
+    private NotificationManager nm;
+    private final String CHANNEL_ID = "Channel1";
+    private NotificationCompat.Builder not;
+    private final int NOTIFICATION_ID = 111;
+
+    // PAra el sonido personalizado de notificación
+    private Uri uri;
+
+    // Para versiones de API >= 26
+    private NotificationChannel ch;
+    private final String CHANNEL_NAME = "Temporizador";
+
+
 
     private static final String CERO = "0";
     private static final String BARRA = "/";
@@ -89,12 +108,14 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
         get_fecha = findViewById(R.id.coge_fecha);
         get_hora = findViewById(R.id.coge_hora);
 
+        //Definimos la ruta hacia el archivo de audio de la notificación
+        uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/" + R.raw.pipes);
+
         // Para tester
         mHora.setText("hora");
         mFecha.setText("fecha");
 
         sacarCita.setText(getText(R.string.dateFor) + " " + nombreMasc);
-
 
         // Eventos onCLick para fecha y hora
         get_fecha.setOnClickListener(this);
@@ -185,14 +206,33 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 final String nombreMascota = nombreMasc;
                 final String ident = uid;
 
-                        Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
-                        DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
-                        dbref.setValue(cita);
+                Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
+                DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
+                dbref.setValue(cita);
 
-                        setResult(RESULT_OK);
-                        finish();
-                        return;
-                    }
+                // Ahora, una vez guardada, creamos la notificación  ////////////////////////
+
+                // Obtenenmos referencia al servicio de notificaciones de Android
+                nm =(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
+                // Solo si se usa version API >= 26
+                createNotificationChannel();
+
+                // Ahora creamos la notificación
+                not = new NotificationCompat.Builder(ServDispActivity.this, CHANNEL_ID);
+                not.setSmallIcon(R.drawable.ic_bell); // Android me obliga a definir un icono
+                not.setContentTitle(getText(R.string.notiTitle));
+                not.setContentText(getText(R.string.notiDesc1) + " "+ nombreMascota);
+                not.setSound(uri);
+                not.setPriority(NotificationCompat.PRIORITY_HIGH);
+
+                //Ahora una vez configurada enviamos la notificacion a través del canal elegido
+                nm.notify(NOTIFICATION_ID, not.build());
+
+                setResult(RESULT_OK);
+                finish();
+                return;
+            }
         });
     }
 
@@ -244,5 +284,35 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
         }, hora, minuto, true);
 
         recogerHora.show();
+    }
+
+    // Comprueba si la aplicacioón esta corriendo en una version de API => 26,
+    // en cuyo caso tendremos que crear el canal de comunicacion.
+    private void createNotificationChannel ()
+    {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            // Definimos los atributos de audio
+            AudioAttributes att = new AudioAttributes.Builder()
+                    .setContentType((AudioAttributes.CONTENT_TYPE_SONIFICATION))
+                    .setUsage((AudioAttributes.USAGE_NOTIFICATION))
+                    .build();
+
+            // Creamos nuestro canal de comunicacion
+            ch = new NotificationChannel(CHANNEL_ID,
+                    CHANNEL_NAME,
+                    NotificationManager.IMPORTANCE_HIGH );
+
+            ch.setDescription(CHANNEL_NAME);
+
+            // Asociamos el audio al canal
+            ch.setSound(uri,att);
+
+            // Creamos el canal
+            nm.createNotificationChannel(ch);
+
+            // Verlo con la pantalla bloqueada
+            ch.setLockscreenVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+        }
     }
 }
