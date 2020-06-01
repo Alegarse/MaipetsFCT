@@ -12,6 +12,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.TimePickerDialog;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.AudioAttributes;
 import android.net.Uri;
@@ -46,7 +47,8 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
     private TextView mHora;
     private ImageButton get_fecha,get_hora;
     private Button sacarCita;
-    private String razonSoc;
+    private String razonSoc,horaCita,fechaCita,nombreCita;
+    private boolean a,b,c;
 
     // Necesarios para la notificacion
     private NotificationManager nm;
@@ -110,10 +112,6 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
 
         //Definimos la ruta hacia el archivo de audio de la notificación
         uri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/" + R.raw.pipes);
-
-        // Para tester
-        mHora.setText("hora");
-        mFecha.setText("fecha");
 
         sacarCita.setText(getText(R.string.dateFor) + " " + nombreMasc);
 
@@ -181,26 +179,32 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
 
                 final String cUid = UUID.randomUUID().toString();
-                final String horaCita,fechaCita,nombreCita;
 
+                // Verificamos que se seleccionen todos los campos
+                    // Nombre del negocio
                     if (razonSoc == null){
                         Snackbar.make(v, getResources().getText(R.string.pChoBus), Snackbar.LENGTH_LONG).show();
                         return ;
                     } else {
                         nombreCita = razonSoc;
+                        a = true;
                     }
-                    if (mFecha.toString().equals("fecha")){
+                    // Fecha de la cita
+                    if (fechaCita == null) {
                         Snackbar.make(v, getResources().getText(R.string.sFecha), Snackbar.LENGTH_LONG).show();
-                        return ;
+                        return;
                     } else {
                         fechaCita = mFecha.getText().toString();
+                        b = true;
                     }
-                    if (mHora.toString().equals("hora")){
-                        Snackbar.make(v, getResources().getText(R.string.sHora), Snackbar.LENGTH_LONG).show();
-                        return ;
-                    } else {
-                        horaCita = mHora.getText().toString();
-                    }
+                    // Hora de la cita
+                     if (horaCita == null){
+                         Snackbar.make(v, getResources().getText(R.string.sHora), Snackbar.LENGTH_LONG).show();
+                         return ;
+                     } else {
+                         horaCita = mHora.getText().toString();
+                         c = true;
+                     }
 
 
                 final String nombreMascota = nombreMasc;
@@ -209,6 +213,8 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
                 DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
                 dbref.setValue(cita);
+                setResult(RESULT_OK);
+                finish();
 
                 // Ahora, una vez guardada, creamos la notificación  ////////////////////////
 
@@ -229,9 +235,18 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 //Ahora una vez configurada enviamos la notificacion a través del canal elegido
                 nm.notify(NOTIFICATION_ID, not.build());
 
+                // Volvemos atrás
+
+                Intent volver = new Intent(ServDispActivity.this,CitasActivity.class);
+                // Para poder volver necesita datos para el bundle de esa activity
+                volver.putExtra("nombre",nombreMascota);
+                startActivity(volver);
+                /*
                 setResult(RESULT_OK);
                 finish();
                 return;
+
+                 */
             }
         });
     }
@@ -262,6 +277,7 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 mFecha.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
             }
         },anio, mes, dia);
+        fechaCita = mFecha.toString();
         //Muestro el widget
         recogerFecha.show();
 
@@ -282,7 +298,7 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
             //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
             //Pero el sistema devuelve la hora en formato 24 horas
         }, hora, minuto, true);
-
+        horaCita = mHora.toString();
         recogerHora.show();
     }
 
