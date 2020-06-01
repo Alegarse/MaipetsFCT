@@ -68,8 +68,8 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/resp"
-        android:textColor="#01579B"
-        app:backgroundTint="#47B60F"
+        android:textColor="#FFF"
+        app:backgroundTint="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correoReset" />

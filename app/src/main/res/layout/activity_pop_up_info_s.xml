@@ -30,6 +30,7 @@
         android:text="@string/name"
         android:textSize="24dp"
         android:textStyle="bold"
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,10 +44,23 @@
         android:padding="10dp"
         android:text="@string/editType"
         android:textSize="15dp"
-        android:textStyle="bold"
+        android:textStyle="normal"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameServInfo" />
+
+    <TextView
+        android:id="@+id/goOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="@string/goOut"
+        android:textColor="#534F4F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InfoServ" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

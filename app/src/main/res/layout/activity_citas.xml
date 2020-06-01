@@ -44,7 +44,7 @@
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Nombre"
-        android:textColor="#01579B"
+        android:textColor="#000"
         android:textSize="24dp"
         android:textStyle="bold"
         android:typeface="serif"

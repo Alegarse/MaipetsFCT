@@ -5,15 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#B34D8E33"
     app:cardCornerRadius="4dp"
-    app:cardElevation="4dp"
+    app:cardElevation="0dp"
+    android:backgroundTint="@color/colorBack"
     android:id="@+id/cv"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/backg_card"
         android:orientation="horizontal" >
 
         <ImageView

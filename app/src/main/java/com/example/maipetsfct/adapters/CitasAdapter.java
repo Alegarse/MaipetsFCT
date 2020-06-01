@@ -16,7 +16,7 @@ import com.example.maipetsfct.models.Cita;
 
 import java.util.ArrayList;
 
-public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHolder>{
+public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHolder> {
 
     ArrayList<Cita> citas;
     Context context;
@@ -36,7 +36,11 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
     @NonNull
     @Override
     public CitaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        Cita cita = citas.get(position);
+
         return new CitaViewHolder(LayoutInflater.from(context).inflate(R.layout.citas_card,parent,false));
+
     }
 
     @Override
@@ -45,7 +49,6 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
         Cita cita = citas.get(position);
 
         holder.imagen.setImageResource(R.drawable.petscard);
-        holder.addCal.setImageResource(R.drawable.addcal);
         holder.nombreMasc.setText(citas.get(position).getNombreMascota());
         holder.nombreCita.setText(citas.get(position).getNombreCita());
         holder.fechaCita.setText(citas.get(position).getFechaCita());
@@ -58,6 +61,7 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
     public int getItemCount() {return citas.size();}
     public int getIndex() {return position;}
 
+
     public class CitaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
         ImageView imagen,addCal;
@@ -69,7 +73,6 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
             super(v);
             this.view = v;
             imagen = v.findViewById(R.id.imgMasc);
-            addCal = v.findViewById(R.id.addCalendar);
             nombreMasc = v.findViewById(R.id.citaPara);
             nombreCita = v.findViewById(R.id.citaEn);
             fechaCita = v.findViewById(R.id.citaFecha);

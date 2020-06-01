@@ -45,7 +45,7 @@
     <string name="editMasc">Ver vicha completa</string>
     <string name="editType">Especie</string>
     <string name="editRace">Raza</string>
-    <string name="editDate">Nacido el:</string>
+    <string name="editDate">Nacido el</string>
     <string name="ed_prof">Guardar Perfil</string>
     <string name="del_prof">Borrar Cuenta</string>
     <string name="save_ok">¡Guardado!</string>
@@ -77,7 +77,7 @@
     <string name="instreset">Introduzca el correo con el que estes registrado en Maipets y recibirá un e-mail con un link para restablecer su contraseña.</string>
     <string name="needEmail">Debe ingresar un correo electrónico</string>
     <string name="mailsend">Correo electrónico enviado</string>
-    <string name="saving">Guardar cambios</string>
+    <string name="saving">Guardar</string>
     <string name="cDel">Confirmar borrado</string>
     <string name="yesDel">¿Está seguro de borrar su perfil? Perderá todos sus datos guardados</string>
     <string name="afirmative">Si</string>

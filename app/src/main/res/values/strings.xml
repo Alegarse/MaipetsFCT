@@ -81,7 +81,7 @@
     <string name="instreset">Enter the email with which you are registered in Maipets and you will receive an email with a link to reset your password.</string>
     <string name="needEmail">You must enter an email</string>
     <string name="mailsend">Email successfully sent</string>
-    <string name="saving">Upload changes</string>
+    <string name="saving">Save</string>
     <string name="cDel">Confim delete</string>
     <string name="yesDel">Are you sure to delete your profile? You will lose all your saved data</string>
     <string name="afirmative">Yes</string>

@@ -19,7 +19,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PopUpInfoS"
+        <activity android:name=".popups.PopUpInfoS"
             android:theme="@style/AppTheme.PopUp" />
         <activity android:name=".ServDispActivity" />
         <activity android:name=".PopSelectAct" />

@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:backgroundTint="#fafbfb"
     app:cardCornerRadius="4dp"
-    app:cardElevation="4dp"
+    app:cardElevation="0dp"
     android:id="@+id/cv"
     app:cardUseCompatPadding="true">
 
@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:background="@color/colorBack"
         android:orientation="horizontal" >
 
         <TextView
@@ -26,7 +27,7 @@
             android:layout_alignParentEnd="true"
             android:layout_toEndOf="@+id/aniImg"
             android:layout_toRightOf="@+id/aniImg"
-            android:background="@drawable/pop_reset"
+            android:background="@drawable/pop_pet"
             android:gravity="left"
             android:paddingLeft="15dp"
             android:text="Nombre Actividad"

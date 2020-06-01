@@ -72,7 +72,7 @@ public class PopPet extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.85),(int)(height*.76));
+        getWindow().setLayout((int)(width*.85),(int)(height*.7));
 
         WindowManager.LayoutParams params = getWindow().getAttributes();
         params.gravity = Gravity.CENTER;

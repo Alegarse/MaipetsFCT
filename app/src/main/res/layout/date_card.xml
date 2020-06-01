@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:cardCornerRadius="4dp"
-    app:cardElevation="2dp"
+    app:cardElevation="4dp"
     android:backgroundTint="#E8000000"
     android:id="@+id/cv"
     app:cardUseCompatPadding="true">

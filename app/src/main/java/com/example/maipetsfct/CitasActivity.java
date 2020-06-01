@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +34,8 @@ public class CitasActivity extends AppCompatActivity {
     private Button citar;
     private TextView nombreM;
 
+    private String titulo,mascota;
+
     RecyclerView recyclerView;
     ArrayList<Cita> citas;
     CitasAdapter citaAdapter;
@@ -51,8 +54,6 @@ public class CitasActivity extends AppCompatActivity {
 
         Bundle datosCitas = getIntent().getExtras();
         String nameM = datosCitas.getString("nombre");
-
-
 
         // Instanciamos
         citar = findViewById(R.id.sacDate);
