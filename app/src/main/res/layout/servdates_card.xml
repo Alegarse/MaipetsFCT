@@ -25,8 +25,6 @@
             android:layout_margin="5dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@+id/aniImg"
-            android:layout_toRightOf="@+id/aniImg"
             android:background="@drawable/pop_pet"
             android:gravity="left"
             android:paddingLeft="15dp"

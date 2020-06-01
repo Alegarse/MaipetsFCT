@@ -123,7 +123,7 @@ public class PopUpSelect extends Activity {
 
         magicalCamera.resultPhoto(requestCode, resultCode, data);
         if (option == 2) {
-            magicalCamera.resultPhoto(requestCode, resultCode, data, MagicalCamera.ORIENTATION_ROTATE_270);
+            magicalCamera.resultPhoto(requestCode, resultCode, data, MagicalCamera.ORIENTATION_ROTATE_90);
         }
 
          // Seteamos a variable bitmap la imagen tomada

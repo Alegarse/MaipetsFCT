@@ -24,8 +24,6 @@
             android:layout_alignParentTop="true"
             android:layout_margin="5dp"
             android:layout_marginStart="5dp"
-            android:layout_toEndOf="@+id/aniImg"
-            android:layout_toRightOf="@+id/aniImg"
             android:gravity="center"
             android:text="Nombre"
             android:textAllCaps="true"
