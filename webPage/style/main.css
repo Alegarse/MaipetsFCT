@@ -1,31 +1,281 @@
+* {
+    font-family: fuente;
+}
+
+@font-face {
+    font-family: fuente;
+    src: url(/font/font.otf);
+}
+
 body
 {
-    background: radial-gradient(#686464, #3f3f3f);
-    background-size: 100% 150%;
+    background: linear-gradient(90deg,#000000, rgb(61, 57, 55),#000000);
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*  HEADER  ================================================================= */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 90%;
+    width: 80%;
+    max-height: 90%;
+    height: 80%;
+  }
 
 #cabecera {
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(60deg, #ff7a21, #6e14b8,#16151557,#ff7a21, #6e14b8);
+    width: 90vw;
+    margin: 0 auto;
+    height: 10%;
+    background: linear-gradient(60deg, rgb(255,190,0),rgba(255, 191, 0, 0.644),rgb(255,190,0));
     background-size: 300% 400%;
-    border-radius: 27px 27px 27px 27px;
-    -webkit-border-radius: 27px 27px 27px 27px;
-    border: 0px solid #000000;
-    animation: Header 15s ease infinite;
-    text-align: center;   
-}
-span {
-    font-size: 5em;
-    text-decoration-color: transparent;
-    border:2px solid grey;
+    border-radius: 10px 10 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #000000;
+    animation: Header 30s ease infinite;
 }
 
-logo {   z-index: 2;
+#contLogo {
     position: relative;
-    top: 20px;
-    right: 50px;
+    top: 5px;
+    align-items: center;
+    width: 50%;
+    height: 8em;
 }
+
+#logoM {
+    position: absolute;
+    top: 5px;
+    width: 25em;
+    height: 7em;
+    -webkit-animation-name: entraLogo;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+/* BARRA DE MENÚ  */
+
+.m {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    display: inline-block;
+    padding-left: 54px;
+    height: 54px;
+    vertical-align: middle;
+    line-height: 54px;  
+}
+
+.flex {
+    width: 100%;
+    height: 54px;
+    display: flex;
+    flex-direction: row;
+}
+
+#op1, #op2, #op3, #op4, #op5 {
+    color: white;
+    width: 24.82%;
+    height: 54px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    margin-right: 1px;
+    align-items: center;
+}
+
+#menu {
+    display: none;
+}
+/* FIN BARRA DE MENÚ  */
+
+/*  FIN HEADER  ================================================================= */
+
+
+
+/*  MAIN  ======================================================================= */
+
+.content1, .content2, .content3, .content4 {
+    display: flex;
+    border: 3px solid black;
+    border-radius: 10px 10 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    opacity: 0.7;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.content1 {
+    background: linear-gradient(60deg, rgb(241, 241, 241),rgba(78, 185, 51, 0.644),rgb(110, 184, 233));
+    top: 3em;
+    width:90vw;
+    height:35vw;
+}
+
+.content2 {
+    background: linear-gradient(120deg, rgb(241, 241, 241),rgba(255, 191, 0, 0.644),rgb(241, 241, 241));
+    top: 6em;
+}
+
+.content3 {
+    background: linear-gradient(60deg, rgb(241, 241, 241),rgba(255, 191, 0, 0.644),rgb(241, 241, 241));
+    top: 9em;
+    width:90vw;
+    height:20vw;
+}
+
+.content4 {
+    background: linear-gradient(120deg, rgb(241, 241, 241),rgba(255, 191, 0, 0.644),rgb(241, 241, 241));
+    top:12em;
+}
+
+/*  DESCRIPCION ================================= */
+
+.img1 {
+    width: 19%;
+    margin: 1vw;
+    background-image: url("/imgs/img1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px 10 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    box-sizing: border-box;
+}
+
+.textDesc {
+    width: 77%;
+    margin: 1vw;
+    background-color: rgb(235, 221, 141);
+    border-radius: 10px 10 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.img2 {
+    display: block;
+    margin: 2vw 0 0 6vw;
+    margin-left: 1vw;
+    width: 40%;
+    height: 17%;
+}
+
+#texto1 p{
+    margin: 2vw 8vw 2vw 6vw;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    color: black;
+}
+
+/*  DESCARGA ================================= */
+
+#imgDesc {
+    display: block;
+    margin: 0 auto;
+    margin-left: 4vw;
+    margin-top: 2vw;
+    width: 13%;
+    height: 100%;
+}
+
+.cajita {
+    text-align: center;
+    width: 77%;
+    margin: 1vw;
+    background-color: rgb(148, 36, 36);
+    border-radius: 10px 10 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+.imgDown {
+    display: block;
+    margin: 2vw 0 0 6vw;
+    margin-left: 1vw;
+    width: 35%;
+    height: 30%;
+}
+#descargando {
+    transform: scaleX(0.2) scaleY(0.5);
+    position: absolute;
+    top: -1vw;
+    left: -4vw;
+}
+
+#textoDescarga p{
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    color: black;
+}
+
+#boton2 {
+    width: 15vw;
+    height: 4vw;
+    border-radius: 3vw;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    text-align: left;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 0px 0px 1px lightgrey;
+}
+
+
+#bt2text1 {
+    color: rgb(255, 255, 255);
+    font-size: 1.2vw;
+    font-weight: bold;
+    display: block;
+    line-height: 1.6vw;
+    margin-top: 1.3vw;
+    margin-left: 4.5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#boton2:hover {
+    background-color: rgb(44, 148, 61);
+    box-shadow: 0px 0px 9px gray;
+}
+
+#boton2:hover #descargando {
+    opacity: 0.5;
+    animation: anima 0.9s linear infinite;
+}
+
+#boton2:active {
+    background-color: #d38929;
+    box-shadow: 0px 2px 2px 0px #404040 inset;
+}
+
+#boton2:active #bt2text1 {
+    color: black;
+    text-shadow: 1px 1px 2px grey;
+}
+
+@keyframes anima{
+    0% { top: -55px; }
+    100% { top: 55px;}
+}
+
+/*  FIN MAIN  =================================================================== */
+
+
+
+/*  FOOTER======================================================================= */
+
+/*  FIN FOOTER=================================================================== */
 
 @keyframes Header {
     0% {
@@ -37,4 +287,9 @@ logo {   z-index: 2;
     100% {
         background-position: 0% 50%;
     }
+}
+
+@keyframes entraLogo {
+    from {left: -500px;}
+    to {left: 1em;}
 }
