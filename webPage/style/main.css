@@ -71,31 +71,28 @@ img {
     top: 1vw;
     left:38vw;
 }
-
 #logos span {
     padding-left: 25vw;
     height: 3vw;
     width: 0vh;
     vertical-align: middle;
     line-height: 46px;
-    ;
     background-repeat: no-repeat;
 }
-
 #linkedin {
     position: absolute;
     margin-top: 0.2vw;
     margin-left: 86vw;
-    width: 3vw;
-    height: 3vw;
-    }
+    width: 2.5vw;
+    height: 2.5vw;
+}
 #github {
     position: absolute;
     margin-top: 0.2vw;
     margin-left: 82vw;
-    width: 3vw;
-    height: 3vw;
-    }
+    width: 2.5vw;
+    height: 2.5vw;
+}
 .flex {
     display: flex;
     flex-direction: row;
@@ -408,7 +405,7 @@ img {
 
 
 
-/* MEDIA QUERYS ################################################ */
+/* ANIMACIONES   ################################################ */
 
 @keyframes Header {
     0% {
@@ -426,3 +423,5 @@ img {
     from {left: -500px;}
     to {left: 1em;}
 }
+
+/* MEDIA QUERYS ################################################ */
