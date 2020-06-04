@@ -5,6 +5,9 @@ Gestión de mascotas integral a nivel usuario.<br/>
 ## Video explicativo del contenido
 [Video explicativo](https://youtu.be/JNNqqDwe2vU)
 
+## Link a la web de presentación de la aplicación
+[Web Maipets](https://wcbkwldo.lucusprueba.es/)
+
 
 # Evolución semanal del proyecto
 
@@ -119,6 +122,7 @@ Implementados servicios y notificaciones, además de añadir audios personalizad
 En el tema estético me he basado en una composición básica de 3 colores, que son el negro,blanco y amarillo anaranjado,para unamejor visualización, además de estar adaptada a personas con daltonismo, y verificado este apartado por un conocido con esta peculiaridad visual.<br/>
 Usado storage de Firebase para elalmacenamiento de las imagenes, referenciadas estas, sean de perfil o de mascotas, a su correspondiente ficha en la BBDD relacional.<br/>
 Comienzo maquetado de la página web, ya que descarto una versiñon anterior por no adaptarse a mis preferencias.<br/>
+EDIT: Terminada página web, con manejo de resoluciones por Media Query, con contenido multimedia tipo video, audio de fondo, logos svg, animaciones e instalador descargable.</br>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Descripción general del proveedor de calendario](https://developer.android.com/guide/topics/providers/calendar-provider.html)<br/>

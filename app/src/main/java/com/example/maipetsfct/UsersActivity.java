@@ -24,7 +24,7 @@ public class UsersActivity extends AppCompatActivity {
     private BottomNavigationView bnv;
 
     // Link Web de prueba para enlace a info (web final)
-    private String url = "https://github.com/Alegarse/MaipetsFCT";
+    private String url = "https://wcbkwldo.lucusprueba.es/";
 
     // Conexión con firebase
     private FirebaseAuth fbauth ;

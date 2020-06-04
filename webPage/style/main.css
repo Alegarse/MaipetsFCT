@@ -503,10 +503,69 @@ img {
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
+        height: 85vw;
+        color: rgb(7, 0, 75);
     }
 
     #textacercade p {
         font-size: 1.2vw;
+    }
+
+    .content1 {
+        height: 80vw;
+    }
+
+    .img3 {
+        height: 8vw;
+    }
+
+    .content2 {
+        height: 60vw;
+    }
+    #func1 {
+        width: 85%;
+        height: 80%;
+    }
+    #func2, #func3 {
+        width: 30%;
+    }
+
+    #func4 {
+        display: none;
+    }
+
+    #texto1 p{
+        font-size: 3.5vw;
+    }
+
+    #imgDesc {
+        display: none;
+    }
+
+    .cajita {
+        width: auto;
+    }
+
+    #textoDescarga p{
+        font-size: 3vw;
+        color: #fff;
+    }
+
+    .content3 {
+        height: 27vw;
+    }
+
+    .content4 {
+        height: 65vw;
+    }
+
+    #acercade1 {
+        height: 15%;
+        margin-top: 20vw;
+    }
+
+    #textacercade p{
+        font-size: 3.3vw;
     }
 
 }

@@ -63,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         resetPass = findViewById(R.id.passLoose);
 
         // Datos para logeo de prueba temporal
-        email.setText("aleboy80@gmail.com");
-        password.setText("123456");
+        // email.setText("aleboy80@gmail.com");
+        // password.setText("123456");
 
         // Escuchador para el botón Cancelar
         cancel.setOnClickListener(new View.OnClickListener() {
