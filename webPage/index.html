@@ -7,23 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico" />
     <link rel="stylesheet" href="./style/main.css" />
+    <script src="js/mijs.js"></script>
     <title>Maipets - La gestión de tus mascotas</title>
 </head>
 
 <body>
-    
+    <!-- Sonido multimedia -->
+    <audio id="sonido" src="/audio/audio_fondo.mp3"></audio>
+
     <!-- Código para la cabecera y el menú -->
     <header>
         <div id="cabecera">
             <div id="contLogo">
-                <img id="logoM" src="imgs/logo.png">
+                <img id="logoM" src="imgs/maipets_logo.png">
                 <img id="slogan" src="imgs/slogan.png">
+                <div id="logos">
+                    <a title="Ver perfil LinkedIn autor" href="https://www.linkedin.com/in/alegarse"
+                        target="_blank"><img id="linkedin" src="imgs/linkedin.png"></a>
+                    <a title="Ver perfil Github autor" href="https://github.com/Alegarse" target="_blank"><img
+                            id="github" src="imgs/github.png"></a>
+                </div>
             </div>
             <div class="flex">
-                <div id="op1"><span id="m1"><a href="#desc">Descripción</a></span></div>
-                <div id="op2"><span id="m2"><a href="#func">Funcionalidades</a></span></div>
-                <div id="op3"><span id="m3"><a href="#desca">Descarga</a></span></div>
-                <div id="op4"><span id="m4"><a href="#acerca">Acerca de</a></span></div>
+                <div id="op1"><span id="m1"><a title="Saltar a descripción" href="#desc">Descripción</a></span></div>
+                <div id="op2"><span id="m2"><a title="Saltar a funcionalidades" href="#func">Funcionalidades</a></span>
+                </div>
+                <div id="op3"><span id="m3"><a title="Saltar a descarga" href="#desca">Descarga</a></span></div>
+                <div id="op4"><span id="m4"><a title="Saltar a acerca de" href="#acerca">Acerca de</a></span></div>
             </div>
         </div>
     </header>
@@ -64,17 +74,22 @@
         <!-- Descarga de la app -->
         <div class="content3" id="desca">
             <div id="imgDesc"><img src="/imgs/s8android.png"></div>
-            <div class="cajita" href="https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-release_1-6-2020.apk"
-                download="App_Maipets.apk">
-                <div class="imgDown"><img src="/imgs/descarga.png"></div>
-                <span id="textoDescarga">
-                    <p>Pulsa en el botón para descargarte el instalador APK</p>
-                </span>
-                <div id="boton2">
-                    <img id="descargando" src="/imgs/download.png">
-                    <span id="bt2text1">Descarga ahora</span>
-                </div>
+            <div class="cajita">
+                <a title="Descargar instalador de la aplicación"
+                    href="https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/app-release_1-6-2020.apk"
+                    target="_blank"
+                    download="App_Maipets.apk">
+                    <div class="imgDown"><img src="/imgs/descarga.png"></div>
+                    <span id="textoDescarga">
+                        <p>Pulsa en el botón para descargarte el instalador APK</p>
+                    </span>
+                    <div id="boton2">
+                        <img id="descargando" src="/imgs/download.png">
+                        <span id="bt2text1">Descarga ahora</span>
+                    </div>
+                </a>
             </div>
+
 
         </div>
 
@@ -102,7 +117,8 @@
 
     <footer>
         <div class="content5">
-            <p><a href="mailto:agscm2@gmail.com?Subject=Más%20información%20sobre%20Maipets%20Android" target="_top">©
+            <p><a title="Enviar email al autor"
+                    href="mailto:agscm2@gmail.com?Subject=Más%20información%20sobre%20Maipets%20Android" target="_top">©
                     Autor: Alejandro García Serrano</a>
         </div>
     </footer>
