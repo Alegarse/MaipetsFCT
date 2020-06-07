@@ -15,28 +15,26 @@ public class Usuario implements Serializable {
     private String contrasena;
     private String codigo;
     private String servCode;
+    private String urlImage;
+    private String uid;
 
     // Contructor vacío para Firebase
     public Usuario(){}
 
     // Constructores para los diferentes tipos de usuario
     // Usuario tipo familia
-    public Usuario(String nombre, String apellidos, String email, String contra, String code) {
+    public Usuario(String nombre, String apellidos, String email, String contra, String code, String urlImage, String uid) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.email = email;
         this.contrasena =  contra;
         this.codigo = code;
-    }
-    public Usuario(String nombre, String apellidos, String email, String contra) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.contrasena = contra;
+        this.urlImage = urlImage;
+        this.uid = uid;
     }
 
     //Usuario tipo servicio
-    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code, String servCode) {
+    public Usuario(String actividad,String razon, String direccion, String telefono, String email, String contrasena, String code, String servCode, String urlImage, String uid) {
         this.actividad = actividad;
         this.razon = razon;
         this.direccion = direccion;
@@ -45,6 +43,8 @@ public class Usuario implements Serializable {
         this.contrasena = contrasena;
         this.codigo = code;
         this.servCode = servCode;
+        this.urlImage = urlImage;
+        this.uid = uid;
     }
 
 
@@ -130,6 +130,22 @@ public class Usuario implements Serializable {
 
     public void setServCode(String servCode) {
         this.servCode = servCode;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     // ToString

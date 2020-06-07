@@ -112,4 +112,21 @@
     <string name="notiTitle">Cita guardada</string>
     <string name="notiDesc1">Se ha guardado la cita para</string>
     <string name="notiDesc2">en el calendario</string>
+    <string name="admin">Gestión de clientes</string>
+    <string name="introSge">Información de clientes</string>
+    <string name="sgedb">Datos básicos</string>
+    <string name="sgespr">Servicios relacionados</string>
+    <string name="sgecom">Comunicación</string>
+    <string name="sgeedr">Otros datos</string>
+    <string name="ususReg">Usuarios registrados</string>
+    <string name="usuFill">Datos de usuario</string>
+    <string name="tipu">Tipo de usuario:</string>
+    <string name="tipuR">Usuario grupo familia</string>
+    <string name="mail2p">Correo electrónico:</string>
+    <string name="telef2p">Teléfono:</string>
+    <string name="noData">Sin datos</string>
+    <string name="activity">Actividad:</string>
+    <string name="related">Productos y servicios relaccionados</string>
+    <string name="relatedAct">Usuarios con actividades registradas</string>
+    <string name="yesAdminDel">¿Está seguro de borrar este usuario? Perderá todos sus datos guardados</string>
 </resources>

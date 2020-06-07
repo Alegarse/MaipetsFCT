@@ -28,6 +28,7 @@ public class VetRegister extends AppCompatActivity {
     private Spinner serv;
     private String cod = "ser";
     private String servCode,uid;
+    private String ruta = "empty";
 
     // Para realizar el registro
     private FirebaseAuth mAuth;
@@ -130,7 +131,7 @@ public class VetRegister extends AppCompatActivity {
                                 uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
-                                Usuario usuario = new Usuario(ser,raz,dir,tel,ema,pwd,cod,servCode);
+                                Usuario usuario = new Usuario(ser,raz,dir,tel,ema,pwd,cod,servCode,ruta,uid);
 
                                 // 3. Obtenemos referencia al documento de usuarios en FB
                                 DatabaseReference dbref = fbdatabase.getReference("usuarios");

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/pop_reset"
+    tools:context=".popups.PopReset">
+
+    <TextView
+        android:id="@+id/ususReg"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="@string/ususReg"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listUsus"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:scrollbars="vertical"
+        android:background="@color/colorBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ususReg"
+        app:layout_constraintVertical_bias="0.026" />
+
+
+    <TextView
+        android:id="@+id/datosUsu"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/usuFill"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintTop_toBottomOf="@+id/listUsus"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <ImageView
+        android:id="@+id/imgUsu"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_margin="5dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datosUsu" />
+
+    <TextView
+        android:id="@+id/nombreUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:gravity="right"
+        android:text="@string/user"
+        android:textSize="12dp"
+        android:typeface="serif"
+        app:layout_constraintStart_toEndOf="@+id/imgUsu"
+        app:layout_constraintTop_toBottomOf="@+id/datosUsu" />
+
+    <TextView
+        android:id="@+id/nombreRUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="Nombre"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintStart_toEndOf="@+id/imgUsu"
+        app:layout_constraintTop_toBottomOf="@+id/nombreUsu" />
+
+    <TextView
+    android:id="@+id/tipoUsu"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="15dp"
+    android:gravity="right"
+    android:text="@string/citaDonde"
+    android:textSize="12dp"
+    android:typeface="serif"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imgUsu" />
+
+    <TextView
+        android:id="@+id/tipoRUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="Nombre"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipoUsu" />
+
+    <TextView
+        android:id="@+id/emailUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:gravity="right"
+        android:text="@string/email"
+        android:textSize="12dp"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipoRUsu" />
+
+    <TextView
+        android:id="@+id/emailRUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="left"
+        android:text="Email"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailUsu" />
+
+    <TextView
+        android:id="@+id/teleUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:gravity="right"
+        android:text="@string/telef"
+        android:textSize="12dp"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailRUsu" />
+
+    <TextView
+        android:id="@+id/teleRUsu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="left"
+        android:text="Teléfono"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleUsu" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delAdminProf"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#5C6359"
+        android:drawableBottom="@drawable/del"
+        android:drawableTint="#FFF"
+        android:gravity="center"
+        android:enabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datosUsu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

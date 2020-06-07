@@ -45,7 +45,9 @@ public class ProfVetFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText bussname, direction, telefono, email, contra;
     private ImageView imgPerfil;
-    private String ruta,sUid,actividadFb,code,servCode;
+    private String sUid,actividadFb,code,servCode;
+    private String ruta = "empty";
+    private String uid;
 
     // Colección de clinica
     ArrayList<servicio> servicios;
@@ -96,7 +98,7 @@ public class ProfVetFragment extends Fragment {
 
         //Obtenemos la instancia de FirebaseDatabase y Storage
         fbdatabase =  FirebaseDatabase.getInstance() ;
-        String uid = mAuth.getCurrentUser().getUid();
+        uid = mAuth.getCurrentUser().getUid();
         reference = FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         usuario = mAuth.getInstance().getCurrentUser();
@@ -241,7 +243,7 @@ public class ProfVetFragment extends Fragment {
                     return ;
                 }
 
-                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code,servCode);
+                Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code,servCode,ruta,uid);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 

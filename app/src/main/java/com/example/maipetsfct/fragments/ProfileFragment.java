@@ -39,7 +39,9 @@ public class ProfileFragment extends Fragment {
     private Button delPerf, editPerf;
     private EditText nombre, apellidos, email, contra;
     private ImageView imgPerfil;
-    private String ruta,code;
+    private String code;
+    private String ruta = "empty";
+    private String uid;
 
     // Elementos para Firebase
     private FirebaseAuth mAuth;
@@ -87,7 +89,7 @@ public class ProfileFragment extends Fragment {
 
         //Obtenemos la instancia de FirebaseDatabase y Storage
         fbdatabase =  FirebaseDatabase.getInstance() ;
-        String uid = mAuth.getCurrentUser().getUid();
+        uid = mAuth.getCurrentUser().getUid();
         reference = FirebaseDatabase.getInstance().getReference();
         mStorageRef = FirebaseStorage.getInstance().getReference();
         usuario = mAuth.getInstance().getCurrentUser();
@@ -219,9 +221,8 @@ public class ProfileFragment extends Fragment {
                     Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
                     return ;
                 }
-                String uid = mAuth.getUid();
 
-                Usuario usuario = new Usuario(nom,ape,ema,pwd,code);
+                Usuario usuario = new Usuario(nom,ape,ema,pwd,code,ruta,uid);
 
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
 

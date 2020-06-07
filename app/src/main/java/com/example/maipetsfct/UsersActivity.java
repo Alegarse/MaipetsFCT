@@ -23,6 +23,8 @@ public class UsersActivity extends AppCompatActivity {
 
     private BottomNavigationView bnv;
 
+    String uid;
+
     // Link Web de prueba para enlace a info (web final)
     private String url = "https://wcbkwldo.lucusprueba.es/";
 
@@ -42,6 +44,8 @@ public class UsersActivity extends AppCompatActivity {
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;
 
+        uid = fbauth.getCurrentUser().getUid();
+
         NavController nc = Navigation.findNavController(this,R.id.fragmentTab);
 
         AppBarConfiguration abc = new AppBarConfiguration
@@ -58,7 +62,12 @@ public class UsersActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater inflater = getMenuInflater() ;
-        inflater.inflate(R.menu.menu_up, menu) ;
+
+        if (uid.equals("6U8usNorymTUDCSdZEMnqsZ4ubz2")){
+            inflater.inflate(R.menu.menu_up_admin, menu) ;
+        } else {
+            inflater.inflate(R.menu.menu_up, menu) ;
+        }
         //
         return true ;
     }
@@ -66,6 +75,54 @@ public class UsersActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item)
     {
+        if (uid.equals("6U8usNorymTUDCSdZEMnqsZ4ubz2")){
+            switch (item.getItemId())
+            {
+                case R.id.mnuLogout :
+                    // cerramos la sesión en FireBase
+                    fbauth.signOut() ;
+                    // volvemos a la actividad principal
+                    setResult(0);
+                    finish();
+                    return true;
+
+                case R.id.info:
+                    Uri uri = Uri.parse(url);
+                    Intent info = new Intent (Intent.ACTION_VIEW, uri);
+                    startActivity(info);
+                    break;
+
+                case R.id.goAdmin:
+
+                    Intent sge = new Intent(this,sgeActivity.class);
+                    startActivity(sge);
+                    /*
+                    Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                    share.setType("text/plain");
+                    share.putExtra(android.content.Intent.EXTRA_TEXT,"https://www.linkedin.com/in/alegarse/");
+                    startActivity(Intent.createChooser(share,"Compartir via"));
+
+                     */
+                    break;
+            }
+        } else {
+            switch (item.getItemId())
+            {
+                case R.id.mnuLogout :
+                    // cerramos la sesión en FireBase
+                    fbauth.signOut() ;
+                    // volvemos a la actividad principal
+                    setResult(0);
+                    finish();
+                    return true;
+
+                case R.id.info:
+                    Uri uri = Uri.parse(url);
+                    Intent info = new Intent (Intent.ACTION_VIEW, uri);
+                    startActivity(info);
+                    break;
+            }
+        }
         switch (item.getItemId())
         {
             case R.id.mnuLogout :

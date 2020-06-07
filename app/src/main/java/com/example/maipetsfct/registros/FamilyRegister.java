@@ -24,6 +24,8 @@ public class FamilyRegister extends AppCompatActivity {
     private EditText nombre, apellidos, pass, conf_pass;
     private EditText email;
     private String cod = "fam";
+    private String ruta = "empty";
+    private String uid;
 
     // Para realizar el registro
     private FirebaseAuth mAuth;
@@ -99,10 +101,10 @@ public class FamilyRegister extends AppCompatActivity {
                             if (task.isSuccessful())  // Usuario se registra correctamente
                             {
                                 // 1.Obtenemos UID del usuario registrado
-                                String uid = mAuth.getUid();
+                                uid = mAuth.getUid();
 
                                 // 2. Creamos el usuario
-                                Usuario usuario = new Usuario(nom,ape,ema,pwd,cod);
+                                Usuario usuario = new Usuario(nom,ape,ema,pwd,cod,ruta,uid);
 
                                 // 3. Obtenemos referencia al documento de usuarios en FB
                                 DatabaseReference dbref = fbdatabase.getReference("usuarios");

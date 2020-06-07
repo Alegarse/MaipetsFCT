@@ -117,6 +117,23 @@
     <string name="notiTitle">Appointment saved</string>
     <string name="notiDesc1">The appointment has been saved for</string>
     <string name="notiDesc2">in calendar</string>
+    <string name="admin">Customer Management</string>
+    <string name="introSge">Customer informations</string>
+    <string name="sgedb">Basic data</string>
+    <string name="sgespr">Related services</string>
+    <string name="sgecom">Communication</string>
+    <string name="sgeedr">Other data</string>
+    <string name="ususReg">Registered users</string>
+    <string name="usuFill">User data</string>
+    <string name="tipu">User type:</string>
+    <string name="tipuR">Family User</string>
+    <string name="mail2p">Email:</string>
+    <string name="telef2p">Telephone:</string>
+    <string name="noData">Without data</string>
+    <string name="activity">Activity:</string>
+    <string name="related">Related products and services</string>
+    <string name="relatedAct">User with registered activities</string>
+    <string name="yesAdminDel">Are you sure to delete this user? The user will lose all your saved data</string>
 
 
 </resources>

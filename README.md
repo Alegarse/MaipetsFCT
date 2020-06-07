@@ -123,6 +123,7 @@ En el tema estético me he basado en una composición básica de 3 colores, que 
 Usado storage de Firebase para elalmacenamiento de las imagenes, referenciadas estas, sean de perfil o de mascotas, a su correspondiente ficha en la BBDD relacional.<br/>
 Comienzo maquetado de la página web, ya que descarto una versiñon anterior por no adaptarse a mis preferencias.<br/>
 EDIT: Terminada página web, con manejo de resoluciones por Media Query, con contenido multimedia tipo video, audio de fondo, logos svg, animaciones e instalador descargable.</br>
+Para implementar la parte de Sistemas de Gestión Empresarial, he diseñado un acceso, solo para el administrador, a una sección de gestión de clientes, en la que a través de diferentes apartados y popups se trata un CRM aplicado al modelo de negocio de la app, en el que el administrador puede controlar los datos básicos de cada cliente (datos de contacto, el tipo de cliente...), los servicios y productos relacionados con el cliente, un canal de comunicación (vía telefónica o email) y un apartado de deseos o requisitos, que se trataría de ciertos ticks para comprobar evolución del cliente.</br>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Descripción general del proveedor de calendario](https://developer.android.com/guide/topics/providers/calendar-provider.html)<br/>
