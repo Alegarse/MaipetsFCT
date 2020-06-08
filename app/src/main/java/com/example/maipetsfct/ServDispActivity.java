@@ -18,6 +18,7 @@ import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -56,7 +57,7 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
     private NotificationCompat.Builder not;
     private final int NOTIFICATION_ID = 111;
 
-    // PAra el sonido personalizado de notificación
+    // Para el sonido personalizado de notificación
     private Uri uri;
 
     // Para versiones de API >= 26
@@ -94,6 +95,8 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serv_disp);
+
+        this.setTitle(R.string.sacarCita);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -216,6 +219,12 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 setResult(RESULT_OK);
                 finish();
 
+                long horaInit = ((anio-1970)*31556926 + mes* 2629743 + dia * 86400 + hora*3600 + minuto+60)+68101;
+                long horaFin = horaInit + 1800;
+
+                // Ponemos la cita en el calendario
+                addEvent(getText(R.string.citaPara)+ " "+ nombreMascota,nombreCita,horaInit,horaFin);
+
                 // Ahora, una vez guardada, creamos la notificación  ////////////////////////
 
                 // Obtenenmos referencia al servicio de notificaciones de Android
@@ -261,6 +270,19 @@ public class ServDispActivity extends AppCompatActivity implements View.OnClickL
                 obtenerHora();
                 break;
         }
+    }
+
+    public void addEvent (String titulo, String ubicacion, long inicio, long fin){
+        Intent programar = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.Events.TITLE,titulo)
+                .putExtra(CalendarContract.Events.EVENT_LOCATION, ubicacion)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,inicio)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME,fin);
+        if (programar.resolveActivity(getPackageManager()) != null) {
+            startActivity(programar);
+        }
+
     }
 
     private void obtenerFecha(){

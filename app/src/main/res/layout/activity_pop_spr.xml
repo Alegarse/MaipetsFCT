@@ -12,7 +12,7 @@
 
     <TextView
         android:id="@+id/ususReg"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_margin="5dp"
@@ -26,19 +26,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listUsusAct"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scrollbars="vertical"
         android:background="@color/colorBack"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ususReg"
-        app:layout_constraintVertical_bias="0.026" />
-
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imgUsu"
@@ -102,7 +102,7 @@
 
     <TextView
         android:id="@+id/datosUsu"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_margin="15dp"
@@ -122,11 +122,10 @@
         android:id="@+id/listServsAct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/datosUsu"
         app:layout_constraintVertical_bias="0.0" />

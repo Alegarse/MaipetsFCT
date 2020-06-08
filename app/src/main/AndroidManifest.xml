@@ -3,16 +3,21 @@
     package="com.example.maipetsfct">
     <!-- PERMISOS -->
     <!-- Para poder usar internet -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- Para poder usar la cámara -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Para poder usar la cámara -->
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true" /> <!-- Para poder escribir y leer en el dispositivo -->
+        android:required="true" />
+    <!-- Para poder escribir y leer en el dispositivo -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Para poder acceder al calendario -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Para poder acceder al calendario -->
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <!-- Para poder acceder a las llamadas y ver estado -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -22,13 +27,19 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!-- Defino el servicio parapoder usarlo -->
-        <service android:name=".services.initService" />
 
+        <!-- Defino el servicio para poder usarlo -->
+        <service android:name=".services.initService" />
         <!-- Actividades de la APP -->
         <activity
+            android:name=".popups.Pop_spr_det"
+            android:theme="@style/AppTheme.PopUp" />
+        <activity
+            android:name=".popups.Pop_com"
+            android:theme="@style/AppTheme.PopUp" />
+        <activity
             android:name=".popups.Pop_spr"
-            android:theme="@style/AppTheme.PopUp"/>
+            android:theme="@style/AppTheme.PopUp" />
         <activity
             android:name=".popups.Pop_db"
             android:theme="@style/AppTheme.PopUp" />

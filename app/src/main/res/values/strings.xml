@@ -92,8 +92,8 @@
     <string name="cabDate">New date</string>
     <string name="chooseOpt">Choose available option</string>
     <string name="choBus">↞  Choose a business   ↠</string>
-    <string name="citasSac">Scheduled dates for:</string>
-    <string name="citaPara">Dates for:</string>
+    <string name="citasSac">Scheduled dates for</string>
+    <string name="citaPara">Dates for</string>
     <string name="citaDonde">Business:</string>
     <string name="date">Date</string>
     <string name="hour">Hour</string>
@@ -118,7 +118,7 @@
     <string name="notiDesc1">The appointment has been saved for</string>
     <string name="notiDesc2">in calendar</string>
     <string name="admin">Customer Management</string>
-    <string name="introSge">Customer informations</string>
+    <string name="introSge">" Application management system"</string>
     <string name="sgedb">Basic data</string>
     <string name="sgespr">Related services</string>
     <string name="sgecom">Communication</string>
@@ -134,6 +134,13 @@
     <string name="related">Related products and services</string>
     <string name="relatedAct">User with registered activities</string>
     <string name="yesAdminDel">Are you sure to delete this user? The user will lose all your saved data</string>
+    <string name="datMan">Dates management</string>
+    <string name="usersList">Users\'s list</string>
+    <string name="usuCom">Ways of communication</string>
+    <string name="subject">Subject</string>
+    <string name="emailmsg">Email message goes here</string>
+    <string name="err" translatable="false">Error</string>
+    <string name="citPara">Date for</string>
 
 
 </resources>

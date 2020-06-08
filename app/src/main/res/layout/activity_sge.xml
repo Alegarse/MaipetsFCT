@@ -12,26 +12,25 @@
         android:id="@+id/textdb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginTop="24dp"
+        android:layout_margin="30dp"
         android:gravity="center"
         android:text="@string/sgedb"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/sgedb"
         android:layout_width="180dp"
         android:layout_height="110dp"
-        android:backgroundTint="#fff"
-        android:drawableBottom="@drawable/sgedb"
-        android:drawableTint="#1A237E"
+        android:src="@drawable/sgedb"
         android:gravity="center"
-        android:layout_margin="5dp"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
+        android:background="@drawable/back_sge_b"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textdb" />
@@ -41,23 +40,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sgespr"
-        android:layout_margin="10dp"
-        android:textSize="15dp"
+        android:layout_margin="30dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sgedb" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/sgespr"
         android:layout_width="180dp"
         android:layout_height="110dp"
         android:layout_margin="5dp"
-        android:backgroundTint="#fff"
-        android:drawableBottom="@drawable/sgespr"
-        android:drawableTint="#B71C1C"
+        android:background="@drawable/back_sge_b"
+        android:src="@drawable/sgespr"
         android:gravity="center"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,53 +68,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sgecom"
-        android:layout_margin="10dp"
-        android:textSize="15dp"
+        android:layout_margin="30dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sgespr" />
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
         android:id="@+id/sgecom"
         android:layout_width="180dp"
         android:layout_height="110dp"
         android:layout_margin="5dp"
-        android:backgroundTint="#fff"
-        android:drawableBottom="@drawable/sgecom"
-        android:drawableTint="#1B5E20"
+        android:background="@drawable/back_sge_b"
+        android:src="@drawable/sgecom"
         android:gravity="center"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textcom" />
-
-    <TextView
-        android:id="@+id/textedr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sgeedr"
-        android:layout_margin="10dp"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sgecom" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/sgeedr"
-        android:layout_width="180dp"
-        android:layout_height="110dp"
-        android:layout_margin="5dp"
-        android:backgroundTint="#fff"
-        android:drawableBottom="@drawable/sgeedr"
-        android:drawableTint="#000"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textedr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,10 +15,12 @@ import com.example.maipetsfct.models.servicio;
 
 import java.util.ArrayList;
 
-public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.ServicioViewHolder>{
+public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.ServicioViewHolder> implements View.OnClickListener{
 
     ArrayList<servicio> servicios;
     Context context;
+
+    private View.OnClickListener listener;
 
     private int position;
 
@@ -35,7 +36,11 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
 
     @Override
     public ServicioAdapter2.ServicioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ServicioAdapter2.ServicioViewHolder(LayoutInflater.from(context).inflate(R.layout.sgedb_card,parent,false));
+
+        View view = LayoutInflater.from(context).inflate(R.layout.sgedb_card,parent,false);
+
+        view.setOnClickListener(this);
+        return new ServicioViewHolder(view);
     }
 
     @Override
@@ -45,6 +50,7 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
         holder.nombre.setText(servicios.get(position).getNombre());
 
         holder.BindHolder(servicios.get(position));
+        holder.view.setOnClickListener(this);
     }
 
     @Override
@@ -53,6 +59,16 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
     }
     public int getIndex(){
         return position;
+    }
+    public void setOnClickListener (View.OnClickListener listener) {
+        this.listener = listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (listener != null) {
+            listener.onClick(v);
+        }
     }
 
     public class ServicioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{

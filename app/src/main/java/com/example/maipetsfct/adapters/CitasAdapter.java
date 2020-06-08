@@ -48,7 +48,7 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
 
         Cita cita = citas.get(position);
 
-        holder.imagen.setImageResource(R.drawable.petscard);
+        holder.imagen.setImageResource(R.drawable.cita);
         holder.nombreMasc.setText(citas.get(position).getNombreMascota());
         holder.nombreCita.setText(citas.get(position).getNombreCita());
         holder.fechaCita.setText(citas.get(position).getFechaCita());

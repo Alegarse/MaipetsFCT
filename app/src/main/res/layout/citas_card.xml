@@ -35,7 +35,7 @@
             android:layout_toEndOf="@+id/imgMasc"
             android:layout_toRightOf="@+id/imgMasc"
             android:gravity="right"
-            android:text="@string/citaPara"
+            android:text="@string/citPara"
             android:textSize="12dp"
             android:typeface="serif" />
 

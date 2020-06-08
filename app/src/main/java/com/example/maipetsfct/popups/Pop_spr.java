@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -116,6 +117,19 @@ public class Pop_spr extends Activity {
                                 }
                                 servicioAdapter = new ServicioAdapter2(Pop_spr.this,servicios);
                                 servicioAdapter.setServicios(servicios);
+
+                                servicioAdapter.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        servicio serv = servicios.get(recyclerView.getChildAdapterPosition(v));
+                                        String desc = serv.getDesc();
+                                        String nombre = serv.getNombre();
+                                        Intent vermasInfo = new Intent(Pop_spr.this,Pop_spr_det.class);
+                                        vermasInfo.putExtra("titulo",nombre);
+                                        vermasInfo.putExtra("desc",desc);
+                                        startActivity(vermasInfo);
+                                    }
+                                });
                                 recyclerView2.setAdapter(servicioAdapter);
                             }
 

@@ -43,6 +43,8 @@ public class PopSelectAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_select);
 
+        this.setTitle(R.string.selecAct);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Bundle datosCitaServ = getIntent().getExtras();

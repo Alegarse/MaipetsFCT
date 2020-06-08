@@ -2,18 +2,22 @@ package com.example.maipetsfct;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.maipetsfct.popups.Pop_com;
 import com.example.maipetsfct.popups.Pop_db;
 import com.example.maipetsfct.popups.Pop_spr;
 
 public class sgeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button sgedb, sgespr, sgecom, sgeedr;
+    private ImageButton sgedb, sgespr, sgecom;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,19 +25,17 @@ public class sgeActivity extends AppCompatActivity implements View.OnClickListen
 
         this.setTitle(R.string.introSge);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         // Instanciamos los elementos
         sgedb = findViewById(R.id.sgedb);
         sgespr = findViewById(R.id.sgespr);
         sgecom = findViewById(R.id.sgecom);
-        sgeedr = findViewById(R.id.sgeedr);
 
         // Llamada el onClickListener
         sgedb.setOnClickListener(this);
         sgespr.setOnClickListener(this);
         sgecom.setOnClickListener(this);
-        sgeedr.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -48,10 +50,9 @@ public class sgeActivity extends AppCompatActivity implements View.OnClickListen
                 startActivity(spr);
                 break;
             case R.id.sgecom:
-                break;
-            case R.id.sgeedr:
+                Intent com = new Intent(sgeActivity.this, Pop_com.class);
+                startActivity(com);
                 break;
         }
-
     }
 }

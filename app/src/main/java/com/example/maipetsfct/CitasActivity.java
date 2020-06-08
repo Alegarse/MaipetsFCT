@@ -50,6 +50,8 @@ public class CitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
 
+        this.setTitle(R.string.datMan);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Bundle datosCitas = getIntent().getExtras();
