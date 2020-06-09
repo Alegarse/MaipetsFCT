@@ -32,6 +32,5 @@ public class MyDatePicker extends DialogFragment implements
     public void onDateSet(DatePicker view, int dayOfMonth, int month, int year) {
 
         populateSetDateText (dayOfMonth,month+1,year);
-
     }
 }

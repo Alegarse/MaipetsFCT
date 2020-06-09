@@ -28,15 +28,12 @@ public class PopServ extends Activity {
     private FirebaseAuth mAuth ;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    private StorageReference mStorage;
 
     // Definimos los elementos de la actividad
     private ImageView image;
     private EditText nombre, desc;
     private Button guardar;
     private String codigo;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +46,7 @@ public class PopServ extends Activity {
         //Obtenemos la instancia de FirebaseAuth
         mAuth = FirebaseAuth.getInstance() ;
 
-        //Obtenemos la instancia de Storage y Database
-        mStorage = FirebaseStorage.getInstance().getReference();
+        //Obtenemos la instancia Database
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
@@ -60,7 +56,6 @@ public class PopServ extends Activity {
         // Diseño de la ventana emergente
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-
 
         int width = dm.widthPixels;
         int height = dm.heightPixels;
@@ -73,8 +68,6 @@ public class PopServ extends Activity {
         params.y = -50;
 
         getWindow().setAttributes(params);
-
-        // Visualizado datos
 
         // Instanciamos los elementos
         image = findViewById(R.id.imgService);
@@ -89,7 +82,6 @@ public class PopServ extends Activity {
         String descS = datos.getString("desc");
         codigo = datos.getString("codigo");
 
-
         // Los asociamos a cada campo de edición
         nombre.setText(nombreS);
         desc.setText(descS);
@@ -101,7 +93,6 @@ public class PopServ extends Activity {
             // Recogemos los datos actualizados
             final String nombreAct =  nombre.getText().toString().trim();
             final String descAct =  desc.getText().toString().trim();
-
 
             // Los agregamos a nuestro HashMap
             datosAct.put("nombre",nombreAct);
@@ -117,6 +108,5 @@ public class PopServ extends Activity {
                 Toast.makeText(this,R.string.nosave,Toast.LENGTH_LONG).show();
             }));
         });
-
     }
 }

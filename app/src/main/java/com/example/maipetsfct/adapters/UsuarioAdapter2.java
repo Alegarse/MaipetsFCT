@@ -40,18 +40,15 @@ public class UsuarioAdapter2
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.date_card,parent,false);
-
         view.setOnClickListener(this);
         return new UsuarioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
+
         Usuario usu = usuarios.get(position);
-
-
         holder.nombre.setText(usuarios.get(position).getRazon());
-
         holder.BindHolder(usuarios.get(position));
         holder.view.setOnClickListener(this);
     }
@@ -78,7 +75,6 @@ public class UsuarioAdapter2
     public class UsuarioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
         TextView nombre;
-
         public View view;
 
         public UsuarioViewHolder(View v){
@@ -107,6 +103,5 @@ public class UsuarioAdapter2
                 }
             });
         }
-
     }
 }

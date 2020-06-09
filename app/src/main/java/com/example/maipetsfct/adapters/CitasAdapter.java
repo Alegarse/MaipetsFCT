@@ -38,7 +38,6 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
     public CitaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         Cita cita = citas.get(position);
-
         return new CitaViewHolder(LayoutInflater.from(context).inflate(R.layout.citas_card,parent,false));
 
     }
@@ -47,13 +46,11 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
     public void onBindViewHolder(@NonNull CitasAdapter.CitaViewHolder holder, int position) {
 
         Cita cita = citas.get(position);
-
         holder.imagen.setImageResource(R.drawable.cita);
         holder.nombreMasc.setText(citas.get(position).getNombreMascota());
         holder.nombreCita.setText(citas.get(position).getNombreCita());
         holder.fechaCita.setText(citas.get(position).getFechaCita());
         holder.horaCita.setText(citas.get(position).getHoraCita());
-
         holder.BindHolder(citas.get(position));
     }
 
@@ -64,7 +61,7 @@ public class CitasAdapter extends RecyclerView.Adapter<CitasAdapter.CitaViewHold
 
     public class CitaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
-        ImageView imagen,addCal;
+        ImageView imagen;
         TextView nombreMasc,nombreCita,horaCita,fechaCita;
 
         public View view;

@@ -24,7 +24,7 @@ public class VetActivity extends AppCompatActivity {
     private BottomNavigationView bnv;
 
     // Link Web de prueba para enlace a info (web final)
-    private String url = "https://wcbkwldo.lucusprueba.es/";
+    private String url = "https://improveyourbrand.es";
 
     // Conexión con firebase
     private FirebaseAuth fbauth ;
@@ -81,18 +81,7 @@ public class VetActivity extends AppCompatActivity {
                 Intent info = new Intent (Intent.ACTION_VIEW, uri);
                 startActivity(info);
                 break;
-
-            /*
-            case R.id.mShare:
-
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("text/plain");
-                share.putExtra(android.content.Intent.EXTRA_TEXT,"https://www.linkedin.com/in/alegarse/");
-                startActivity(Intent.createChooser(share,"Compartir via"));
-                break;
-             */
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

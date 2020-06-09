@@ -37,7 +37,6 @@ public class AddMascActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_masc);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Obtenemos la instancia de FirebaseAuth
@@ -81,7 +80,6 @@ public class AddMascActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-
                 // Sacamos el valor de los campos
                 final String uUid = uid.trim();
                 final String mUid = UUID.randomUUID().toString();

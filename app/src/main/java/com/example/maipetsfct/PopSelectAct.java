@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.CalendarContract;
+import android.provider.CalendarContract.Events;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -41,6 +42,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.UUID;
 
 public class PopSelectAct extends AppCompatActivity implements View.OnClickListener {
@@ -49,8 +51,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
     private TextView mHora;
     private ImageButton get_fecha,get_hora;
     private Button sacarCita;
-    private String razonSoc,horaCita,fechaCita,nombreCita;
-    private boolean a,b,c;
+    private String razonSoc,horaCita,fechaCita,nombreCita,nombreMasc;
 
     // Calendario para fecha y hora
     public final Calendar f = Calendar.getInstance();
@@ -62,11 +63,15 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
     final int hora = f.get(Calendar.HOUR_OF_DAY);
     final int minuto = f.get(Calendar.MINUTE);
 
+    //Variables para event Calendar
+    int diaC,mesC,anioC,horaC,minC,calId;
+
+    // Variables de seteo de fecha y hora
     private static final String CERO = "0";
     private static final String BARRA = "/";
     private static final String DOS_PUNTOS = ":";
 
-    // Necesarios para la notificacion
+    // Variables necesarios para la notificacion
     private NotificationManager nm;
     private final String CHANNEL_ID = "Channel1";
     private NotificationCompat.Builder not;
@@ -79,12 +84,14 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
     private NotificationChannel ch;
     private final String CHANNEL_NAME = "Temporizador";
 
+    // Recyclerviews, listas y adaptadores
     RecyclerView recyclerView, recyclerView2;
     ArrayList<Usuario> usuarios,usuarios2;
     ArrayList<String> repes = new ArrayList<>();
     ActividadAdapter actividadAdapter;
     UsuarioAdapter2 usuarioAdapter;
 
+    // Conexión Firebase
     private FirebaseAuth fbauth;
     private FirebaseDatabase fbdatabase;
     DatabaseReference ref;
@@ -96,11 +103,10 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_pop_select);
 
         this.setTitle(R.string.selecAct);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Bundle datosCitaServ = getIntent().getExtras();
-        String nombreMasc = datosCitaServ.getString("nombreMasc");
+        nombreMasc = datosCitaServ.getString("nombreMasc");
 
         // Instanciamos los elementos que intervienen
         sacarCita = findViewById(R.id.sacaCita);
@@ -118,6 +124,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         get_fecha.setOnClickListener(this);
         get_hora.setOnClickListener(this);
 
+        calId =(int) Math.random() * 100000;
 
         //Obtenemos conexiones Firebase
         fbauth = FirebaseAuth.getInstance() ;
@@ -131,7 +138,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         usuarios = new ArrayList<Usuario>();
 
         ref = FirebaseDatabase.getInstance().getReference().child("usuarios");
-
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -150,13 +156,11 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                 }
                 actividadAdapter = new ActividadAdapter(getApplicationContext(),usuarios);
                 actividadAdapter.setUsuarios(usuarios);
-
                 actividadAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Usuario user = usuarios.get(recyclerView.getChildAdapterPosition(v));
                         Toast.makeText(getApplicationContext(),"Selected: "+ usuarios.get(recyclerView.getChildAdapterPosition(v)).getActividad(), Toast.LENGTH_SHORT).show();
-
                         String servCode = user.getServCode();
 
                         // RELLENO DATOS DEL SEGUNDO RECYCLER
@@ -180,10 +184,8 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                         }
                                     }
                                 }
-
                                 usuarioAdapter = new UsuarioAdapter2(getApplicationContext(),usuarios2);
                                 usuarioAdapter.setUsuarios(usuarios2);
-
                                 usuarioAdapter.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -192,13 +194,10 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                         Toast.makeText(getApplicationContext(),getText(R.string.sel)+" " + razonSoc, Toast.LENGTH_LONG).show();
                                     }
                                 });
-
                                 recyclerView2.setAdapter(usuarioAdapter);
                             }
-
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                             }
                         });
 
@@ -208,7 +207,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                             public void onClick(View v) {
 
                                 final String cUid = UUID.randomUUID().toString();
-
                                 // Verificamos que se seleccionen todos los campos
                                 // Nombre del negocio
                                 if (razonSoc == null){
@@ -216,7 +214,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                     return ;
                                 } else {
                                     nombreCita = razonSoc;
-                                    a = true;
                                 }
                                 // Fecha de la cita
                                 if (fechaCita == null) {
@@ -224,7 +221,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                     return;
                                 } else {
                                     fechaCita = mFecha.getText().toString();
-                                    b = true;
                                 }
                                 // Hora de la cita
                                 if (horaCita == null){
@@ -232,27 +228,22 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                     return ;
                                 } else {
                                     horaCita = mHora.getText().toString();
-                                    c = true;
                                 }
-
 
                                 final String nombreMascota = nombreMasc;
                                 final String ident = uid;
 
+                                // Creamos la cita en la BBDD
                                 Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
                                 DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
                                 dbref.setValue(cita);
                                 setResult(RESULT_OK);
                                 finish();
 
-                                long horaInit = ((anio-1970)*31556926 + mes* 2629743 + dia * 86400 + hora*3600 + minuto+60)+68101;
-                                long horaFin = horaInit + 1800;
-
-                                // Ponemos la cita en el calendario
-                                addEvent(getText(R.string.citaPara)+ " "+ nombreMascota,nombreCita,horaInit,horaFin);
+                                // Ponemos la cita en el calendario del usuario
+                                addEvent(getText(R.string.citaPara)+ " "+ nombreMascota,nombreCita);
 
                                 // Ahora, una vez guardada, creamos la notificación  ////////////////////////
-
                                 // Obtenenmos referencia al servicio de notificaciones de Android
                                 nm =(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
 
@@ -263,7 +254,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                 not = new NotificationCompat.Builder(PopSelectAct.this, CHANNEL_ID);
                                 not.setSmallIcon(R.drawable.ic_bell); // Android me obliga a definir un icono
                                 not.setContentTitle(getText(R.string.notiTitle));
-                                not.setContentText(getText(R.string.notiDesc1) + " "+ nombreMascota);
+                                not.setContentText(getText(R.string.notiDesc1) + " "+ nombreMascota + " " + getText(R.string.notiDesc2));
                                 not.setSound(uri);
                                 not.setPriority(NotificationCompat.PRIORITY_HIGH);
 
@@ -271,47 +262,51 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                 nm.notify(NOTIFICATION_ID, not.build());
 
                                 // Volvemos atrás
-
                                 Intent volver = new Intent(PopSelectAct.this,CitasActivity.class);
                                 // Para poder volver necesita datos para el bundle de esa activity
                                 volver.putExtra("nombre",nombreMascota);
                                 startActivity(volver);
-                /*
-                setResult(RESULT_OK);
-                finish();
-                return;
-
-                 */
                             }
                         });
-
-
-
-
-
-                        /*
-                        Intent irASelServ = new Intent(PopSelectAct.this,ServDispActivity.class);
-                        irASelServ.putExtra("nombreMasc",nombreMasc);
-                        irASelServ.putExtra("actividad", user.getActividad());
-                        irASelServ.putExtra("mail",user.getEmail());
-                        irASelServ.putExtra("servCode",user.getServCode());
-                        startActivity(irASelServ);
-
-                         */
                         }
                 });
-
                 recyclerView.setAdapter(actividadAdapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
         registerForContextMenu(recyclerView);
-
     }
+
+    //Para agregar la cita al calendario del movil
+    public void addEvent (String titulo, String ubic){
+
+        // Creamos la intención
+        Intent agregaCita = new Intent(Intent.ACTION_INSERT);
+        agregaCita.setData(CalendarContract.Events.CONTENT_URI);
+
+        //Rellenamos con datos
+        agregaCita.setType("vnd.android.cursor.item/event");
+        agregaCita.putExtra(Events.CALENDAR_ID,calId);
+        agregaCita.putExtra(Events.TITLE, titulo);
+        agregaCita.putExtra(Events.EVENT_LOCATION, ubic);
+        agregaCita.putExtra(Events.DESCRIPTION, getText(R.string.citaPara)+" "+nombreMasc+" en "+ubic);
+
+        //Preparamos la fecha y hora (Duración 1/2 hora por defecto)
+        GregorianCalendar calDate = new GregorianCalendar(anioC, mesC, diaC);
+        long beginTime = calDate.getTimeInMillis() +(((horaC*3600)+(minC)*60))*1000;
+        agregaCita.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime);
+        agregaCita.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,beginTime+1800000);
+
+        // Configuración del evento como ocupado y privado
+        agregaCita.putExtra(Events.AVAILABILITY, Events.AVAILABILITY_BUSY);
+        agregaCita.putExtra(Events.ACCESS_LEVEL, Events.ACCESS_PRIVATE);
+        startActivity(agregaCita);
+    }
+
+    // Eventos onClick para seleccion fecha/hora
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -323,18 +318,8 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-    public void addEvent (String titulo, String ubicacion, long inicio, long fin){
-        Intent programar = new Intent(Intent.ACTION_INSERT)
-                .setData(CalendarContract.Events.CONTENT_URI)
-                .putExtra(CalendarContract.Events.TITLE,titulo)
-                .putExtra(CalendarContract.Events.EVENT_LOCATION, ubicacion)
-                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,inicio)
-                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME,fin);
-        if (programar.resolveActivity(getPackageManager()) != null) {
-            startActivity(programar);
-        }
 
-    }
+    // Uso de widget para seleccionar fecha
     private void obtenerFecha(){
         DatePickerDialog recogerFecha = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -347,6 +332,9 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                 String mesFormateado = (mesActual < 10)? CERO + String.valueOf(mesActual):String.valueOf(mesActual);
                 //Muestro la fecha con el formato deseado
                 mFecha.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
+                diaC = dayOfMonth;
+                mesC = month;
+                anioC = year;
             }
         },anio, mes, dia);
         fechaCita = mFecha.toString();
@@ -354,6 +342,8 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         recogerFecha.show();
 
     }
+
+    // Uso de widget para seleccionar hora
     private void obtenerHora(){
         TimePickerDialog recogerHora = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
             @Override
@@ -364,6 +354,8 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                 String minutoFormateado = (minute < 10)? String.valueOf(CERO + minute):String.valueOf(minute);
                 //Muestro la hora con el formato deseado
                 mHora.setText(horaFormateada + DOS_PUNTOS + minutoFormateado);
+                horaC = hourOfDay;
+                minC = minute;
             }
             //Estos valores deben ir en ese orden
             //Al colocar en false se muestra en formato 12 horas y true en formato 24 horas
@@ -373,6 +365,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         recogerHora.show();
     }
 
+    // Extra para la notificación al crearse la cita
     // Comprueba si la aplicacioón esta corriendo en una version de API => 26,
     // en cuyo caso tendremos que crear el canal de comunicacion.
     private void createNotificationChannel ()
@@ -402,5 +395,4 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
             ch.setLockscreenVisibility(NotificationCompat.VISIBILITY_PUBLIC);
         }
     }
-
 }

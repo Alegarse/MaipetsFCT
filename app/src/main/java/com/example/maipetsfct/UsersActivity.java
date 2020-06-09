@@ -26,7 +26,7 @@ public class UsersActivity extends AppCompatActivity {
     String uid;
 
     // Link Web de prueba para enlace a info (web final)
-    private String url = "https://wcbkwldo.lucusprueba.es/";
+    private String url = "https://improveyourbrand.es";
 
     // Conexión con firebase
     private FirebaseAuth fbauth ;
@@ -43,7 +43,6 @@ public class UsersActivity extends AppCompatActivity {
 
         //Obtenemos la instancia de FirebaseAuth
         fbauth = FirebaseAuth.getInstance() ;
-
         uid = fbauth.getCurrentUser().getUid();
 
         NavController nc = Navigation.findNavController(this,R.id.fragmentTab);
@@ -53,7 +52,6 @@ public class UsersActivity extends AppCompatActivity {
                 .build();
 
         NavigationUI.setupActionBarWithNavController(this,nc,abc);
-
         NavigationUI.setupWithNavController(bnv,nc);
     }
 
@@ -96,13 +94,6 @@ public class UsersActivity extends AppCompatActivity {
 
                     Intent sge = new Intent(this,sgeActivity.class);
                     startActivity(sge);
-                    /*
-                    Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                    share.setType("text/plain");
-                    share.putExtra(android.content.Intent.EXTRA_TEXT,"https://www.linkedin.com/in/alegarse/");
-                    startActivity(Intent.createChooser(share,"Compartir via"));
-
-                     */
                     break;
             }
         } else {
@@ -123,33 +114,6 @@ public class UsersActivity extends AppCompatActivity {
                     break;
             }
         }
-        switch (item.getItemId())
-        {
-            case R.id.mnuLogout :
-                // cerramos la sesión en FireBase
-                fbauth.signOut() ;
-                // volvemos a la actividad principal
-                setResult(0);
-                finish();
-                return true;
-
-            case R.id.info:
-                Uri uri = Uri.parse(url);
-                Intent info = new Intent (Intent.ACTION_VIEW, uri);
-                startActivity(info);
-                break;
-
-            /*
-            case R.id.mShare:
-
-                Intent share = new Intent(android.content.Intent.ACTION_SEND);
-                share.setType("text/plain");
-                share.putExtra(android.content.Intent.EXTRA_TEXT,"https://www.linkedin.com/in/alegarse/");
-                startActivity(Intent.createChooser(share,"Compartir via"));
-                break;
-             */
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }

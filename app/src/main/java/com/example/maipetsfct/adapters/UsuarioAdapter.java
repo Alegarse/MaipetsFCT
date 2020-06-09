@@ -40,9 +40,8 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
+
         Usuario usu = usuarios.get(position);
-
-
         if (usu.getServCode().equals("1")){
             holder.imagen.setImageResource(R.drawable.clinica);
         } else if (usu.getServCode().equals("2")){
@@ -54,9 +53,7 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
         }  else if (usu.getServCode().equals("5")){
             holder.imagen.setImageResource(R.drawable.protectora);
         }
-
         holder.nombre.setText(usuarios.get(position).getActividad());
-
         holder.BindHolder(usuarios.get(position));
     }
 
@@ -72,7 +69,6 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
 
         ImageView imagen;
         TextView nombre;
-
         public View view;
 
         public UsuarioViewHolder(View v){
@@ -102,6 +98,5 @@ public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioV
                 }
             });
         }
-
     }
 }

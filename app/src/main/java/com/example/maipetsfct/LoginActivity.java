@@ -17,6 +17,7 @@ import com.example.maipetsfct.models.Usuario;
 import com.example.maipetsfct.popups.PopReset;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -43,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Para ocultar la action bar y que no de problemas con los estilos de Material Design
@@ -61,10 +61,6 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.btnLogin);
         cancel = findViewById(R.id.btnCancel);
         resetPass = findViewById(R.id.passLoose);
-
-        // Datos para logeo de prueba temporal
-        email.setText("aleboy80@gmail.com");
-        password.setText("123456");
 
         // Escuchador para el botón Cancelar
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -92,10 +88,14 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // Guardamos las variables introducidas
                 String mail = email.getText().toString();
                 String passw = password.getText().toString();
+
+                if (mail.isEmpty() || passw.isEmpty() ){
+                    Snackbar.make(v, getResources().getText(R.string.e_empty), Snackbar.LENGTH_LONG).show();
+                    return ;
+                }
 
                 // Realizamos el logeo
                 mAuth.signInWithEmailAndPassword(mail,passw)
@@ -120,7 +120,6 @@ public class LoginActivity extends AppCompatActivity {
 
                             // 3. Obtenemos referencia al usuario logueado
                             DatabaseReference userRef = fbdatabase.getReference().child("usuarios/"+uid);
-
 
                             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
@@ -148,7 +147,6 @@ public class LoginActivity extends AppCompatActivity {
                                                 intent = new Intent(LoginActivity.this, VetActivity.class) ;
                                                 break;
                                         }
-
                                         intent.putExtras(bundle);
                                         startActivity(intent);
                                     }
@@ -156,7 +154,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
                                 }
                             });
                         }

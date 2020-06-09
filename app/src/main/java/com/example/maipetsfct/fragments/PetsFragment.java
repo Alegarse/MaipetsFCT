@@ -44,7 +44,6 @@ public class PetsFragment extends Fragment {
     private FirebaseAuth fbauth ;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference,ref;
-    private StorageReference mStorageRef;
 
 
     // Colección de mascotas
@@ -102,12 +101,10 @@ public class PetsFragment extends Fragment {
                     mascota m = dataSnapshot1.getValue(mascota.class);
                     mascotas.add(m);
                 }
-
                 mascotaAdapter = new MascotaAdapter(activity,mascotas);
                 mascotaAdapter.setMascotas(mascotas) ;
                 mascotaAdapter.notifyDataSetChanged();
                 recyclerView.setAdapter(mascotaAdapter);
-
             }
 
             @Override
@@ -129,9 +126,6 @@ public class PetsFragment extends Fragment {
             // Empezar la intención
             startActivityForResult(add, COD_REGISTRO);
         });
-
-
-
         return view;
     }
 
@@ -190,7 +184,6 @@ public class PetsFragment extends Fragment {
 
                 AlertDialog dialog = myBuild.create();
                 dialog.show();
-
         }
         return super.onContextItemSelected(item);
     }

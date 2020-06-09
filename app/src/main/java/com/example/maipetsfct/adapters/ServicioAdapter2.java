@@ -38,17 +38,15 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
     public ServicioAdapter2.ServicioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.sgedb_card,parent,false);
-
         view.setOnClickListener(this);
         return new ServicioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ServicioAdapter2.ServicioViewHolder holder, int position) {
+
         servicio serv = servicios.get(position);
-
         holder.nombre.setText(servicios.get(position).getNombre());
-
         holder.BindHolder(servicios.get(position));
         holder.view.setOnClickListener(this);
     }
@@ -74,7 +72,6 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
     public class ServicioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
         TextView nombre;
-
         public View view;
 
         public ServicioViewHolder(View v){
@@ -103,6 +100,5 @@ public class ServicioAdapter2 extends RecyclerView.Adapter<ServicioAdapter2.Serv
                 }
             });
         }
-
     }
 }

@@ -45,7 +45,6 @@ public class PopPet extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_pet);
 
-
         // Inicializamos FireBase
         FirebaseApp.initializeApp(this);
 
@@ -64,7 +63,6 @@ public class PopPet extends Activity {
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
@@ -76,8 +74,6 @@ public class PopPet extends Activity {
         params.y = -50;
 
         getWindow().setAttributes(params);
-
-        // Visualizado datos de mascota
 
         // Instanciamos los elementos
         nombre = findViewById(R.id.name2Pet);
@@ -105,26 +101,6 @@ public class PopPet extends Activity {
         } else {
             Picasso.get().load(rutaB).into(imgPet);
         }
-
-        /*
-        // Verificamos si ya existe la imagen del perfil
-        if (mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg") != null) {
-
-            StorageReference profileImgPath = mStorage.child("images").child(mAuth.getCurrentUser().getUid()).child("PetImg_"+codigo+".jpg");
-            profileImgPath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    Uri downloadUrl = uri;
-                    ruta = downloadUrl.toString();
-                    Picasso.get().load(ruta).into(imgPet);
-                }
-            });
-        } else {
-            imgPet.setImageResource(R.drawable.petscard);
-            ruta = "empty";
-        }
-
-         */
 
         // Los asociamos a cada campo de edición
         nombre.setText(nombreB);
@@ -171,7 +147,6 @@ public class PopPet extends Activity {
                 Toast.makeText(this,R.string.nosave,Toast.LENGTH_LONG).show();
             }));
         });
-
     }
 
     @Override

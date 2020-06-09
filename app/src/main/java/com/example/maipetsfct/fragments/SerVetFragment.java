@@ -57,13 +57,11 @@ public class SerVetFragment extends Fragment {
         super.onCreate(savedInstanceState);
         }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ser_vet, container, false);
-
         btnAdd = view.findViewById(R.id.addServ);
 
         //Obtenemos la instancia de FirebaseAuth
@@ -71,8 +69,6 @@ public class SerVetFragment extends Fragment {
 
         //Obtenemos la instancia de FirebaseDatabase
         fbdatabase =  FirebaseDatabase.getInstance();
-
-
 
         Activity activity = getActivity();
 
@@ -121,17 +117,14 @@ public class SerVetFragment extends Fragment {
             // Empezar la intención
             startActivityForResult(add, COD_REGISTRO);
         });
-
         return view;
     }
-
 
     // Menú contextual para las tarjetas de las mascotas
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         getActivity().getMenuInflater().inflate(R.menu.contextual, menu);
-
     }
 
     @Override

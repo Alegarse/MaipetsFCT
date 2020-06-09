@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.ImageView;
-
 import com.example.maipetsfct.registros.FamilyRegister;
 import com.example.maipetsfct.registros.VetRegister;
 

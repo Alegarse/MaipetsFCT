@@ -81,7 +81,6 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
-
         Activity activity = getActivity();
 
         //Obtenemos la instancia de FirebaseAuth
@@ -104,7 +103,6 @@ public class ProfileFragment extends Fragment {
         contra = view.findViewById(R.id.passP);
         imgPerfil = view.findViewById(R.id.imgPerfil);
 
-
         // Verificamos si ya existe la imagen del perfil
         if (mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg") != null) {
 
@@ -121,7 +119,6 @@ public class ProfileFragment extends Fragment {
             imgPerfil.setImageResource(R.drawable.profile);
         }
 
-
         //Lanzamos el popup de selección para la imagen de perfil
         imgPerfil.setOnClickListener(v ->
         {
@@ -129,7 +126,6 @@ public class ProfileFragment extends Fragment {
             select.putExtra("code",1);
             startActivity(select);
         });
-
 
         // Datos del perfil del usuario
         // Mostramos los datos en los campos de datos
@@ -151,7 +147,6 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
@@ -169,42 +164,18 @@ public class ProfileFragment extends Fragment {
                     usuario.delete();
                     reference.child("usuarios").child(uid).removeValue();
                     reference.child("mascotas").child(uid).removeValue();
-
-                    /* Para intentar borrar archivos del Storage, ya que no implementa borrar directorio
-                    No funciona, ver si da tiempo
-                    mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).listAll();
-                    StorageReference listRef = mStorageRef.child("images").child(mAuth.getCurrentUser().getUid());
-                    Task<ListResult> listPagetask = listRef.list(100);
-                    listPagetask.addOnSuccessListener(new OnSuccessListener<ListResult>() {
-                        @Override
-                        public void onSuccess(ListResult listResult) {
-                            List<StorageReference> items = listResult.getItems();
-                            int tamanio = items.size();
-                            for (int m = 0; m < tamanio;m++){
-                                String item = items.get(m).toString();
-                                mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).child(item).delete();
-                            }
-
-                        }
-                    });
-
-                     */
-
                     mAuth.signOut();
                     Intent salir = new Intent(activity, MainActivity.class);
                     startActivity(salir);
                 });
                 myBuild.setNegativeButton("No", (dialogInterface, i) ->
                         dialogInterface.cancel());
-
                 AlertDialog dialog = myBuild.create();
                 dialog.show();
-
             }
         });
 
         // Botón guardar
-
         editPerf.setOnClickListener(new View.OnClickListener() {
             private View v;
             @Override
@@ -223,19 +194,14 @@ public class ProfileFragment extends Fragment {
                 }
 
                 Usuario usuario = new Usuario(nom,ape,ema,pwd,code,ruta,uid);
-
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
-
                 dbref.child(uid).setValue(usuario) ;
                 Snackbar.make(v, getResources().getText(R.string.save_ok), Snackbar.LENGTH_LONG).show();
                 return;
             }
         });
-
         return view;
     }
-
-
 
     // Método para obtener texto de los campos
     private String getField(EditText edit)

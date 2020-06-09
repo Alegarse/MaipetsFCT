@@ -1,7 +1,6 @@
 package com.example.maipetsfct.fragments;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,10 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.maipetsfct.MainActivity;
-import com.example.maipetsfct.adapters.ServicioAdapter;
 import com.example.maipetsfct.models.servicio;
 import com.example.maipetsfct.popups.PopUpSelect;
 import com.example.maipetsfct.R;
@@ -60,7 +57,6 @@ public class ProfVetFragment extends Fragment {
     FirebaseUser usuario;
 
     public ProfVetFragment(){
-
     }
 
     @Override
@@ -90,7 +86,6 @@ public class ProfVetFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_prof, container, false);
-
         Activity activity = getActivity();
 
         //Obtenemos la instancia de FirebaseAuth
@@ -113,13 +108,12 @@ public class ProfVetFragment extends Fragment {
         email = view.findViewById(R.id.emaB);
         contra = view.findViewById(R.id.passB);
         imgPerfil = view.findViewById(R.id.imgPerfil);
+
         //////////////////////////////////////////////////////////////////////////////////
         // Para el posible borrado posterior
         servicios = new ArrayList<servicio>();
         ref = FirebaseDatabase.getInstance().getReference().child("clinica");
-
-        ////////////////////////////////////////////////////////////////////////////////
-
+        //////////////////////////////////////////////////////////////////////////////////
 
         // Verificamos si ya existe la imagen del perfil
         if (mStorageRef.child("images").child(mAuth.getCurrentUser().getUid()).child("ProfileImg.jpg") != null) {
@@ -137,7 +131,6 @@ public class ProfVetFragment extends Fragment {
             imgPerfil.setImageResource(R.drawable.profile);
         }
 
-
         //Lanzamos el popup de selección para la imagen de perfil
         imgPerfil.setOnClickListener(v ->
         {
@@ -145,7 +138,6 @@ public class ProfVetFragment extends Fragment {
             select.putExtra("code",1);
             startActivity(select);
         });
-
 
         // Datos del perfil del usuario
         // Mostramos los datos en los campos de datos
@@ -168,20 +160,15 @@ public class ProfVetFragment extends Fragment {
                     contra.setText(passFb);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
         // Boton borrar
-
         delPerf.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View v) {
-
                 AlertDialog.Builder myBuild = new AlertDialog.Builder(activity);
                 myBuild.setTitle(R.string.cDel);
                 myBuild.setMessage(R.string.yesDel);
@@ -203,28 +190,22 @@ public class ProfVetFragment extends Fragment {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
                         }
                     });
 
                     reference.child("usuarios").child(uid).removeValue();
                     usuario.delete();
-
                     mAuth.signOut();
                     Intent salir = new Intent(activity, MainActivity.class);
                     startActivity(salir);
                 });
-
-                myBuild.setNegativeButton("No", (dialogInterface, i) ->
-                        dialogInterface.cancel());
-
+                myBuild.setNegativeButton("No", (dialogInterface, i) -> dialogInterface.cancel());
                 AlertDialog dialog = myBuild.create();
                 dialog.show();
             }
         });
 
         // Botón guardar
-
         editPerf.setOnClickListener(new View.OnClickListener() {
             private View v;
             @Override
@@ -244,24 +225,18 @@ public class ProfVetFragment extends Fragment {
                 }
 
                 Usuario usuario = new Usuario(actividadFb,bnom,dir,tel,ema,pwd,code,servCode,ruta,uid);
-
                 DatabaseReference dbref = fbdatabase.getReference("usuarios");
-
                 dbref.child(uid).setValue(usuario) ;
                 Snackbar.make(v, getResources().getText(R.string.save_ok), Snackbar.LENGTH_LONG).show();
                 return;
             }
         });
-
         return view;
     }
-
-
 
     // Método para obtener texto de los campos
     private String getField(EditText edit)
     {
         return edit.getText().toString().trim() ;
     }
-
 }

@@ -38,7 +38,6 @@ public class ServicesFragment extends Fragment {
     private FirebaseAuth fbauth ;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference,ref;
-    private StorageReference mStorageRef;
     int test = 0;
 
     // Colección de servicios de usuarios
@@ -46,9 +45,6 @@ public class ServicesFragment extends Fragment {
     ArrayList<String> repes = new ArrayList<>();
     RecyclerView recyclerView;
     UsuarioAdapter usuarioAdapter;
-
-
-    private Button prueba;
 
 
     public ServicesFragment() {
@@ -102,7 +98,6 @@ public class ServicesFragment extends Fragment {
                             }
                         }
                 }
-
                 usuarioAdapter = new UsuarioAdapter(activity,usuarios);
                 usuarioAdapter.setUsuarios(usuarios);
                 recyclerView.setAdapter(usuarioAdapter);
@@ -114,7 +109,6 @@ public class ServicesFragment extends Fragment {
             }
         });
         registerForContextMenu(recyclerView);
-
         return  view;
     }
 
@@ -136,7 +130,6 @@ public class ServicesFragment extends Fragment {
                 verInfo.putExtra("servCode",usuario.getServCode());
                 verInfo.putExtra("titulo",usuario.getActividad());
                 startActivity(verInfo);
-
         }
         return super.onContextItemSelected(item);
     }

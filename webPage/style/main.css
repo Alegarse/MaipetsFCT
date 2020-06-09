@@ -652,6 +652,9 @@ img {
         height: 15%;
         margin-top: 20vw;
     }
+    #acercade2 {
+        overflow: scroll;
+    }
 
     #textacercade p {
         font-size: 3.3vw;

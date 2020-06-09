@@ -40,18 +40,14 @@ public class ActividadAdapter
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.servdates_card,parent,false);
-
         view.setOnClickListener(this);
-
         return new UsuarioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         Usuario usu = usuarios.get(position);
-
         holder.nombre.setText(usuarios.get(position).getActividad());
-
         holder.BindHolder(usuarios.get(position));
         holder.view.setOnClickListener(this);
     }
@@ -78,14 +74,12 @@ public class ActividadAdapter
     public class UsuarioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
         TextView nombre;
-
         public View view;
 
         public UsuarioViewHolder(View v){
 
             super(v);
             this.view = v;
-
             nombre = v.findViewById(R.id.nombreActiv);
             v.setOnCreateContextMenuListener(this);
         }
@@ -108,6 +102,5 @@ public class ActividadAdapter
                 }
             });
         }
-
     }
 }

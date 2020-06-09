@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.maipetsfct.LoginActivity;
 import com.example.maipetsfct.R;
@@ -145,6 +146,7 @@ public class VetRegister extends AppCompatActivity {
                                 finish();
                                 // Tras el registro correcto redirijo a la pagina de login
                                 Intent aLogin = new Intent(VetRegister.this, LoginActivity.class);
+                                Toast.makeText(getApplicationContext(),getText(R.string.ok_register), Toast.LENGTH_LONG).show();
                                 startActivity(aLogin);
 
                             } else {  // Usuario no se registra correctamente

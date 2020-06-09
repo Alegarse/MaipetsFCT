@@ -25,9 +25,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-
 import java.io.File;
-
 
 public class PopUpSelect extends Activity {
 
@@ -67,7 +65,6 @@ public class PopUpSelect extends Activity {
 
         //Obtenemos la instancia de Storage
         mStorage = FirebaseStorage.getInstance().getReference();
-
 
         // Diseño de la ventana emergente
         DisplayMetrics dm = new DisplayMetrics();
@@ -137,8 +134,6 @@ public class PopUpSelect extends Activity {
         if (code == 2 ){
             path = magicalCamera.savePhotoInMemoryDevice(magicalCamera.getPhoto(),"PetImg","Maipets", MagicalCamera.JPEG, true);
         }
-
-
 
         if(path != null){
             Toast.makeText(PopUpSelect.this, getString(R.string.imgSave) + path, Toast.LENGTH_SHORT).show();

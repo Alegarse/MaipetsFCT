@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.maipetsfct.LoginActivity;
 import com.example.maipetsfct.R;
@@ -117,6 +118,7 @@ public class FamilyRegister extends AppCompatActivity {
                                 setResult(RESULT_OK);
                                 finish();
                                 Intent aLogin = new Intent(FamilyRegister.this, LoginActivity.class);
+                                Toast.makeText(getApplicationContext(),getText(R.string.ok_register), Toast.LENGTH_LONG).show();
                                 startActivity(aLogin);
 
                             } else {  // Usuario no se registra correctamente
@@ -126,14 +128,6 @@ public class FamilyRegister extends AppCompatActivity {
                         });
             }
         });
-
-
-
-
-
-
-
-
     }
     // Método para obtener texto de los campos
     private String getField(EditText edit)

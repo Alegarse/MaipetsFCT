@@ -10,7 +10,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,9 +48,7 @@ public class CitasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas);
-
         this.setTitle(R.string.datMan);
-
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Bundle datosCitas = getIntent().getExtras();
@@ -96,15 +93,12 @@ public class CitasActivity extends AppCompatActivity {
                         citas.add(c);
                     }
                 }
-
                 citaAdapter = new CitasAdapter(CitasActivity.this,citas);
                 citaAdapter.setCitas(citas);
                 recyclerView.setAdapter(citaAdapter);
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
         registerForContextMenu(recyclerView);
@@ -117,7 +111,6 @@ public class CitasActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
         getMenuInflater().inflate(R.menu.citas_menu, menu);
     }
-
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
@@ -132,17 +125,14 @@ public class CitasActivity extends AppCompatActivity {
 
                     Cita cita = citas.get(citaAdapter.getIndex());
                     String UUID = cita.getIdCita();
-
                     ref.child(UUID).removeValue();
                     Toast.makeText(this,R.string.ficDel, Toast.LENGTH_LONG).show();
 
                 });
                 myBuild.setNegativeButton("No", (dialogInterface, i) ->
                         dialogInterface.cancel());
-
                 AlertDialog dialog = myBuild.create();
                 dialog.show();
-
         }
         return super.onContextItemSelected(item);
     }

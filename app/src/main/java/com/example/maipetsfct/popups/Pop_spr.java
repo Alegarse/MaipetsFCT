@@ -78,17 +78,13 @@ public class Pop_spr extends Activity {
                         usuarios.add(u);
                     }
                 }
-
                 usuarioAdapter = new sgeAdapter(Pop_spr.this,usuarios);
                 usuarioAdapter.setUsuarios(usuarios);
-
                 usuarioAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Usuario user = usuarios.get(recyclerView.getChildAdapterPosition(v));
-
                         uidSel = user.getUid();
-
                             if (user.getUrlImage().equals("empty")) {
                                 imgUsuario.setImageResource(R.drawable.profile);
                             } else {
@@ -97,14 +93,13 @@ public class Pop_spr extends Activity {
                             nombreRUsu.setText(user.getRazon());
                             tipoRUsu.setText(user.getActividad());
 
-                            // ALIMENTO EL SEGUNDO RECYCLERVIEW
+                        // ALIMENTO EL SEGUNDO RECYCLERVIEW
                         recyclerView2 = findViewById(R.id.listServsAct);
                         recyclerView2.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
                         servicios = new ArrayList<servicio>();
 
                         ref = FirebaseDatabase.getInstance().getReference().child("servicios");
-
                         ref.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -117,7 +112,6 @@ public class Pop_spr extends Activity {
                                 }
                                 servicioAdapter = new ServicioAdapter2(Pop_spr.this,servicios);
                                 servicioAdapter.setServicios(servicios);
-
                                 servicioAdapter.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -132,10 +126,8 @@ public class Pop_spr extends Activity {
                                 });
                                 recyclerView2.setAdapter(servicioAdapter);
                             }
-
                             @Override
                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                             }
                         });
                     }

@@ -40,21 +40,19 @@ public class sgeAdapter
     public sgeAdapter.UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.sgedb_card,parent,false);
-
         view.setOnClickListener(this);
         return new UsuarioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull sgeAdapter.UsuarioViewHolder holder, int position) {
-        Usuario usu = usuarios.get(position);
 
+        Usuario usu = usuarios.get(position);
         if (usu.getCodigo().equals("fam")){
             holder.nombre.setText(usu.getNombre()+ " " + usu.getApellidos());
         } else {
             holder.nombre.setText(usu.getRazon());
         }
-
         holder.BindHolder(usuarios.get(position));
         holder.view.setOnClickListener(this);
     }
@@ -81,7 +79,6 @@ public class sgeAdapter
     public class UsuarioViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
 
         TextView nombre;
-
         public View view;
 
         public UsuarioViewHolder(View v){
@@ -110,6 +107,5 @@ public class sgeAdapter
                 }
             });
         }
-
     }
 }

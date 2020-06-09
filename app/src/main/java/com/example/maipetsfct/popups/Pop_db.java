@@ -1,7 +1,6 @@
 package com.example.maipetsfct.popups;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.maipetsfct.MainActivity;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.sgeAdapter;
 import com.example.maipetsfct.models.Cita;
@@ -41,7 +39,6 @@ public class Pop_db extends Activity {
     private FirebaseAuth fbauth ;
     private FirebaseDatabase fbdatabase;
     DatabaseReference reference,ref;
-    FirebaseUser usuario;
 
     // Colección de servicios de usuarios
     ArrayList<Usuario> usuarios;
@@ -58,9 +55,7 @@ public class Pop_db extends Activity {
         tipoUsu = findViewById(R.id.tipoUsu);
         emailUsu = findViewById(R.id.emailUsu);
         telUsu = findViewById(R.id.teleUsu);
-
         borraUser = findViewById(R.id.delAdminProf);
-
 
         // Instanciamos datos reales usuario
         imgUsuario = findViewById(R.id.imgUsu);
@@ -75,7 +70,7 @@ public class Pop_db extends Activity {
         //Obtenemos la instancia de FirebaseDatabase
         fbdatabase =  FirebaseDatabase.getInstance();
 
-        // LISTADO DE USUARIOS
+        // LISTADO DE USUARIOS, CITAS Y RECYCLERVIEW
         recyclerView = findViewById(R.id.listUsus);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -94,10 +89,8 @@ public class Pop_db extends Activity {
                     Usuario u = data1.getValue(Usuario.class);
                     usuarios.add(u);
                 }
-
                 usuarioAdapter = new sgeAdapter(Pop_db.this,usuarios);
                 usuarioAdapter.setUsuarios(usuarios);
-
                 usuarioAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -131,7 +124,6 @@ public class Pop_db extends Activity {
                             telUsu.setText(R.string.telef2p);
                             telRUsu.setText(user.getTelefono());
                         }
-
                         // Escuchador para el boton de eliminar al usuario
                         borraUser.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -156,27 +148,21 @@ public class Pop_db extends Activity {
                                                     }
                                                 }
                                             }
-
                                             @Override
                                             public void onCancelled(@NonNull DatabaseError databaseError) {
-
                                             }
                                         });
                                         finish();
                                     }
-
                                 });
                                 myBuild.setNegativeButton("No", (dialogInterface, i) ->
                                         dialogInterface.cancel());
-
                                 AlertDialog dialog = myBuild.create();
                                 dialog.show();
                             }
                         });
-
                     }
                 });
-
                 recyclerView.setAdapter(usuarioAdapter);
             }
 
@@ -185,6 +171,5 @@ public class Pop_db extends Activity {
                 Toast.makeText(getApplicationContext(), R.string.s_noadd, Toast.LENGTH_LONG).show();
             }
         });
-
     }
 }

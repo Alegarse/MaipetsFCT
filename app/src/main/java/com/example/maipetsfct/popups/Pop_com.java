@@ -35,7 +35,6 @@ public class Pop_com extends Activity {
     private TextView nombreRUsu, emailRUsu, telRUsu;
     private TextView emailUsu, telUsu;
     private ImageButton botonLlamada, botonMail;
-    private String numero,para;
 
     private FirebaseAuth fbauth;
     private FirebaseDatabase fbdatabase;
@@ -89,10 +88,8 @@ public class Pop_com extends Activity {
                     Usuario u = data1.getValue(Usuario.class);
                     usuarios.add(u);
                 }
-
                 usuarioAdapter = new sgeAdapter(Pop_com.this, usuarios);
                 usuarioAdapter.setUsuarios(usuarios);
-
                 usuarioAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -27,12 +27,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
 
     private int position;
 
-    private FirebaseAuth mAuth ;
-    private StorageReference mStorage;
-
-
-
-
     public MascotaAdapter(Context c, ArrayList<mascota> m) {
         context = c;
         mascotas = m;
@@ -49,8 +43,6 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     public MascotaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         mascota m = mascotas.get(position);
-
-
         return new MascotaViewHolder(LayoutInflater.from(context).inflate(R.layout.mascota_card,parent,false));
     }
 
@@ -112,5 +104,4 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
                 });
         }
     }
-
 }
