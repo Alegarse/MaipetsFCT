@@ -8,7 +8,7 @@
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:background="@drawable/pop_reset"
-    tools:context=".popups.PopReset">
+    tools:context="com.maipetsfct.popups.PopReset">
 
     <TextView
         android:id="@+id/ususReg"

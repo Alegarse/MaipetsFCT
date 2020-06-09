@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/pop_pet"
     android:scrollbars="vertical"
-    tools:context=".popups.PopPet">
+    tools:context="com.maipetsfct.popups.PopPet">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saved"

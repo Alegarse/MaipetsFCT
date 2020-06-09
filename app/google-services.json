@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:138672750066:android:f358682254da574018bf6b",
         "android_client_info": {
-          "package_name": "com.ags.maipets"
+          "package_name": "com.maipetsfct"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "138672750066-beiec8u16pursldbu2dltb23ooroi1mq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.ags.maipets",
+            "package_name": "com.maipetsfct",
             "certificate_hash": "75033d205d444f3bce2c8a4dafbd7fcb6594395a"
           }
         },
@@ -47,7 +47,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:138672750066:android:d20d35599ada643918bf6b",
         "android_client_info": {
-          "package_name": "com.example.maipetsfct"
+          "package_name": "com.maipetsfct"
         }
       },
       "oauth_client": [
@@ -55,7 +55,7 @@
           "client_id": "138672750066-1bme6pdk59jp0ghqq2tcav1u598n467p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.maipetsfct",
+            "package_name": "com.maipetsfct",
             "certificate_hash": "ab11447774888604fa330ccdd6c2af558a7f1b11"
           }
         },

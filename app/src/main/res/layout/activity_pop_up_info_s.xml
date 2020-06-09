@@ -8,7 +8,7 @@
     android:background="@drawable/pop_pet"
     android:padding="10dp"
     android:scrollbars="vertical"
-    tools:context=".popups.PopUpInfoS">
+    tools:context="com.maipetsfct.popups.PopUpInfoS">
 
 
     <ImageView

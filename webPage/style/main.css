@@ -464,7 +464,6 @@ img {
 .content5 p {
     margin: 0;
     padding: 1vw;
-    text-align: center;
     font-size: 1.3vw;
 }
 
@@ -472,6 +471,14 @@ img {
     color: rgba(0, 128, 0, 0.671);
     background-color: transparent;
     text-decoration: none;
+    text-align: start;
+}
+
+#pripol {
+    font-size: 0.8vw;
+    font-style: italic;
+    color: #404040;
+    text-align: end;
 }
 
 /*  FIN FOOTER=================================================================== */

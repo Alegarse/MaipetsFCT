@@ -29,48 +29,48 @@
         android:theme="@style/AppTheme">
 
         <!-- Defino el servicio para poder usarlo -->
-        <service android:name=".services.initService" />
+        <service android:name="com.maipetsfct.services.initService" />
         <!-- Actividades de la APP -->
         <activity
-            android:name=".popups.Pop_spr_det"
+            android:name="com.maipetsfct.popups.Pop_spr_det"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".popups.Pop_com"
+            android:name="com.maipetsfct.popups.Pop_com"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".popups.Pop_spr"
+            android:name="com.maipetsfct.popups.Pop_spr"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".popups.Pop_db"
+            android:name="com.maipetsfct.popups.Pop_db"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".sgeActivity" />
+        <activity android:name="com.maipetsfct.sgeActivity" />
         <activity
-            android:name=".popups.PopUpInfoS"
+            android:name="com.maipetsfct.popups.PopUpInfoS"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".PopSelectAct" />
-        <activity android:name=".CitasActivity" />
+        <activity android:name="com.maipetsfct.PopSelectAct" />
+        <activity android:name="com.maipetsfct.CitasActivity" />
         <activity
-            android:name=".popups.PopReset"
+            android:name="com.maipetsfct.popups.PopReset"
             android:theme="@style/AppTheme.PopUp" />
         <activity
-            android:name=".popups.PopServ"
+            android:name="com.maipetsfct.popups.PopServ"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".AddServActivity" />
-        <activity android:name=".VetActivity" />
+        <activity android:name="com.maipetsfct.AddServActivity" />
+        <activity android:name="com.maipetsfct.VetActivity" />
         <activity
-            android:name=".popups.PopPet"
+            android:name="com.maipetsfct.popups.PopPet"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".AddMascActivity" />
+        <activity android:name="com.maipetsfct.AddMascActivity" />
         <activity
-            android:name=".popups.PopUpSelect"
+            android:name="com.maipetsfct.popups.PopUpSelect"
             android:theme="@style/AppTheme.PopUp" />
-        <activity android:name=".UsersActivity" />
-        <activity android:name=".registros.VetRegister" />
-        <activity android:name=".registros.FamilyRegister" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".NewUserActivity" />
-        <activity android:name=".PostMainActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.maipetsfct.UsersActivity" />
+        <activity android:name="com.maipetsfct.registros.VetRegister" />
+        <activity android:name="com.maipetsfct.registros.FamilyRegister" />
+        <activity android:name="com.maipetsfct.LoginActivity" />
+        <activity android:name="com.maipetsfct.NewUserActivity" />
+        <activity android:name="com.maipetsfct.PostMainActivity" />
+        <activity android:name="com.maipetsfct.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

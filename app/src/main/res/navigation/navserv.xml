@@ -8,13 +8,13 @@
 
     <fragment
         android:id="@+id/perfil"
-        android:name="com.example.maipetsfct.fragments.ProfVetFragment"
+        android:name="com.maipetsfct.fragments.ProfVetFragment"
         android:label="@string/perfil"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/serv"
-        android:name="com.example.maipetsfct.fragments.SerVetFragment"
+        android:name="com.maipetsfct.fragments.SerVetFragment"
         android:label="@string/serv"
         tools:layout="@layout/fragment_ser_vet" />
 
