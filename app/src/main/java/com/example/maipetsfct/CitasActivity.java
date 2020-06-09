@@ -7,9 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -124,8 +128,10 @@ public class CitasActivity extends AppCompatActivity {
                 myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
 
                     Cita cita = citas.get(citaAdapter.getIndex());
+                    int calId = cita.getIdCalCita();
                     String UUID = cita.getIdCita();
                     ref.child(UUID).removeValue();
+                    borraCitCal(calId);
                     Toast.makeText(this,R.string.ficDel, Toast.LENGTH_LONG).show();
 
                 });
@@ -135,5 +141,12 @@ public class CitasActivity extends AppCompatActivity {
                 dialog.show();
         }
         return super.onContextItemSelected(item);
+    }
+
+    private void borraCitCal(int id) {
+        ContentResolver cr = getContentResolver();
+        Uri deleteUri = null;
+        deleteUri = ContentUris.withAppendedId(CalendarContract.Events.CONTENT_URI,id);
+        int rows = cr.delete(deleteUri,null,null);
     }
 }

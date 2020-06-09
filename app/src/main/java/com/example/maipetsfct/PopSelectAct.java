@@ -124,8 +124,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         get_fecha.setOnClickListener(this);
         get_hora.setOnClickListener(this);
 
-        calId =(int) Math.random() * 100000;
-
         //Obtenemos conexiones Firebase
         fbauth = FirebaseAuth.getInstance() ;
         fbdatabase =  FirebaseDatabase.getInstance();
@@ -233,8 +231,11 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                 final String nombreMascota = nombreMasc;
                                 final String ident = uid;
 
+                                // Obtenemos id aleatorio de la cita para el Cal
+                                calId =(int) Math.random() * 100000;
+
                                 // Creamos la cita en la BBDD
-                                Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
+                                Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid,calId);
                                 DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
                                 dbref.setValue(cita);
                                 setResult(RESULT_OK);
