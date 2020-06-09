@@ -6,7 +6,7 @@ Gestión de mascotas integral a nivel usuario.<br/>
 [Video explicativo](https://youtu.be/JNNqqDwe2vU)
 
 ## Link a la web de presentación de la aplicación
-[Web Maipets](https://wcbkwldo.lucusprueba.es/)
+[Web Maipets](https://improveyourbrand.es/)
 
 
 # Evolución semanal del proyecto
@@ -142,7 +142,7 @@ Implementada ya en su totalidad la parte de SGE, de solo acceso por el admin, do
 El primero de gestión de la cartera de clientes o usuarios de la app, con posibilidad de visualización de todos sus datos, y posibilidad de eliminar dicho usuario de la BBDD.</br>
 El segundo, en el que se discrecciona a los usuarios para ver solo los tipos de usuarios que ofertan un servicio para las mascotas, pudiendo ver que tipo de servicios han ofertado y la descripción del mismo para controlar el contenido.</br>
 El tercero, que supone la vía de comunicación entre el gestor de la BBDD y los usuarios finales, en el que se puede contactar con estos a través de un evento email en todos los casos, de manera que la app se apoya en una herramienta externa de email para crear los mensajes, recordatorios, notas y demás comunicaciones necesarias para su gestión de usuarios. Inclusive, a nivel de contacto en caso de servicios profesionales, se puede contactar vía telefonica con los usuarios tipo servicios desdela propia app, ya que lanza un DIAL con el número de teléfono.</br>
-Página web subida a un dominio propio, [puede visitarse aqui](improveyourbrand.es)</br>
+Página web subida a un dominio propio, [puede visitarse aqui](https://improveyourbrand.es/)</br>
 
 ### Bibliografía Utilizada
 :small_orange_diamond:[Descripción general del proveedor de calendario](https://developer.android.com/guide/topics/providers/calendar-provider.html)<br/>
