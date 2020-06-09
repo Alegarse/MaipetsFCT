@@ -15,8 +15,8 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 📱 Disponemos de 2 opciones: Pasar a hacer login si ya tenemos cuenta o registrarnos si somos un nuevo usuario.<br/>
 :small_orange_diamond: En caso de tener cuenta, introducimos nuestro email y contraseña para entrar. En caso de haber olvidado la contraseña, podemos usar el campo de restaurarla.<br/>
 :small_orange_diamond: Si no tenemos cuenta, podemos registrarnos.<br/>
----Siendo usuario tipo familia.<br/>
----Siendo usuario tipo servicios.<br/>
+:small_orange_diamond:small_blue_diamond:Siendo usuario tipo familia.<br/>
+:small_orange_diamond::small_blue_diamond:Siendo usuario tipo servicios.<br/>
 :small_orange_diamond: Para ambas opciones, introducimos los datos requeridos y pulsamos en registrarnos, lo que nos lleva automaticamente a la ventana de login.</br>
 ![Cap2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/two.png?raw=true)<br/>
 📱 Una vez dentro, se dan dos posibles casos:<br/>
