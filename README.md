@@ -27,14 +27,14 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 :small_orange_diamond::small_blue_diamond::small_orange_diamond:Para cambiar la imagen, pulsamos en ella y la seleccionamos desde la cámara o la galería.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond:Para borrar nuestra cuenta pulsamos el botón correspondiente, debiendo confirmar de nuevo.<br/>
 ![Cap3.1.1](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/three.png?raw=true)<br/>
-        3.1.2 Ficha mascotas:<br/>
-            3.1.2.1 Usamos el boton inferior para añadir una mascota, rellenando los campos requeridos y dándole a guardar.<br/>
-            3.2.2.2 Sobre una ficha de mascota, con pulsación larga disponemos de 3 opciones:<br/>
-                3.2.2.2.1 Actualizar los datos, que se abreen una ventana emergente y desdeahí podemos editarlos, cambiar la imagen y gaurdar los cambios.<br/>
-                3.2.2.2.2 Gestionar las citas para la mascota<br/>
-                    3.2.2.2.2.1 Añadiendo nueva, donde seleccionamos la modalidad, luego elegimos un negocio disponible, fecha y hora y guardamos, pudiendo añadirla al calendario del movil.<br/>
-                    3.2.2.2.2.2 Visualizandolas citas disponibles, con pulsación larga sobre ellas podemos eliminarlas.<br/>
-                3.2.2.2.3 Eliminar la ficha de la mascota, debiendo hacer una segunda confirmación para borrarla.<br/>
+:small_orange_diamond: Ficha mascotas:<br/>
+:small_orange_diamond::small_blue_diamond: Usamos el boton inferior para añadir una mascota, rellenando los campos requeridos y dándole a guardar.<br/>
+:small_orange_diamond::small_blue_diamond: Sobre una ficha de mascota, con pulsación larga disponemos de 3 opciones:<br/>
+:small_orange_diamond::small_blue_diamond::small_orange_diamond: Actualizar los datos, que se abreen una ventana emergente y desdeahí podemos editarlos, cambiar la imagen y gaurdar los cambios.<br/>
+:small_orange_diamond::small_blue_diamond::small_orange_diamond: Gestionar las citas para la mascota<br/>
+:small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Añadiendo nueva, donde seleccionamos la modalidad, luego elegimos un negocio disponible, fecha y hora y guardamos, pudiendo añadirla al calendario del movil.<br/>
+:small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Visualizandolas citas disponibles, con pulsación larga sobre ellas podemos eliminarlas.<br/>
+:small_orange_diamond::small_blue_diamond::small_orange_diamond: Eliminar la ficha de la mascota, debiendo hacer una segunda confirmación para borrarla.<br/>
 ![Cap3.1.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/four.jpg?raw=true)<br/>
 ![Cap3.1.2.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/five.jpg?raw=true)<br/>
         3.1.3 Ficha servicios:<br/>
