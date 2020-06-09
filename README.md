@@ -14,11 +14,11 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 📱 1.Iniciamos en la pantalla inicial y pulsamos para avanzar el botón.</br>
 ![Cap2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/two.png?raw=true)<br/>
 📱 2. Disponemos de 2 opciones: Pasar a hacer login si ya tenemos cuenta o registrarnos si somos un nuevo usuario.<br/>
-    2.1. En caso de tener cuenta, introducimos nuestro email y contraseña para entrar. En caso de haber olvidado la contraseña, podemos usar el campo de restaurarla.<br/>
-    2.2. Si no tenemos cuenta, podemos registrarnos.<br/>
-        2.2.1. Siendo usuario tipo familia.<br/>
-        2.2.2. Siendo usuario tipo servicios.<br/>
-    Para ambas opciones, introducimos los datos requeridos y pulsamos en registrarnos, loque nos lleva automaticamente a la ventana de login.
+> En caso de tener cuenta, introducimos nuestro email y contraseña para entrar. En caso de haber olvidado la contraseña, podemos usar el campo de restaurarla.<br/>
+> Si no tenemos cuenta, podemos registrarnos.<br/>
+>> Siendo usuario tipo familia.<br/>
+>> Siendo usuario tipo servicios.<br/>
+> Para ambas opciones, introducimos los datos requeridos y pulsamos en registrarnos, loque nos lleva automaticamente a la ventana de login.
 ![Cap3.1.1](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/three.png?raw=true)<br/>
 📱 3. Una vez dentro, se dan dos posibles casos:<br/>
     3.1. Usuario tipo familia con mascotas.<br/>
@@ -40,7 +40,7 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 ![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/seven.jpg?raw=true)<br/>
         3.1.3 Ficha servicios:<br/>
             3.1.3.1 Se muestra un listado de fichas delos negocios disponibles registrados por usuarios con negocios en la aplicación. Para cada una,con pulsaciónlarga podemos ver una ventana emergente con la descripción del tipo de actividad o negocio.<br/>
-![Cap3.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/seven.jpg?raw=true)<br/>       
+![Cap3.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/nine.jpg?raw=true)<br/>       
     3.2. Usuario tipo servicios.
         La aplicación muestra 2 fichas (Perfil, Servicios) entre las que podemos desplazarnos pulsando en su icono correspondiente.
         3.2.1. Ficha perfil:
