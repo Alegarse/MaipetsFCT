@@ -64,7 +64,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
     final int minuto = f.get(Calendar.MINUTE);
 
     //Variables para event Calendar
-    int diaC,mesC,anioC,horaC,minC,calId;
+    int diaC,mesC,anioC,horaC,minC;
 
     // Variables de seteo de fecha y hora
     private static final String CERO = "0";
@@ -231,11 +231,8 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                 final String nombreMascota = nombreMasc;
                                 final String ident = uid;
 
-                                // Obtenemos id aleatorio de la cita para el Cal
-                                calId =(int) Math.random() * 100000;
-
                                 // Creamos la cita en la BBDD
-                                Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid,calId);
+                                Cita cita = new Cita(nombreCita,fechaCita,horaCita,nombreMascota,ident,cUid);
                                 DatabaseReference dbref = fbdatabase.getReference("citas/"+cUid);
                                 dbref.setValue(cita);
                                 setResult(RESULT_OK);
@@ -290,7 +287,6 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
 
         //Rellenamos con datos
         agregaCita.setType("vnd.android.cursor.item/event");
-        agregaCita.putExtra(Events.CALENDAR_ID,calId);
         agregaCita.putExtra(Events.TITLE, titulo);
         agregaCita.putExtra(Events.EVENT_LOCATION, ubic);
         agregaCita.putExtra(Events.DESCRIPTION, getText(R.string.citaPara)+" "+nombreMasc+" en "+ubic);

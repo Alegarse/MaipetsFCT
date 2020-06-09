@@ -9,20 +9,18 @@ public class Cita {
     private String nombreMascota;
     private String idUsuario;
     private String idCita;
-    private int idCalCita;
 
     public Cita() {
 
     }
 
-    public Cita(String nombreCita, String fechaCita, String horaCita, String nombreMascota, String idUsuario, String idCita, int idCalCita) {
+    public Cita(String nombreCita, String fechaCita, String horaCita, String nombreMascota, String idUsuario, String idCita) {
         this.nombreCita = nombreCita;
         this.fechaCita = fechaCita;
         this.horaCita = horaCita;
         this.nombreMascota = nombreMascota;
         this.idUsuario = idUsuario;
         this.idCita = idCita;
-        this.idCalCita = idCalCita;
     }
 
     public String getNombreCita() {
@@ -71,14 +69,6 @@ public class Cita {
 
     public void setIdCita(String idCita) {
         this.idCita = idCita;
-    }
-
-    public int getIdCalCita() {
-        return idCalCita;
-    }
-
-    public void setIdCalCita(int idCalCita) {
-        this.idCalCita = idCalCita;
     }
 
     @Override

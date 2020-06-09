@@ -117,7 +117,7 @@ Arreglando temas estéticos acorde a lo que creo es facilmente funcional y simpl
 
 ##  :books:Semana 1 de Junio al 5 de Junio de 2020
 ### Contenido
-Terminado el grueo de la app Android, a falta de realizar más tester. Se han realizado ya comprobaciones para evitar loopers en el funcionamiento, además de verificaciones decontenido de los campos solicitados al usuario.<br/>
+Terminado el grueso de la app Android, a falta de realizar más tester. Se han realizado ya comprobaciones para evitar loopers en el funcionamiento, además de verificaciones decontenido de los campos solicitados al usuario.<br/>
 Implementados servicios y notificaciones, además de añadir audios personalizados a la aplicación.<br/>
 En el tema estético me he basado en una composición básica de 3 colores, que son el negro,blanco y amarillo anaranjado,para unamejor visualización, además de estar adaptada a personas con daltonismo, y verificado este apartado por un conocido con esta peculiaridad visual.<br/>
 Usado storage de Firebase para elalmacenamiento de las imagenes, referenciadas estas, sean de perfil o de mascotas, a su correspondiente ficha en la BBDD relacional.<br/>
@@ -131,6 +131,24 @@ Para implementar la parte de Sistemas de Gestión Empresarial, he diseñado un a
 :small_orange_diamond:[Descripción general de MediaPlayer](https://developer.android.com/guide/topics/media/mediaplayer?hl=es)<br/>
 :small_orange_diamond:[Descripción general de los servicios](https://developer.android.com/guide/components/services?hl=es-419)<br/>
 :small_orange_diamond:[Icons Material Design](https://material.io/resources/icons/?style=baseline)<br/>
+
+
+##  :books:Semana 8 de Junio al 12 de Junio de 2020. Fin del proyecto
+### Contenido
+Testeo de la app en varios terminales y emuladores. Verificadas las comprobaciones de todos los campos de interacción con el usuario, y así evitados algunos fallos detectados.<br/>
+Usado storage de Firebase para elalmacenamiento de las imagenes, referenciadas estas, sean de perfil o de mascotas, a su correspondiente ficha en la BBDD relacional.<br/>
+Página web de presentación de la app terminada, conteniendo Media Querys para cambiar elementos según la resolución del movil. Incluido audio de fondo en la página, notable a través de Firefox, Chrome ha dejado de dar soporte al auio inrustado en laweb hasta que no se interaccione con ella.<br/>
+Implementada ya en su totalidad la parte de SGE, de solo acceso por el admin, donde se gestionan los clientes. Se compone de tres apartados:</br>
+El primero de gestión de la cartera de clientes o usuarios de la app, con posibilidad de visualización de todos sus datos, y posibilidad de eliminar dicho usuario de la BBDD.</br>
+El segundo, en el que se discrecciona a los usuarios para ver solo los tipos de usuarios que ofertan un servicio para las mascotas, pudiendo ver que tipo de servicios han ofertado y la descripción del mismo para controlar el contenido.</br>
+El tercero, que supone la vía de comunicación entre el gestor de la BBDD y los usuarios finales, en el que se puede contactar con estos a través de un evento email en todos los casos, de manera que la app se apoya en una herramienta externa de email para crear los mensajes, recordatorios, notas y demás comunicaciones necesarias para su gestión de usuarios. Inclusive, a nivel de contacto en caso de servicios profesionales, se puede contactar vía telefonica con los usuarios tipo servicios desdela propia app, ya que lanza un DIAL con el número de teléfono.</br>
+Página web subida a un dominio propio, [puede visitarse aqui](improveyourbrand.es)</br>
+
+### Bibliografía Utilizada
+:small_orange_diamond:[Descripción general del proveedor de calendario](https://developer.android.com/guide/topics/providers/calendar-provider.html)<br/>
+:small_orange_diamond:[Documentación calendar Contracts](https://developer.android.com/reference/android/provider/CalendarContract.EventsColumns?hl=es-419)<br/>
+:small_orange_diamond:[Intents comunes](https://developer.android.com/guide/components/intents-common?hl=es-419#java)<br/>
+:small_orange_diamond:[Como crear una app de llamadas](https://developer.android.com/guide/topics/connectivity/telecom/selfManaged)<br/>
 
 
 
