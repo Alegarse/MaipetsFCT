@@ -8,6 +8,55 @@ Gestión de mascotas integral a nivel usuario.<br/>
 ## Link a la web de presentación de la aplicación
 [Web Maipets](https://improveyourbrand.es/)
 
+# Tutorial uso de la app
+Breve tutorial de uso de la aplicación, a través de capturas de las pantallas y descripción de uso.</br>
+![Página inicial de la app](https://github.com/Alegarse/Maipetsv2/blob/master/Capturas/Inicial.png?raw=true)<br/>
+📱 1.Iniciamos en la pantalla inicial y pulsamos para avanzar el botón.
+📱 2. Disponemos de 2 opciones: Pasar a hacer login si ya tenemos cuenta o registrarnos si somos un nuevo usuario.
+    2.1. En caso de tener cuenta, introducimos nuestro email y contraseña para entrar. En caso de haber olvidado la contraseña, podemos usar el campo de restaurarla.
+    2.2. Si no tenemos cuenta, podemos registrarnos.
+        2.2.1. Siendo usuario tipo familia.
+        2.2.2. Siendo usuario tipo servicios.
+    Para ambas opciones, introducimos los datos requeridos y pulsamos en registrarnos, loque nos lleva automaticamente a la ventana de login.
+📱 3. Una vez dentro, se dan dos posibles casos:
+    3.1. Usuario tipo familia con mascotas.
+        La aplicacion muestra 3 fichas (Perfil, Mascotas, Servicios) entre las que podemos desplazarnos pulsando en su icono correspondiente.
+        3.1.1 Ficha perfil:
+            3.1.1.1 Para cambiar nuestros datos los editamos y pulsamos el boton de guardar.
+            3.1.1.2 Para cambiar la imagen, pulsamos en ella y la seleccionamos desde la cámara o la galería.
+            3.1.1.3 Para borrar nuestra cuenta pulsamos el botón correspondiente, debiendo confirmar de nuevo.
+        3.1.2 Ficha mascotas:
+            3.1.2.1 Usamos el boton inferior para añadir una mascota, rellenando los campos requeridos y dándole a guardar.
+            3.2.2.2 Sobre una ficha de mascota, con pulsación larga disponemos de 3 opciones:
+                3.2.2.2.1 Actualizar los datos, que se abreen una ventana emergente y desdeahí podemos editarlos, cambiar la imagen y gaurdar los cambios.
+                3.2.2.2.2 Gestionar las citas para la mascota
+                    3.2.2.2.2.1 Añadiendo nueva, donde seleccionamos la modalidad, luego elegimos un negocio disponible, fecha y hora y guardamos, pudiendo añadirla al calendario del movil.
+                    3.2.2.2.2.2 Visualizandolas citas disponibles, con pulsación larga sobre ellas podemos eliminarlas.
+                3.2.2.2.3 Eliminar la ficha de la mascota, debiendo hacer una segunda confirmación para borrarla.
+        3.1.3 Ficha servicios:
+            3.1.3.1 Se muestra un listado de fichas delos negocios disponibles registrados por usuarios con negocios en la aplicación. Para cada una,con pulsaciónlarga podemos ver una ventana emergente con la descripción del tipo de actividad o negocio.
+        
+    3.2. Usuario tipo servicios.
+        La aplicación muestra 2 fichas (Perfil, Servicios) entre las que podemos desplazarnos pulsando en su icono correspondiente.
+        3.2.1. Ficha perfil:
+            3.2.1.1 Para cambiar nuestros datos los editamos y pulsamos el boton de guardar.
+            3.2.1.2 Para cambiar la imagen, pulsamos en ella y la seleccionamos desde la cámara o la galería.
+            3.2.1.3 Para borrar nuestra cuenta pulsamos el botón correspondiente, debiendo confirmar de nuevo.
+        3.2.2. Ficha servicios:
+            Muestra un listado de fichas de los servicios que el usuario tenga registrados en la aplicación.
+            3.2.2.1 A través del botón nuevo servicio introducimos los campos requeridos y añadimos uno nuevo.
+            3.2.2.2 Con pulsación larga sobre un servicio existente, tenemos dos opciones:
+                3.2.2.2.1 Actualizar los datos, editando lo que corresponda y guardando posteriormente.
+                3.2.2.2.2 Eliminar dicho servicio, debiendo confirmar nuevamente su borrado.
+
+    En todos los casos, disponemos de un menú superior con 2 opciones:
+            Acerca de: Nos redirigirá a aweb de presentación de la aplicación.
+            Cerrar sesión: Cierra la sesión existente y no redirige a la pagina de inicio de sesión.
+    
+    En el caso de tratarse de un usuario administrador, dispondremos de una tercera opción en el menú superior, que es un sistema de gestión de la aplicación y sus usuarios, cas que no conlleva a realización de tutorial de uso.
+
+        
+
 
 # Evolución semanal del proyecto
 
