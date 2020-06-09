@@ -168,8 +168,10 @@ La interfaz iniciará e una actividad de logeo, con opciones de registro y resta
 Constará también de un menú contextual, el cual servirá de enlace a la gestión del perfil de usuario, si este esadministrador, información tecnica de la aplicación con un enlace a su web y como via de deslogeo.<br/>
 Dicho perfil de gestión de usuarios, solo disponible para administración, se implementa en la propia aplicación nativa (con apoyo de aplicaión externa de correo electrónico), y donde se accederá a la BBDD de usuarios.<br/>
 
+<!--
 ## Próximas versiones
  Implementar un control de vacunas, acceso a un canal de chat de usuarios y una seccion para posibles mascotas extraviadas, en las que indicar zona y fotografía, pendiente de concretar con empresas del sector.</br>
+ -->
 
 ## Medios a utilizar
 Nos valdremos de los siguientes medios:<br/>
