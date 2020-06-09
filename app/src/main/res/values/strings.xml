@@ -115,8 +115,8 @@
     <string name="sFecha">Please, select a date</string>
     <string name="sHora">Please, select a hour</string>
     <string name="notiTitle">Appointment saved</string>
-    <string name="notiDesc1">The appointment has been saved for</string>
-    <string name="notiDesc2">in calendar</string>
+    <string name="notiDesc1">The appointment for</string>
+    <string name="notiDesc2">" has been sent to calendar"</string>
     <string name="admin">Customer Management</string>
     <string name="introSge">" Application management system"</string>
     <string name="sgedb">Basic data</string>

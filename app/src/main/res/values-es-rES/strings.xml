@@ -110,8 +110,8 @@
     <string name="sFecha">Por favor, seleccione una fecha</string>
     <string name="sHora">Por favor, seleccione una hora</string>
     <string name="notiTitle">Cita guardada</string>
-    <string name="notiDesc1">Se ha guardado la cita para</string>
-    <string name="notiDesc2">en el calendario</string>
+    <string name="notiDesc1">Se ha enviado la cita para</string>
+    <string name="notiDesc2">al calendario</string>
     <string name="admin">Gestión de clientes</string>
     <string name="introSge">Sistema de gestión de la aplicación</string>
     <string name="sgedb">Datos básicos</string>

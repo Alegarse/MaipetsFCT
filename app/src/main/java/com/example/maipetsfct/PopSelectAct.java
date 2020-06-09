@@ -239,7 +239,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
                                 finish();
 
                                 // Ponemos la cita en el calendario del usuario
-                                addEvent(getText(R.string.citaPara)+ " "+ nombreMascota,nombreCita);
+                                addEvent(getText(R.string.citPara)+ " "+ nombreMascota,nombreCita);
 
                                 // Ahora, una vez guardada, creamos la notificación  ////////////////////////
                                 // Obtenenmos referencia al servicio de notificaciones de Android
@@ -289,7 +289,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         agregaCita.setType("vnd.android.cursor.item/event");
         agregaCita.putExtra(Events.TITLE, titulo);
         agregaCita.putExtra(Events.EVENT_LOCATION, ubic);
-        agregaCita.putExtra(Events.DESCRIPTION, getText(R.string.citaPara)+" "+nombreMasc+" en "+ubic);
+        agregaCita.putExtra(Events.DESCRIPTION, getText(R.string.citPara)+" "+nombreMasc+" en "+ubic);
 
         //Preparamos la fecha y hora (Duración 1/2 hora por defecto)
         GregorianCalendar calDate = new GregorianCalendar(anioC, mesC, diaC);
@@ -301,6 +301,7 @@ public class PopSelectAct extends AppCompatActivity implements View.OnClickListe
         agregaCita.putExtra(Events.AVAILABILITY, Events.AVAILABILITY_BUSY);
         agregaCita.putExtra(Events.ACCESS_LEVEL, Events.ACCESS_PRIVATE);
         startActivity(agregaCita);
+        return;
     }
 
     // Eventos onClick para seleccion fecha/hora
