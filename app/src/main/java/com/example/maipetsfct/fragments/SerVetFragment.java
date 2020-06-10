@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.maipetsfct.AddServActivity;
+import com.example.maipetsfct.models.mascota;
 import com.example.maipetsfct.popups.PopServ;
 import com.example.maipetsfct.R;
 import com.example.maipetsfct.adapters.ServicioAdapter;
@@ -142,10 +144,23 @@ public class SerVetFragment extends Fragment {
                 break;
 
             case R.id.ctxDel:
-                servicio ser = servicios.get(servicioAdapter.getIndex());
-                String UUID = ser.getsUid();
-                ref.child("servicios").child(UUID).removeValue();
-                Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
+
+                AlertDialog.Builder myBuild = new AlertDialog.Builder(getContext());
+                myBuild.setTitle(R.string.cDel);
+                myBuild.setMessage(R.string.delPet);
+                myBuild.setPositiveButton(R.string.afirmative, (dialogInterface, i) -> {
+
+                    servicio ser = servicios.get(servicioAdapter.getIndex());
+                    String UUID = ser.getsUid();
+                    ref.child("servicios").child(UUID).removeValue();
+                    Toast.makeText(getActivity().getApplicationContext(),R.string.ficDel, Toast.LENGTH_LONG).show();
+
+                });
+                myBuild.setNegativeButton("No", (dialogInterface, i) ->
+                        dialogInterface.cancel());
+
+                AlertDialog dialog = myBuild.create();
+                dialog.show();
                 break;
         }
         return super.onContextItemSelected(item);

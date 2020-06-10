@@ -184,6 +184,7 @@ public class PetsFragment extends Fragment {
 
                 AlertDialog dialog = myBuild.create();
                 dialog.show();
+                break;
         }
         return super.onContextItemSelected(item);
     }
