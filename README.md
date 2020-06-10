@@ -8,17 +8,18 @@ Gestión de mascotas integral a nivel usuario.<br/>
 ## Link a la web de presentación de la aplicación
 [Web Maipets](https://improveyourbrand.es/)
 
+
 # Tutorial uso de la app
 Breve tutorial de uso de la aplicación, a través de capturas de las pantallas y descripción de uso.</br>
 📱 Iniciamos en la pantalla inicial y pulsamos para avanzar el botón.</br>
-![Cap1](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/one.jpg?raw=true)<br/>
+![Cap1](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/one.jpg?raw=true)<br/>
 📱 Disponemos de 2 opciones: Pasar a hacer login si ya tenemos cuenta o registrarnos si somos un nuevo usuario.<br/>
 :small_orange_diamond: En caso de tener cuenta, introducimos nuestro email y contraseña para entrar. En caso de haber olvidado la contraseña, podemos usar el campo de restaurarla.<br/>
 :small_orange_diamond: Si no tenemos cuenta, podemos registrarnos.<br/>
 :small_orange_diamond::small_blue_diamond:Siendo usuario tipo familia.<br/>
 :small_orange_diamond::small_blue_diamond:Siendo usuario tipo servicios.<br/>
 :small_orange_diamond: Para ambas opciones, introducimos los datos requeridos y pulsamos en registrarnos, lo que nos lleva automaticamente a la ventana de login.</br>
-![Cap2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/two.png?raw=true)<br/>
+![Cap2](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/two.png?raw=true)<br/>
 📱 Una vez dentro, se dan dos posibles casos:<br/>
 :small_orange_diamond: Usuario tipo familia con mascotas.<br/>
 :small_orange_diamond: La aplicacion muestra 3 fichas (Perfil, Mascotas, Servicios) entre las que podemos desplazarnos pulsando en su icono correspondiente.<br/>
@@ -26,7 +27,7 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 :small_orange_diamond::small_blue_diamond::small_orange_diamond:Para cambiar nuestros datos los editamos y pulsamos el boton de guardar.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond:Para cambiar la imagen, pulsamos en ella y la seleccionamos desde la cámara o la galería.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond:Para borrar nuestra cuenta pulsamos el botón correspondiente, debiendo confirmar de nuevo.<br/>
-![Cap3.1.1](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/three.png?raw=true)<br/>
+![Cap3.1.1](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/three.png?raw=true)<br/>
 :small_orange_diamond: Ficha mascotas:<br/>
 :small_orange_diamond::small_blue_diamond: Usamos el boton inferior para añadir una mascota, rellenando los campos requeridos y dándole a guardar.<br/>
 :small_orange_diamond::small_blue_diamond: Sobre una ficha de mascota, con pulsación larga disponemos de 3 opciones:<br/>
@@ -35,11 +36,11 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 :small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Añadiendo nueva, donde seleccionamos la modalidad, luego elegimos un negocio disponible, fecha y hora y guardamos, pudiendo añadirla al calendario del movil.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Visualizandolas citas disponibles, con pulsación larga sobre ellas podemos eliminarlas.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond: Eliminar la ficha de la mascota, debiendo hacer una segunda confirmación para borrarla.<br/>
-![Cap3.1.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/four.jpg?raw=true)<br/>
-![Cap3.1.2.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/five.jpg?raw=true)<br/>
+![Cap3.1.2](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/four.jpg?raw=true)<br/>
+![Cap3.1.2.2](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/five.jpg?raw=true)<br/>
 :small_orange_diamond: Ficha servicios:<br/>
 :small_orange_diamond::small_blue_diamond: Se muestra un listado de fichas delos negocios disponibles registrados por usuarios con negocios en la aplicación. Para cada una,con pulsaciónlarga podemos ver una ventana emergente con la descripción del tipo de actividad o negocio.<br/>
-![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/seven.jpg?raw=true)<br/>
+![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/seven.jpg?raw=true)<br/>
 :small_orange_diamond: Usuario tipo servicios.<br/>
 :small_orange_diamond: La aplicación muestra 2 fichas (Perfil, Servicios) entre las que podemos desplazarnos pulsando en su icono correspondiente.<br/>
 :small_orange_diamond::small_blue_diamond: Ficha perfil:<br/>
@@ -52,13 +53,13 @@ Breve tutorial de uso de la aplicación, a través de capturas de las pantallas 
 :small_orange_diamond::small_blue_diamond::small_orange_diamond: Con pulsación larga sobre un servicio existente, tenemos dos opciones:<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Actualizar los datos, editando lo que corresponda y guardando posteriormente.<br/>
 :small_orange_diamond::small_blue_diamond::small_orange_diamond::small_blue_diamond: Eliminar dicho servicio, debiendo confirmar nuevamente su borrado.<br/>
-![Cap3.2](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/nine.jpg?raw=true)<br/>       
+![Cap3.2](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/nine.jpg?raw=true)<br/>       
 📱 En todos los casos, disponemos de un menú superior con 2 opciones:<br/>
 :small_orange_diamond: Acerca de: Nos redirigirá a aweb de presentación de la aplicación.<br/>
 :small_orange_diamond: Cerrar sesión: Cierra la sesión existente y no redirige a la pagina de inicio de sesión.<br/>
-![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/six.jpg?raw=true)<br/>
+![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/six.jpg?raw=true)<br/>
 📱 En el caso de tratarse de un usuario administrador, dispondremos de una tercera opción en el menú superior, que es un sistema de gestión de la aplicación y sus usuarios, cas que no conlleva a realización de tutorial de uso.<br/>
-![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/imgs/tuto/tutorial/eight.jpg?raw=true)<br/>   
+![Cap3.1.3](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Capturas/Para%20tutorial/eight.jpg?raw=true)<br/>   
 
 
         
