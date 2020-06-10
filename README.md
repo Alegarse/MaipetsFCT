@@ -194,6 +194,7 @@ Implementada ya en su totalidad la parte de SGE, de solo acceso por el admin, do
 🏷️El primero, de gestión de la cartera de clientes o usuarios de la app, con posibilidad de visualización de todos sus datos, y posibilidad de eliminar dicho usuario de la BBDD.</br>
 🏷️El segundo, en el que se discrecciona a los usuarios para ver solo los tipos de usuarios que ofertan un servicio para las mascotas, pudiendo ver que tipo de servicios han ofertado y la descripción del mismo para controlar el contenido.</br>
 🏷️El tercero, que supone la vía de comunicación entre el gestor de la BBDD y los usuarios finales, en el que se puede contactar con estos a través de un evento email en todos los casos, de manera que la app se apoya en una herramienta externa de email para crear los mensajes, recordatorios, notas y demás comunicaciones necesarias para su gestión de usuarios. Inclusive, a nivel de contacto en caso de servicios profesionales, se puede contactar vía telefonica con los usuarios tipo servicios desdela propia app, ya que lanza un DIAL con el número de teléfono.</br>
+Realizado el tutorial breve de uso de la aplicación con capturas de pantalla incluidas, y publicado en el repositorio. Inclusive se ha realiado también el documento pdf para la exposición.</br>
 Página web subida a un dominio propio, [puede visitarse aqui](https://improveyourbrand.es/)</br>
 
 ### Bibliografía Utilizada
