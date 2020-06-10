@@ -10,7 +10,7 @@
     android:paddingRight="20dp"
     android:paddingTop="20dp"
     android:background="@color/colorBack"
-    tools:context=".fragments.PetsFragment">
+    tools:context="com.maipetsfct.fragments.PetsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mascShows"
