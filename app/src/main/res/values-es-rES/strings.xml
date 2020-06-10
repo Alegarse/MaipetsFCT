@@ -131,7 +131,7 @@
     <string name="yesAdminDel">¿Está seguro de borrar este usuario? Perderá todos sus datos guardados</string>
     <string name="datMan">Gestión citas</string>
     <string name="usersList">Listado de usuarios</string>
-    <string name="usuCom">Vias de cmunicacion</string>
+    <string name="usuCom">Vias de comunicacion</string>
     <string name="subject">Vias de comunicacion</string>
     <string name="emailmsg">El mensaje va aquí</string>
     <string name="citPara">Cita para</string>
