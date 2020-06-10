@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/x-icon" href="/imgs/favicon.ico" />
+    <link rel="stylesheet" href="./style/main.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <script src="js/mijs.js"></script>
+    <title>Maipets - La gestión de tus mascotas</title>
+</head>
+
+<body>
+    <!-- Sonido multimedia -->
+    <audio id="sonido" src="/audio/audio_fondo.mp3"></audio>
+
+    <!-- Código para la cabecera y el menú -->
+    <header>
+        <div id="cabecera">
+            <div id="contLogo">
+                <img id="logoM" src="imgs/maipets_logo.png">
+                <img id="slogan" src="imgs/slogan.png">
+                <div id="logos">
+                    <a title="Ver perfil LinkedIn autor" href="https://www.linkedin.com/in/alegarse" target="_blank">
+                        <img id="linkedin" src="svg/linkedin.svg">
+                    </a>
+                    <a title="Ver perfil Github autor" href="https://github.com/Alegarse" target="_blank">
+                        <img id="github" src="/svg/github.svg"></img>
+                    </a>
+                </div>
+            </div>
+            <div class="flex">
+                <div id="menu">Menú</div>
+                <div id="op1"><span id="m1"><a title="Saltar a descripción" href="#desc">Descripción</a></span></div>
+                <div id="op2"><span id="m2"><a title="Saltar a funcionalidades" href="#func">Funcionalidades</a></span>
+                </div>
+                <div id="op3"><span id="m3"><a title="Saltar a descarga" href="#desca">Descarga</a></span></div>
+                <div id="op4"><span id="m4"><a title="Saltar a acerca de" href="#acerca">Acerca de</a></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Código para el contenido principal de la página -->
+    <main>
+        <!-- Presentación -->
+        <div class="content1" id="desc">
+            <div class="img1"></div>
+            <div class="textDesc">
+                <div class="img2"><img src="/imgs/descripcion.png"></div>
+                <span id="texto1">
+                    <p>Los que convivimos con animales no humanos sabemos, por un lado, que criarlos
+                        es casi como criar a un hijo a pequeña escala, y por otro, que dicha crianza
+                        requiere un compromiso firme y los conocimientos adecuados para que tenga una vida saludable.</p>
+                    <p>Por ello, a través de la app Maipets podrás tener a mano siempre disponible toda la
+                        información de tus mascotas.</p>
+                    <p>Con esta fantástica aplicación, tu mascota será ya otro miembro de la familia. ¡¡Es su momento,
+                        el momento MAIPETS!!</p>
+                </span>
+            </div>
+        </div>
+
+        <!-- Funcionalidades -->
+        <div class="content2" id="func">
+            <!-- Multimedia -->
+            <video src="/video/octagon.mp4" type="video/mp4" loop autoplay muted></video>
+            <div class="title">
+                <div class="img3"><img src="/imgs/funcionalidades.png"></div>
+                <div id="func1"></div>
+            </div>
+            <div id="func2"></div>
+            <div id="func3"></div>
+            <div id="func4"></div>
+
+        </div>
+
+        <!-- Descarga de la app -->
+        <div class="content3" id="desca">
+            <div id="imgDesc"><img src="/imgs/s8android.png"></div>
+            <div class="cajita">
+                <div class="imgDown"><img src="/imgs/descarga.png"></div>
+                <span id="textoDescarga">
+                    <p>Pulsa en el botón para descargarte el instalador APK</p>
+                </span>
+                <div id="boton2">
+                    <a title="Descargar instalador de la aplicación" href="/apk/Maipets-release.apk"
+                        target="_blank" download="App_Maipets.apk">
+                        <img id="descargando" src="/imgs/download.png">
+                        <span id="bt2text1">Descarga ahora</span>
+                    </a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <!-- Acerca de la aplicación-->
+        <div class="content4" id="acerca">
+            <div class="title2">
+                <div class="img4"><img src="/imgs/acercade.png"></div>
+                <div id="acercade1"></div>
+            </div>
+            <div id="acercade2">
+                <span id="textacercade">
+                    <p>Entusiasta de las nuevas tecnologías, comienzo mi andadura en la programación
+                        cuando decido dar un cambio a mi paradigma vocacional.</p>
+                    <p>Así, amante de la naturaleza y los animales, decido realizar esta app Android nativa para poder
+                        ayudar a los usuarios a llevar adelante su nueva "Modern Family" con sus mascotas.</p>
+                    <p>Para más información sobre mi o seguir mi trayectoria, puedes usar los enlaces de la cabecera 
+                        y ver mis demás trabajos en mis repos de Github.</p>
+                </span>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <footer>
+        <div class="content5">
+            <p><a id="sendM"
+                title="Enviar email al autor"
+                    href="mailto:agscm2@gmail.com?Subject=Más%20información%20sobre%20Maipets%20Android" target="_top">©
+                    Autor: Alejandro García Serrano</a>
+            <p><a id="pripol" title="Política de privacidad"
+                href="/pp.html" target="_top">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>

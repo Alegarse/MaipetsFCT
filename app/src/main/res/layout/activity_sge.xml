@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBack"
+    tools:context=".sgeActivity">
+
+
+    <TextView
+        android:id="@+id/textdb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="@string/sgedb"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/sgedb"
+        android:layout_width="180dp"
+        android:layout_height="110dp"
+        android:src="@drawable/sgedb"
+        android:gravity="center"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
+        android:background="@drawable/back_sge_b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textdb" />
+
+    <TextView
+        android:id="@+id/textspr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sgespr"
+        android:layout_margin="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sgedb" />
+
+    <ImageButton
+        android:id="@+id/sgespr"
+        android:layout_width="180dp"
+        android:layout_height="110dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/back_sge_b"
+        android:src="@drawable/sgespr"
+        android:gravity="center"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textspr" />
+
+    <TextView
+        android:id="@+id/textcom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sgecom"
+        android:layout_margin="30dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sgespr" />
+
+    <ImageButton
+        android:id="@+id/sgecom"
+        android:layout_width="180dp"
+        android:layout_height="110dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/back_sge_b"
+        android:src="@drawable/sgecom"
+        android:gravity="center"
+        android:tint="#fff"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textcom" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

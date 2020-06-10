@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#fafbfb"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp"
+    android:id="@+id/cv"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/imgMasc"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_margin="5dp"
+            android:scaleType="centerCrop"/>
+
+
+        <TextView
+            android:id="@+id/preCitaPara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/imgMasc"
+            android:layout_toRightOf="@+id/imgMasc"
+            android:gravity="right"
+            android:text="@string/citPara"
+            android:textSize="12dp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/citaPara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="105dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/preCitaPara"
+            android:layout_toRightOf="@+id/imgMasc"
+            android:gravity="left"
+            android:text="Nombre"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/preCitaEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/preCitaPara"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/imgMasc"
+            android:gravity="right"
+            android:text="@string/citaDonde"
+            android:textSize="12dp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/citaEn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/citaPara"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="91dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/preCitaEn"
+            android:layout_toRightOf="@+id/imgMasc"
+            android:gravity="left"
+            android:text="Negocio"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/preCitaFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/preCitaEn"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/imgMasc"
+            android:gravity="right"
+            android:text="@string/date"
+            android:textSize="12dp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/citaFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/citaEn"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="91dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/preCitaFecha"
+            android:layout_toRightOf="@+id/imgMasc"
+            android:gravity="left"
+            android:text="Fecha"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/preCitaHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/preCitaEn"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="9dp"
+            android:layout_toEndOf="@+id/citaFecha"
+            android:gravity="right"
+            android:text="@string/hour"
+            android:textSize="12dp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/citaHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/citaEn"
+            android:layout_marginStart="6dp"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@+id/preCitaHora"
+            android:layout_toRightOf="@+id/imgMasc"
+            android:gravity="left"
+            android:text="Hora"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#000"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
