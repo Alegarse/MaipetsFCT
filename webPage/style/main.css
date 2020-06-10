@@ -457,27 +457,25 @@ img {
     top: 15em;
     width: 90vw;
     height: 5vw;
-    align-items: center;
     padding-left: 35%;
 }
 
 .content5 p {
-    margin: 0;
-    padding: 1vw;
+    padding: 0.5vw;
     font-size: 1.3vw;
 }
 
-.content5 p a {
+#sendM {
     color: rgba(0, 128, 0, 0.671);
     background-color: transparent;
     text-decoration: none;
-    text-align: start;
+    text-align: left;
 }
 
 #pripol {
-    font-size: 0.8vw;
+    font-size: 0.9vw;
     font-style: italic;
-    color: #404040;
+    color: #888888;
     text-align: end;
 }
 
@@ -670,9 +668,19 @@ img {
     /* ZONA FOOTER  */
 
     .content5 p {
-        font-size: 3vw;
-        margin: 0;
-        padding: 0;
+        margin: 0 auto;
+    }
+
+    #sendM {
+        text-align: left;
+        font-size: 1.8vw;
         text-align: center;
+    }
+    
+    #pripol {
+        font-size: 1.1vw;
+        font-style: italic;
+        color: #888888;
+        text-align: right;
     }
 }
