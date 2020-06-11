@@ -3,7 +3,7 @@ Gestión de mascotas integral a nivel usuario.<br/>
 
 
 ## Videos explicativos
-▶️ [Exposisición breve y funcionamiento del proyecto](https://youtu.be/JNNqqDwe2vU)</br>
+▶️ [Video-Presentación del proyecto](https://youtu.be/RT81XHWLuNM)</br>
 :small_orange_diamond:[Video explicativo preliminar](https://youtu.be/JNNqqDwe2vU)</br>
 
 ## Links de la web y del pdf de presentación de la aplicación
