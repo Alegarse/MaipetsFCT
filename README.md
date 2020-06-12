@@ -7,9 +7,9 @@ Gestión de mascotas integral a nivel usuario.<br/>
 :small_orange_diamond:[Video explicativo preliminar](https://youtu.be/JNNqqDwe2vU)</br>
 
 ## Links de la web, apk y pdf de presentación de la aplicación
-🗐 [Web Maipets](https://improveyourbrand.es/)</br>
+🗐  [Web Maipets](https://improveyourbrand.es/)</br>
 🚀  [Apk Maipets](https://github.com/Alegarse/MaipetsFCT/blob/master/Apk/Maipets-release.apk)</br>
-📜 [Documento PDF Exposición](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Presentacion%20Proyecto.pdf)</br>
+📜  [Documento PDF Exposición](https://github.com/Alegarse/MaipetsFCT/blob/master/Documentos/Presentacion%20Proyecto.pdf)</br>
 
 
 # Tutorial uso de la app
