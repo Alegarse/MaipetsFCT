@@ -62,11 +62,6 @@ public class LoginActivity extends AppCompatActivity {
         cancel = findViewById(R.id.btnCancel);
         resetPass = findViewById(R.id.passLoose);
 
-
-        // Para la exposición del proyecto
-        email.setText("aleboy80@gmail.com");
-        password.setText("123456");
-
         // Escuchador para el botón Cancelar
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
