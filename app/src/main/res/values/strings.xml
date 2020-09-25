@@ -141,6 +141,7 @@
     <string name="emailmsg">Email message goes here</string>
     <string name="err" translatable="false">Error</string>
     <string name="citPara">Date for</string>
+    <string name="log_exist">User already logged. Entering...</string>
 
 
 </resources>

@@ -33,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button login, cancel;
     private TextView resetPass;
     String codify;
+    Bundle bundle;
 
     private FirebaseAuth mAuth ;
     private FirebaseDatabase fbdatabase ;
@@ -86,8 +87,10 @@ public class LoginActivity extends AppCompatActivity {
 
         // Escuchador para el botón de Login
         login.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 // Guardamos las variables introducidas
                 String mail = email.getText().toString();
                 String passw = password.getText().toString();
@@ -98,15 +101,23 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 // Realizamos el logeo
-                mAuth.signInWithEmailAndPassword(mail,passw)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+                logIn(mail,passw);
+
+            }
+        });
+    }
+
+    private void logIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task)
                     {
                         // Error en el Login
                         if (!task.isSuccessful()){
                             Toast.makeText(getApplicationContext(), R.string.log_nok, Toast.LENGTH_LONG).show();
-                    } else
+                        } else
                         {
                             // Login se realiza correctamente
                             // Toast de prueba para si logea bien
@@ -135,9 +146,15 @@ public class LoginActivity extends AppCompatActivity {
                                         Usuario usuario = dataSnapshot.getValue(Usuario.class) ;
 
                                         // creamos un diccionario para poner los datos del usuario
-                                        Bundle bundle = new Bundle() ;
+                                        bundle = new Bundle() ;
                                         bundle.putSerializable("_usuario", usuario) ;
 
+                                        //Guardamos sesion de usuario
+                                        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
+                                        sessionManagement.saveSession(usuario);
+
+
+                                        // Entramos a la app
                                         // Creamos el intent de usuario segun cual sea
                                         switch (codify){
                                             case "fam":
@@ -147,6 +164,7 @@ public class LoginActivity extends AppCompatActivity {
                                                 intent = new Intent(LoginActivity.this, VetActivity.class) ;
                                                 break;
                                         }
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.putExtras(bundle);
                                         startActivity(intent);
                                     }
@@ -159,7 +177,29 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-            }
-        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        checkSession();
+    }
+
+    private void checkSession() {
+        // Verificamos si el usuario está ya logeado
+        // Si así fuese entramos directamente a la app
+
+        SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
+        String userID = sessionManagement.getSession();
+        String mail = sessionManagement.getMail();
+        String pass = sessionManagement.getPass();
+
+
+        if (userID != "Usuario") {
+            // El usuario ya está logeado
+            logIn(mail,pass);
+        } else {
+            // No hacemos nada
+        }
     }
 }

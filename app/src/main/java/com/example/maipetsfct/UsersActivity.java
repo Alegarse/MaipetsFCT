@@ -79,6 +79,8 @@ public class UsersActivity extends AppCompatActivity {
                 case R.id.mnuLogout :
                     // cerramos la sesión en FireBase
                     fbauth.signOut() ;
+                    SessionManagement sessionManagement = new SessionManagement(UsersActivity.this);
+                    sessionManagement.removeSession();
                     // volvemos a la actividad principal
                     setResult(0);
                     finish();

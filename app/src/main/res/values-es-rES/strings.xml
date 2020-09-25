@@ -135,4 +135,5 @@
     <string name="subject">Vias de comunicacion</string>
     <string name="emailmsg">El mensaje va aquí</string>
     <string name="citPara">Cita para</string>
+    <string name="log_exist">Usuario ya logeado. Entrando...</string>
 </resources>

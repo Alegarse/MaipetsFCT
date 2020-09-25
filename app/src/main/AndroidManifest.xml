@@ -70,6 +70,8 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".PostMainActivity" />
+
+        <!-- Actividad de arranque de la app -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

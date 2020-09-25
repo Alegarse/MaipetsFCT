@@ -47,7 +47,12 @@ public class Usuario implements Serializable {
         this.uid = uid;
     }
 
+    //Usuaio para guardar logeo
 
+    public Usuario(String nombre, String uid) {
+        this.nombre = nombre;
+        this.uid = uid;
+    }
 
 
     // Getters y Setters
